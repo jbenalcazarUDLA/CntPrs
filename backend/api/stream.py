@@ -19,20 +19,74 @@ def stream_file(source_id: int, db: Session = Depends(get_db)):
     
     return FileResponse(db_source.path_url, media_type="video/mp4")
 
+import threading
+import time
+
+class RTSPStreamReader:
+    def __init__(self, rtsp_url):
+        self.rtsp_url = rtsp_url
+        self.cap = None
+        self.frame = None
+        self.running = False
+        self.lock = threading.Lock()
+        self.thread = None
+        
+        # Optimize OpenCV connection and disable heavy FFMPEG logging for HEVC errors
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|analyzeduration;500000|probesize;500000|timeout;3000000|fflags;discardcorrupt"
+        os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
+        os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
+
+    def start(self):
+        self.running = True
+        self.thread = threading.Thread(target=self._update, daemon=True)
+        self.thread.start()
+        return self
+
+    def _update(self):
+        while self.running:
+            if self.cap is None or not self.cap.isOpened():
+                self.cap = cv2.VideoCapture(self.rtsp_url)
+                if not self.cap.isOpened():
+                    time.sleep(2) # Wait before retrying connection
+                    continue
+                    
+            success, frame = self.cap.read()
+            if success:
+                with self.lock:
+                    self.frame = frame
+            else:
+                self.cap.release()
+                self.cap = None
+                time.sleep(1) # Wait before retrying if stream dropped
+
+    def read_jpeg(self):
+        with self.lock:
+            if self.frame is not None:
+                # Resize for better performance if needed
+                # frame = cv2.resize(self.frame, (640, 360))
+                ret, buffer = cv2.imencode('.jpg', self.frame)
+                if ret:
+                    return buffer.tobytes()
+        return None
+
+    def stop(self):
+        self.running = False
+        if self.thread:
+            self.thread.join()
+        if self.cap:
+            self.cap.release()
+
 def gen_frames(rtsp_url: str):
-    cap = cv2.VideoCapture(rtsp_url)
-    while True:
-        success, frame = cap.read()
-        if not success:
-            break
-        else:
-            # Resize for better performance if needed
-            # frame = cv2.resize(frame, (640, 360))
-            ret, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-    cap.release()
+    reader = RTSPStreamReader(rtsp_url).start()
+    try:
+        while True:
+            frame_bytes = reader.read_jpeg()
+            if frame_bytes is not None:
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+            time.sleep(0.03) # Cap at ~30 FPS to save CPU
+    finally:
+        reader.stop()
 
 @router.get("/rtsp/{source_id}")
 def stream_rtsp(source_id: int, db: Session = Depends(get_db)):

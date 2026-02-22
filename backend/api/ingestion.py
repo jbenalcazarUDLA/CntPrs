@@ -35,6 +35,24 @@ def register_rtsp(
 ):
     if source.type != "rtsp":
         raise HTTPException(status_code=400, detail="Invalid type for RTSP registration")
+        
+    import cv2
+    import os
+    # Set timeout options so it doesn't hang indefinitely (approx 3 seconds)
+    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "timeout;3000000|fflags;discardcorrupt"
+    os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
+    os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
+    
+    cap = cv2.VideoCapture(source.path_url)
+    if not cap.isOpened():
+        raise HTTPException(status_code=400, detail="Could not connect to the RTSP stream.")
+        
+    success, frame = cap.read()
+    cap.release()
+    
+    if not success:
+        raise HTTPException(status_code=400, detail="Connected to RTSP stream but failed to read a frame.")
+        
     return crud.create_video_source(db=db, source=source)
 
 @router.get("/", response_model=list[schemas.VideoSource])
