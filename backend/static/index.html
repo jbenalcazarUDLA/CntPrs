@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleCounter AI - Sistema de Gestión</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>PeopleCounter <span>AI</span></span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" data-view="management">
+                    <i class="fas fa-tasks"></i> Gestión
+                </a>
+                <a href="#" class="nav-link" data-view="visualization">
+                    <i class="fas fa-chart-bar"></i> Visualización
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Sprint 1 - Ingesta</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="view-title">Módulo de Gestión</h1>
+                <div class="user-profile">
+                    <span class="status-dot"></span> Online
+                </div>
+            </header>
+
+            <!-- Management View -->
+            <section id="management-view" class="view">
+                <div class="dashboard-grid">
+                    <!-- Ingestion Form -->
+                    <div class="card glass">
+                        <h3><i class="fas fa-plus-circle"></i> Nueva Fuente de Video</h3>
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="switchTab('file')">Video File</button>
+                            <button class="tab-btn" onclick="switchTab('rtsp')">RTSP Stream</button>
+                        </div>
+
+                        <div id="file-ingest" class="tab-content active">
+                            <form id="upload-form">
+                                <div class="form-group">
+                                    <label>Nombre de la Sede/Cámara</label>
+                                    <input type="text" name="name" placeholder="Ej: Entrada Principal" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Archivo de Video</label>
+                                    <div class="file-upload">
+                                        <input type="file" name="file" id="video-file" accept="video/*" required>
+                                        <label for="video-file">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span>Click para subir o arrastra aquí</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary">Subir Fuente</button>
+                            </form>
+                        </div>
+
+                        <div id="rtsp-ingest" class="tab-content">
+                            <form id="rtsp-form">
+                                <div class="form-group">
+                                    <label>Nombre de la Sede/Cámara</label>
+                                    <input type="text" name="name" placeholder="Ej: Cámara Pasillo 2" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>URL RTSP</label>
+                                    <input type="text" name="path_url" placeholder="rtsp://usuario:pass@ip:puerto/ruta"
+                                        required>
+                                </div>
+                                <button type="submit" class="btn-primary">Registrar Cámara</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Registered Sources List -->
+                    <div class="card glass list-card">
+                        <h3><i class="fas fa-list"></i> Fuentes Registradas</h3>
+                        <div class="sources-list" id="sources-list">
+                            <div class="loading-spinner">Cargando fuentes...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visualization View (Placeholder) -->
+            <section id="visualization-view" class="view hidden">
+                <div class="placeholder-content">
+                    <i class="fas fa-chart-pie"></i>
+                    <h2>Módulo de Visualización</h2>
+                    <p>Las analíticas y métricas de conteo estarán disponibles en el próximo sprint.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Video Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3 id="modal-title">Vista Previa</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="video-container" id="video-wrapper">
+                <!-- Video or Image will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification system -->
+    <div id="notification" class="notification"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
