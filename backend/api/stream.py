@@ -32,7 +32,7 @@ class RTSPStreamReader:
         self.thread = None
         
         # Optimize OpenCV connection and disable heavy FFMPEG logging for HEVC errors
-        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|analyzeduration;500000|probesize;500000|timeout;3000000|fflags;discardcorrupt"
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|rtsp_flags;prefer_tcp|max_delay;500000|buffer_size;10240000|analyzeduration;500000|probesize;500000|timeout;3000000|fflags;discardcorrupt"
         os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
         os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
 

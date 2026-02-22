@@ -39,7 +39,7 @@ def register_rtsp(
     import cv2
     import os
     # Set timeout options so it doesn't hang indefinitely (approx 3 seconds)
-    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "timeout;3000000|fflags;discardcorrupt"
+    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|rtsp_flags;prefer_tcp|max_delay;500000|buffer_size;10240000|timeout;3000000|fflags;discardcorrupt"
     os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
     os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
     
