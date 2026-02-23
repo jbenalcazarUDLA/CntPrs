@@ -31,9 +31,10 @@ class RTSPStreamReader:
         self.lock = threading.Lock()
         self.thread = None
         
-        # Optimize OpenCV connection and disable heavy FFMPEG logging for HEVC errors
-        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|rtsp_flags;prefer_tcp|max_delay;500000|buffer_size;10240000|analyzeduration;500000|probesize;500000|timeout;3000000|fflags;discardcorrupt"
-        os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
+        # Optimize OpenCV connection and disable FFMPEG logging for HEVC/RTP errors
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental"
+        os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
+        os.environ["AV_LOG_LEVEL"] = "-8"
         os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
 
     def start(self):

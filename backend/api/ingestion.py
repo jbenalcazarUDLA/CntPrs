@@ -38,9 +38,10 @@ def register_rtsp(
         
     import cv2
     import os
-    # Set timeout options so it doesn't hang indefinitely (approx 3 seconds)
-    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|rtsp_flags;prefer_tcp|max_delay;500000|buffer_size;10240000|timeout;3000000|fflags;discardcorrupt"
-    os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "quiet"
+    # Set timeout options so it doesn't hang indefinitely
+    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental"
+    os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
+    os.environ["AV_LOG_LEVEL"] = "-8"
     os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
     
     cap = cv2.VideoCapture(source.path_url)

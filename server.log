@@ -59,3 +59,6 @@ Traceback (most recent call last):
   File "/home/jbenalcazar/TITA/CntPrs/backend/api/stream.py", line 4, in <module>
     import cv2
 ModuleNotFoundError: No module named 'cv2'
+nohup: failed to run command 'uvicorn': No such file or directory
+nohup: failed to run command 'uvicorn': No such file or directory
+nohup: failed to run command 'uvicorn': No such file or directory
