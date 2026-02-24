@@ -387,3 +387,48 @@ INFO:     172.16.80.95:55864 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redi
 DEBUG: Saving tripwire for source_id=3: {'x1': 0.47572922945500373, 'y1': 0.011096275573947675, 'x2': 0.3424626963888715, 'y2': 0.9933026812678979, 'direction': 'IN', 'source_id': 3}
 DEBUG: Creating new tripwire for source_id=3
 INFO:     172.16.80.95:55864 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [25240]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.0.118:60498 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.118:60498 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     192.168.0.118:60498 - "GET /static/js/app.js?v=2 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:60498 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:60498 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.118:60498 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+DEBUG: Fetching tripwire for source_id=6
+INFO:     192.168.0.118:50553 - "GET /api/tripwires/source/6 HTTP/1.1" 200 OK
+[ WARN:0@45.852] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30093.241151 ms
+DEBUG: Attempting to capture frame from: rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302 (type: rtsp)
+ERROR: Could not open video source: rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302
+INFO:     192.168.0.118:50553 - "GET /api/tripwires/frame/6?t=1771902535462 HTTP/1.1" 400 Bad Request
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25240]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1914]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.0.118:51620 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.118:51620 - "GET /static/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     192.168.0.118:51620 - "GET /static/js/app.js?v=2 HTTP/1.1" 304 Not Modified
+INFO:     192.168.0.118:51620 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:51620 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=7
+INFO:     192.168.0.118:51620 - "GET /api/tripwires/source/7 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: uploads/demo2.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     192.168.0.118:51620 - "GET /api/tripwires/frame/7?t=1771905139003 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:51620 - "GET /api/stream/file/7 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:63928 - "GET /api/stream/file/7 HTTP/1.1" 206 Partial Content
