@@ -321,3 +321,69 @@ INFO:     192.168.0.118:56924 - "GET /api/tripwires/frame/7?t=1771901603474 HTTP
 [ WARN:1@179.567] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30078.838460 ms
 [ WARN:1@211.640] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30072.871199 ms
 [ WARN:1@243.660] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30015.293775 ms
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [275445]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.95:57569 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.95:57569 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     172.16.80.95:59543 - "GET /static/js/app.js?v=2 HTTP/1.1" 200 OK
+INFO:     172.16.80.95:59543 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.95:59543 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.95:60197 - "GET /api/stream/rtsp/6 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.95:49192 - "GET /api/tripwires/source/6 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.95:49192 - "GET /api/tripwires/frame/6?t=1771902134542 HTTP/1.1" 200 OK
+INFO:     172.16.80.95:51096 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=6: {'x1': 0.03584946993596568, 'y1': 0.7424130015525954, 'x2': 0.9947673056073084, 'y2': 0.39721727201522883, 'direction': 'IN', 'source_id': 6}
+DEBUG: Creating new tripwire for source_id=6
+INFO:     172.16.80.95:51096 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.95:51096 - "GET /api/stream/rtsp/5 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=5
+INFO:     172.16.80.95:50169 - "GET /api/tripwires/source/5 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.100.151:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.95:50169 - "GET /api/tripwires/frame/5?t=1771902179338 HTTP/1.1" 200 OK
+INFO:     172.16.80.95:61505 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=5: {'x1': 0.6049877464890719, 'y1': 1.0, 'x2': 0.9947673056073084, 'y2': 0.15522438945295122, 'direction': 'IN', 'source_id': 5}
+DEBUG: Creating new tripwire for source_id=5
+INFO:     172.16.80.95:61505 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.95:61505 - "GET /api/tripwires/source/6 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.95:61505 - "GET /api/tripwires/frame/6?t=1771902213664 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=5
+INFO:     172.16.80.95:63491 - "GET /api/tripwires/source/5 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.100.151:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.95:63491 - "GET /api/tripwires/frame/5?t=1771902223658 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=3
+INFO:     172.16.80.95:55820 - "GET /api/tripwires/source/3 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.95:55820 - "GET /api/tripwires/frame/3?t=1771902235857 HTTP/1.1" 200 OK
+INFO:     172.16.80.95:55864 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=3: {'x1': 0.47572922945500373, 'y1': 0.011096275573947675, 'x2': 0.3424626963888715, 'y2': 0.9933026812678979, 'direction': 'IN', 'source_id': 3}
+DEBUG: Creating new tripwire for source_id=3
+INFO:     172.16.80.95:55864 - "POST /api/tripwires/ HTTP/1.1" 200 OK
