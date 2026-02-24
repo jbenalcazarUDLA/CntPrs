@@ -16,3 +16,24 @@ class VideoSource(VideoSourceBase):
 
     class Config:
         orm_mode = True
+
+class TripwireBase(BaseModel):
+    x1: float
+    y1: float
+    x2: float
+    y2: float
+    direction: str
+
+class TripwireCreate(TripwireBase):
+    source_id: int
+
+class TripwireUpdate(TripwireBase):
+    pass
+
+class Tripwire(TripwireBase):
+    id: int
+    source_id: int
+    updated_at: datetime
+
+    class Config:
+        orm_mode = True

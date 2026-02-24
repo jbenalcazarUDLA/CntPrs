@@ -1,64 +1,255 @@
 /home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
 * 'orm_mode' has been renamed to 'from_attributes'
   warnings.warn(message, UserWarning)
-Traceback (most recent call last):
-  File "/home/jbenalcazar/TITA/CntPrs/./venv/bin/uvicorn", line 8, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
-    return self.main(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
-    rv = self.invoke(ctx)
-         ^^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
-    return callback(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/main.py", line 433, in main
-    run(
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/main.py", line 606, in run
-    server.run()
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/server.py", line 75, in run
-    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/server.py", line 79, in serve
-    await self._serve(sockets)
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/server.py", line 86, in _serve
-    config.load()
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/config.py", line 441, in load
-    self.loaded_app = import_from_string(self.app)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 22, in import_from_string
-    raise exc from None
-  File "/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
-    module = importlib.import_module(module_str)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/home/jbenalcazar/TITA/CntPrs/backend/main.py", line 9, in <module>
-    from .api import ingestion, stream
-  File "/home/jbenalcazar/TITA/CntPrs/backend/api/stream.py", line 4, in <module>
-    import cv2
-ModuleNotFoundError: No module named 'cv2'
-nohup: failed to run command 'uvicorn': No such file or directory
-nohup: failed to run command 'uvicorn': No such file or directory
-nohup: failed to run command 'uvicorn': No such file or directory
+INFO:     Started server process [11511]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.0.126:60131 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.126:60131 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11511]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [11535]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.0.126:60863 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.126:60863 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.126:60863 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.126:60863 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.126:60863 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.126:60863 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.126:53917 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.126:53917 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     192.168.0.126:50994 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     192.168.0.126:50994 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.126:50994 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.126:50994 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.0.118:50175 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.118:50175 - "GET /static/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     192.168.0.118:50175 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     192.168.0.118:50175 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:50175 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.118:63990 - "GET /api/stream/rtsp/3 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:61682 - "GET /api/stream/rtsp/5 HTTP/1.1" 200 OK
+[ WARN:0@84998.956] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30012.814936 ms
+[ WARN:1@85029.056] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30099.416191 ms
+[ WARN:0@85059.094] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30038.298219 ms
+[ WARN:1@85089.100] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30005.630683 ms
+[ WARN:0@85119.277] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30175.986228 ms
+[ WARN:1@85149.335] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30058.414391 ms
+[ WARN:0@85179.378] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30042.015327 ms
+INFO:     192.168.0.118:56691 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     192.168.0.118:56691 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:56691 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.118:56691 - "GET /api/stream/file/7 HTTP/1.1" 206 Partial Content
+[ WARN:1@85209.454] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30075.527161 ms
+[ WARN:0@85239.746] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30292.439344 ms
+[ WARN:1@85269.801] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30054.362153 ms
+[ WARN:0@85300.143] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30341.368294 ms
+[ WARN:1@85330.256] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30112.789461 ms
+[ WARN:0@85360.306] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30049.986093 ms
+[ WARN:1@85390.320] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30013.535263 ms
+[ WARN:0@85420.370] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30050.035536 ms
+[ WARN:1@85450.568] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30197.419941 ms
+[ WARN:0@85480.577] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30009.310245 ms
+[ WARN:1@85510.768] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30190.505370 ms
+[ WARN:0@85540.778] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30009.906500 ms
+[ WARN:1@85570.830] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30051.578870 ms
+[ WARN:0@85600.865] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30034.664615 ms
+[ WARN:1@85630.943] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30077.956768 ms
+[ WARN:0@85660.956] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30012.846689 ms
+[ WARN:1@85691.002] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30045.332006 ms
+[ WARN:0@85721.058] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30055.959488 ms
+[ WARN:1@85751.316] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30257.481403 ms
+[ WARN:0@85781.412] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30095.812683 ms
+[ WARN:1@85811.446] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30033.637565 ms
+[ WARN:0@85841.611] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30165.184318 ms
+[ WARN:1@85871.664] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30052.415427 ms
+[ WARN:0@85901.755] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.580744 ms
+[ WARN:1@85931.830] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30075.310531 ms
+[ WARN:0@85961.965] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30134.579620 ms
+[ WARN:1@85991.983] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30018.148110 ms
+[ WARN:0@86022.129] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30145.056726 ms
+[ WARN:1@86052.145] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30015.638768 ms
+[ WARN:0@86082.234] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30089.710362 ms
+[ WARN:1@86112.384] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30149.565582 ms
+[ WARN:0@86142.436] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30051.797615 ms
+[ WARN:1@86172.763] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30326.477627 ms
+[ WARN:0@86202.816] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30052.428375 ms
+[ WARN:1@86232.928] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30111.761134 ms
+[ WARN:0@86262.978] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30049.984296 ms
+[ WARN:1@86293.421] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30442.345046 ms
+[ WARN:0@86323.558] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30136.782112 ms
+[ WARN:1@86353.632] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30073.935485 ms
+[ WARN:0@86383.753] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30120.997509 ms
+[ WARN:1@86413.838] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30084.667803 ms
+[ WARN:0@86443.866] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30027.621447 ms
+[ WARN:1@86473.951] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30084.608490 ms
+[ WARN:0@86503.991] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30039.786236 ms
+[ WARN:1@86534.013] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30021.479962 ms
+[ WARN:0@86564.160] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30147.108073 ms
+[ WARN:1@86594.342] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30182.025014 ms
+[ WARN:0@86624.377] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30034.251549 ms
+[ WARN:1@86654.828] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30450.476597 ms
+INFO:     192.168.0.118:57654 - "GET /api/stream/rtsp/3 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:64548 - "GET /api/stream/rtsp/5 HTTP/1.1" 200 OK
+[ WARN:0@86684.928] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30099.969581 ms
+[ WARN:2@86714.979] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30051.354346 ms
+[ WARN:3@86745.051] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30071.524726 ms
+[ WARN:0@86775.131] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30079.599648 ms
+[ WARN:2@86805.212] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30080.628214 ms
+[ WARN:3@86835.380] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30167.272093 ms
+[ WARN:0@86865.453] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30072.992571 ms
+[ WARN:2@86895.549] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30095.785243 ms
+[ WARN:3@86925.650] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30100.488481 ms
+[ WARN:0@86955.756] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30105.716433 ms
+[ WARN:2@86985.878] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30122.166340 ms
+[ WARN:3@87015.946] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30067.766260 ms
+[ WARN:0@87045.994] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30047.331304 ms
+[ WARN:2@87076.088] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30093.721133 ms
+[ WARN:3@87106.178] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30089.708830 ms
+[ WARN:0@87136.220] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30042.310540 ms
+[ WARN:2@87166.298] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30077.100052 ms
+[ WARN:3@87196.324] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30026.221493 ms
+[ WARN:0@87226.378] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30053.806155 ms
+[ WARN:2@87256.478] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30099.293211 ms
+[ WARN:3@87286.616] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30138.059955 ms
+[ WARN:0@87316.697] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30080.973329 ms
+[ WARN:2@87346.887] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30189.207682 ms
+[ WARN:3@87376.887] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30000.027513 ms
+[ WARN:0@87406.986] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30098.775725 ms
+[ WARN:2@87437.295] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30308.409242 ms
+[ WARN:3@87467.385] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.123875 ms
+[ WARN:1@87497.437] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30051.780311 ms
+[ WARN:2@87527.445] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30007.379614 ms
+[ WARN:3@87557.467] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30022.366975 ms
+[ WARN:1@87587.481] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30013.666967 ms
+[ WARN:2@87617.579] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30097.793174 ms
+[ WARN:3@87647.619] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30039.778352 ms
+[ WARN:1@87677.652] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30032.302492 ms
+[ WARN:2@87707.683] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30030.741634 ms
+[ WARN:3@87737.726] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30043.208322 ms
+[ WARN:1@87767.827] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30100.050292 ms
+[ WARN:2@87797.920] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30092.929326 ms
+[ WARN:3@87827.967] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30029.482330 ms
+[ WARN:1@87858.032] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30064.479059 ms
+[ WARN:2@87888.121] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30088.851695 ms
+[ WARN:3@87918.179] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30057.595581 ms
+[ WARN:1@87948.271] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30092.019594 ms
+INFO:     192.168.0.118:53142 - "GET /api/stream/rtsp/6 HTTP/1.1" 200 OK
+[ WARN:2@87978.281] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30009.782604 ms
+[ WARN:3@88008.353] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30071.412547 ms
+[ WARN:1@88038.412] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30058.943625 ms
+[ WARN:0@88068.466] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30053.401991 ms
+[ WARN:2@88098.479] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30012.911369 ms
+[ WARN:3@88128.568] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30088.859734 ms
+[ WARN:4@88158.643] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30074.454853 ms
+[ WARN:1@88188.895] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30251.850564 ms
+[ WARN:0@88218.990] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30094.480851 ms
+[ WARN:2@88249.186] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30196.122963 ms
+[ WARN:3@88279.231] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30044.718897 ms
+[ WARN:4@88309.262] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30030.298341 ms
+[ WARN:1@88339.349] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30087.123047 ms
+[ WARN:0@88369.405] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30055.964839 ms
+[ WARN:2@88399.430] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30024.808240 ms
+[ WARN:3@88429.489] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30058.209642 ms
+[ WARN:4@88459.610] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30120.926622 ms
+[ WARN:1@88489.707] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30096.689507 ms
+[ WARN:0@88519.863] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30155.354560 ms
+[ WARN:2@88549.915] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30052.051936 ms
+[ WARN:3@88579.957] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30041.561079 ms
+[ WARN:4@88610.024] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30066.402289 ms
+[ WARN:1@88640.070] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30045.645990 ms
+[ WARN:0@88670.100] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30030.542204 ms
+[ WARN:2@88700.191] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.367285 ms
+[ WARN:3@88730.281] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.065328 ms
+[ WARN:4@88760.300] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30018.639639 ms
+[ WARN:1@88790.385] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30084.967056 ms
+[ WARN:0@88820.447] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30061.651756 ms
+[ WARN:2@88850.448] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30000.556043 ms
+[ WARN:3@88880.487] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30038.275643 ms
+[ WARN:4@88910.508] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30021.263262 ms
+[ WARN:1@88940.543] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30034.823242 ms
+[ WARN:0@88970.580] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30036.167783 ms
+[ WARN:2@89000.616] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30036.123731 ms
+[ WARN:3@89030.655] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30037.936008 ms
+[ WARN:4@89060.751] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30095.829747 ms
+[ WARN:1@89090.848] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30097.377377 ms
+[ WARN:3@89120.873] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30023.835275 ms
+[ WARN:4@89150.903] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30029.696423 ms
+[ WARN:2@89180.999] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30095.410832 ms
+[ WARN:0@89211.013] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30013.998429 ms
+[ WARN:3@89241.108] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30094.822009 ms
+[ WARN:4@89271.135] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30026.114988 ms
+[ WARN:1@89301.174] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30038.494915 ms
+[ WARN:2@89331.194] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30019.459150 ms
+[ WARN:0@89361.267] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30072.712129 ms
+[ WARN:3@89391.359] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30092.352169 ms
+[ WARN:4@89421.421] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30061.701207 ms
+[ WARN:1@89451.507] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30085.368546 ms
+[ WARN:2@89481.532] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30024.308040 ms
+[ WARN:0@89511.608] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30075.569893 ms
+INFO:     192.168.0.118:59792 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     192.168.0.118:59792 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:59792 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     192.168.0.118:59792 - "GET /api/stream/file/7 HTTP/1.1" 206 Partial Content
+INFO:     192.168.0.118:59130 - "GET /api/stream/file/7 HTTP/1.1" 206 Partial Content
+INFO:     192.168.0.118:56907 - "GET /api/stream/file/8 HTTP/1.1" 206 Partial Content
+INFO:     192.168.0.118:58545 - "DELETE /api/sources/8 HTTP/1.1" 200 OK
+INFO:     192.168.0.118:58545 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     192.168.0.118:58545 - "GET /api/sources/ HTTP/1.1" 200 OK
+[ WARN:3@89541.674] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30065.598167 ms
+[ WARN:4@89571.737] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30062.956013 ms
+[ WARN:1@89601.761] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30023.710751 ms
+[ WARN:2@89631.852] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.944818 ms
+[ WARN:0@89661.875] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30022.110467 ms
+[ WARN:3@89691.901] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30026.272658 ms
+[ WARN:4@89721.922] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30020.347949 ms
+[ WARN:1@89751.977] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30055.304104 ms
+[ WARN:2@89782.071] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30093.929479 ms
+[ WARN:0@89812.153] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30081.129862 ms
+[ WARN:3@89842.234] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30081.009563 ms
+[ WARN:4@89872.252] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30017.606425 ms
+[ WARN:1@89902.315] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30062.603366 ms
+[ WARN:2@89932.413] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30098.363455 ms
+[ WARN:0@89962.487] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30073.307240 ms
+[ WARN:3@89992.551] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30063.537165 ms
+[ WARN:4@90022.602] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30050.908326 ms
+[ WARN:1@90052.634] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30031.737033 ms
+[ WARN:2@90082.713] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30078.531369 ms
+[ WARN:0@90112.714] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30001.363898 ms
+[ WARN:3@90142.778] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30063.768752 ms
+[ WARN:4@90172.823] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30044.225577 ms
+[ WARN:1@90202.919] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30096.245030 ms
+[ WARN:2@90232.928] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30008.223592 ms
+[ WARN:0@90262.986] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30058.022754 ms
+[ WARN:3@90293.082] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30095.817460 ms
+[ WARN:4@90323.181] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30098.755450 ms
+[ WARN:1@90353.266] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30084.422268 ms
+[ WARN:2@90383.308] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30042.126695 ms
+[ WARN:0@90413.398] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30089.296540 ms
+[ WARN:3@90443.434] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30036.314557 ms
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[ WARN:4@90473.525] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30090.727615 ms
+[ WARN:1@90503.535] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30009.539999 ms
+[ WARN:2@90533.620] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30084.924786 ms
+[ WARN:0@90563.708] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30086.983920 ms
+[ WARN:3@90593.751] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30042.230705 ms
+[ WARN:2@90623.771] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30020.236687 ms
+[ WARN:4@90653.824] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 30052.836117 ms
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [19073]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

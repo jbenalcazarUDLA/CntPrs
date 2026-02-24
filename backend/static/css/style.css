@@ -476,3 +476,145 @@ input[type="text"]:focus {
 .btn-preview i {
     margin-right: 5px;
 }
+
+/* Tripwire Specific Styles */
+.tripwire-modal-content {
+    max-width: 1000px;
+}
+
+.tripwire-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    position: relative;
+    cursor: crosshair;
+    overflow: hidden;
+}
+
+#tripwire-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.tripwire-controls {
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.direction-toggle {
+    display: flex;
+    background: rgba(0,0,0,0.3);
+    padding: 4px;
+    border-radius: 0.5rem;
+    gap: 4px;
+}
+
+.direction-toggle button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.direction-toggle button.active {
+    background: var(--primary);
+    color: white;
+}
+
+.tripwire-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tripwire-info {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    max-width: 300px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.1);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-tripwire {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    height: 32px;
+}
+
+.btn-tripwire:hover {
+    background: var(--success);
+    color: white;
+}
+
+.btn-tripwire i {
+    margin-right: 5px;
+}

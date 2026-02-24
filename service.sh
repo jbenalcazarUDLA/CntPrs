@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-PROJECT_DIR="/home/jbenalcazar/CntPrs"
+PROJECT_DIR="/home/jbenalcazar/TITA/CntPrs"
 VENV_DIR="$PROJECT_DIR/venv"
 PID_FILE="$PROJECT_DIR/service.pid"
 LOG_FILE="$PROJECT_DIR/server.log"

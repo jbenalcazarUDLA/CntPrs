@@ -113,7 +113,7 @@
         <div class="modal-content glass">
             <div class="modal-header">
                 <h3 id="modal-title">Vista Previa</h3>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <button class="close-btn" onclick="closeModal('preview')">&times;</button>
             </div>
             <div class="video-container" id="video-wrapper">
                 <!-- Video or Image will be injected here -->
@@ -121,10 +121,54 @@
         </div>
     </div>
 
+    <!-- Tripwire Configuration Modal -->
+    <div id="tripwire-modal" class="modal">
+        <div class="modal-content glass tripwire-modal-content">
+            <div class="modal-header">
+                <h3 id="tripwire-modal-title">Configurar Virtual Tripwire</h3>
+                <button class="close-btn" onclick="closeModal('tripwire')">&times;</button>
+            </div>
+            <div class="tripwire-body">
+                <div class="canvas-container" id="canvas-wrapper">
+                    <canvas id="tripwire-canvas"></canvas>
+                    <div id="canvas-loading" class="canvas-overlay">
+                        <div class="spinner"></div>
+                        <p>Capturando frame...</p>
+                    </div>
+                </div>
+                <div class="tripwire-controls">
+                    <div class="control-group">
+                        <label>Dirección del Conteo</label>
+                        <div class="direction-toggle">
+                            <button id="dir-in-btn" class="active" onclick="setDirection('IN')">
+                                <i class="fas fa-arrow-right"></i> IN
+                            </button>
+                            <button id="dir-out-btn" onclick="setDirection('OUT')">
+                                <i class="fas fa-arrow-left"></i> OUT
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tripwire-info">
+                        <p><i class="fas fa-info-circle"></i> Haz clic y arrastra para dibujar la línea. Arrastra los
+                            extremos para ajustar.</p>
+                    </div>
+                    <div class="tripwire-actions">
+                        <button class="btn-secondary" onclick="resetTripwire()">
+                            <i class="fas fa-undo"></i> Reiniciar
+                        </button>
+                        <button class="btn-primary" onclick="saveTripwire()">
+                            <i class="fas fa-save"></i> Guardar Configuración
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Notification system -->
     <div id="notification" class="notification"></div>
 
-    <script src="/static/js/app.js"></script>
+    <script src="/static/js/app.js?v=2"></script>
 </body>
 
 </html>
