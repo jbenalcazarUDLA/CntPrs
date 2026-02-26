@@ -187,81 +187,131 @@ def file_gen_frames(source_id: int, file_path: str):
 
     yolo_processor = AsyncYOLOProcessor()
     
-    try:
-        while cap.isOpened():
-            start_time = time.time()
-            
-            # --- MEASURE READ ---
-            t_r1 = time.time()
-            success, frame = cap.read()
-            t_r2 = time.time()
-            
-            if not success:
-               current_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
-               total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-               
-               print(f"[STREAM-FILE-{source_id}] DEBUG: Read failed. pos: {current_frame}, total: {total_frames}")
-               
-               # If we are at the end (or very close), loop the video
-               if total_frames > 0 and current_frame >= total_frames - 1:
-                   print(f"[STREAM-FILE-{source_id}] Reached end of video file. Looping back to frame 0...")
-                   cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-                   consecutive_failures = 0
+    import asyncio
+    import queue
+    
+    # We will use a thread-safe Queue to pass frames to the network.
+    # We keep the maxsize small (e.g. 2) to ensure we always stream the freshest frame
+    # and drop frames if the network client is too slow.
+    frame_queue = queue.Queue(maxsize=3)
+    
+    # We must run the video file reader in its own synchronous thread,
+    # because opencv `cap.read()` blocks, and we don't want to block FastAPI's event loop.
+    def video_reader_thread():
+        nonlocal consecutive_failures, frame_count
+        print(f"[STREAM-FILE-{source_id}] video_reader_thread started!")
+        
+        try:
+            playback_start_time = time.time()
+            while cap.isOpened() and yolo_processor.running:
+                start_time = time.time()
+                
+                # Catch up to real-time if we are falling behind
+                elapsed_playback = start_time - playback_start_time
+                expected_frame_count = int(elapsed_playback * fps)
+                
+                if expected_frame_count > frame_count:
+                    skip_count = expected_frame_count - frame_count
+                    if skip_count > 5:
+                        cap.set(cv2.CAP_PROP_POS_FRAMES, expected_frame_count)
+                        frame_count = expected_frame_count
+                    else:
+                        for _ in range(skip_count):
+                            cap.grab()
+                        frame_count += skip_count
+                
+                t_r1 = time.time()
+                success, frame = cap.read()
+                t_r2 = time.time()
+                
+                if not success:
+                   current_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
+                   total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+                   
+                   # Loop video
+                   if total_frames > 0 and current_frame >= total_frames - 1:
+                       cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+                       consecutive_failures = 0
+                       playback_start_time = time.time()
+                       frame_count = 0
+                       continue
+                       
+                   consecutive_failures += 1
+                   if consecutive_failures > 30:
+                       print(f"[STREAM-FILE-{source_id}] ERROR: 30 consecutive failures. Break.")
+                       break
                    continue
                    
-               consecutive_failures += 1
-               if consecutive_failures > 30:
-                   print(f"[STREAM-FILE-{source_id}] ERROR: Too many consecutive frame read failures in file streaming. Aborting.")
-                   break
-                   
-               # Just a bad frame, skip it
-               continue
-               
-            consecutive_failures = 0
-            frame_count += 1
-            
-            if frame_count == 1:
-                print(f"[STREAM-FILE-{source_id}] First frame decoded successfully! Starting async YOLO...")
-            elif frame_count % 30 == 0:
-                pass # We will print debug logs below instead
-            
-            # 1. Dispatch frame to background thread for YOLO (non-blocking)
-            yolo_processor.update_frame(frame)
-            
-            # 2. Retrieve the *latest available* processed frame from cache
-            # If YOLO is slow, this will just return a slightly older frame with older bounding boxes
-            with yolo_processor.lock:
-                frame_to_stream = yolo_processor.processed_frame_cache if yolo_processor.processed_frame_cache is not None else frame
+                consecutive_failures = 0
+                frame_count += 1
+                
+                # Dispatch frame to YOLO
+                yolo_processor.update_frame(frame)
+                
+                # Get latest bounding boxes
+                with yolo_processor.lock:
+                    frame_to_stream = yolo_processor.processed_frame_cache if yolo_processor.processed_frame_cache is not None else frame
+                
+                # Encode (lower quality = faster network transfer)
+                t_e1 = time.time()
+                ret, buffer = cv2.imencode('.jpg', frame_to_stream, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
+                t_e2 = time.time()
+                
+                if ret:
+                    frame_bytes = buffer.tobytes()
+                    chunk = (b'--frame\r\n'
+                           b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+                    
+                    # Try to put data in the queue for the network thread. 
+                    # If network is slow and queue is full, we literally drop the frame to keep video playing real-time
+                    try:
+                        frame_queue.put_nowait(chunk)
+                    except queue.Full:
+                        pass
+                    except Exception as e:
+                        print(f"[STREAM-FILE-{source_id}] Queue put error: {e}")
+                        pass
 
-            # 3. Stream to browser immediately
-            # --- MEASURE ENCODE ---
-            t_e1 = time.time()
-            ret, buffer = cv2.imencode('.jpg', frame_to_stream, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
-            t_e2 = time.time()
-            
-            t_y1 = time.time()
-            t_y2 = time.time()
-            if ret:
-                frame_bytes = buffer.tobytes()
-                # --- MEASURE NETWORK YIELD ---
-                t_y1 = time.time()
-                yield (b'--frame\r\n'
-                       b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-                t_y2 = time.time()
-            
-            # 4. Synchronize native video speed
-            elapsed_time = time.time() - start_time
-            sleep_time = frame_time - elapsed_time
-            if sleep_time > 0:
-                time.sleep(sleep_time)
+                # Maintain video speed
+                elapsed_time = time.time() - start_time
+                sleep_time = frame_time - elapsed_time
+                if sleep_time > 0:
+                    time.sleep(sleep_time)
                 
-            if frame_count % 30 == 0:
-                print(f"[STREAM-FILE-{source_id}] FPS={fps:.1f} | Frame={frame_count} | read={(t_r2-t_r1)*1000:.1f}ms | encode={(t_e2-t_e1)*1000:.1f}ms | yield={(t_y2-t_y1)*1000:.1f}ms | total_loop={elapsed_time*1000:.1f}ms")
-                
-    finally:
-        print(f"[STREAM-FILE-{source_id}] Closing video capture descriptor...")
-        yolo_processor.stop()
-        cap.release()
+                if frame_count % 30 == 0:
+                    print(f"[STREAM-FILE-{source_id}] FPS={fps:.1f} | Frame={frame_count} | read={(t_r2-t_r1)*1000:.1f}ms | encode={(t_e2-t_e1)*1000:.1f}ms | loop={(time.time()-start_time)*1000:.1f}ms")
+                    
+        finally:
+            print(f"[STREAM-FILE-{source_id}] Closing video thread...")
+            # Signal the async generator to stop
+            try:
+                frame_queue.put_nowait(None)
+            except Exception:
+                pass
+            yolo_processor.stop()
+            cap.release()
+
+    # Start the background reading thread
+    reader_thread = threading.Thread(target=video_reader_thread, daemon=True)
+    reader_thread.start()
+    
+    # Asynchronous generator for FastAPI to yield to HTTP client non-blocking
+    async def async_generator():
+        print(f"[STREAM-FILE-{source_id}] async_generator started!")
+        try:
+            while True:
+                # We use run_in_executor to avoid blocking the asyncio event loop while waiting for the thread-safe Queue
+                chunk = await asyncio.get_event_loop().run_in_executor(None, frame_queue.get)
+                if chunk is None: # EOF signal
+                    print(f"[STREAM-FILE-{source_id}] async_generator received EOF.")
+                    break
+                yield chunk
+        finally:
+            print(f"[STREAM-FILE-{source_id}] async_generator stopping.")
+            # If the user disconnected early, make sure we clean up the reader
+            yolo_processor.running = False
+            
+    return async_generator()
 
 @router.get("/file/{source_id}")
 def stream_file(source_id: int, db: Session = Depends(get_db)):
