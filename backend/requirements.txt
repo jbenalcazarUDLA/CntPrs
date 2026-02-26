@@ -6,3 +6,5 @@ python-multipart
 aiofiles
 sqlite-utils
 opencv-python-headless
+ultralytics
+numpy

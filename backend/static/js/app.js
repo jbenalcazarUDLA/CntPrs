@@ -108,27 +108,109 @@ function renderSources() {
     `).join('');
 }
 
-uploadForm.addEventListener('submit', async (e) => {
+// --- Upload & Drag-and-Drop Handling ---
+const fileInput = document.getElementById('video-file');
+const fileNameDisplay = document.getElementById('file-name-display');
+const dropZone = document.getElementById('drop-zone');
+const progressContainer = document.getElementById('upload-progress-container');
+const progressBar = document.getElementById('upload-progress-bar');
+const progressText = document.getElementById('upload-progress-text');
+const uploadBtn = uploadForm.querySelector('button[type="submit"]');
+
+// File Selection
+fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+        fileNameDisplay.innerText = e.target.files[0].name;
+    } else {
+        fileNameDisplay.innerText = 'Click para subir o arrastra aquí';
+    }
+});
+
+// Drag and Drop Effects
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults(e) {
     e.preventDefault();
+    e.stopPropagation();
+}
+
+['dragenter', 'dragover'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => dropZone.classList.add('highlight'), false);
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => dropZone.classList.remove('highlight'), false);
+});
+
+dropZone.addEventListener('drop', (e) => {
+    let dt = e.dataTransfer;
+    let files = dt.files;
+
+    if (files.length > 0) {
+        fileInput.files = files; // Assign files to input
+        fileNameDisplay.innerText = files[0].name;
+    }
+}, false);
+
+// Form Submit with Progress
+uploadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!fileInput.files.length) return;
+
     const formData = new FormData(uploadForm);
 
-    try {
-        const response = await fetch(`${API_BASE_URL}/upload`, {
-            method: 'POST',
-            body: formData
-        });
+    // UI Setup
+    progressContainer.classList.remove('hidden');
+    uploadBtn.disabled = true;
+    uploadBtn.innerText = 'Subiendo...';
+    progressBar.style.width = '0%';
+    progressText.innerText = '0%';
 
-        if (response.ok) {
+    const xhr = new XMLHttpRequest();
+
+    // Progress Event
+    xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+            const percentComplete = Math.round((e.loaded / e.total) * 100);
+            progressBar.style.width = percentComplete + '%';
+            progressText.innerText = percentComplete + '%';
+            if (percentComplete === 100) {
+                progressText.innerText = 'Procesando archivo...';
+            }
+        }
+    });
+
+    // Completion Event
+    xhr.addEventListener('load', () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
             showNotification('Archivo subido con éxito', 'success');
             uploadForm.reset();
+            fileNameDisplay.innerText = 'Click para subir o arrastra aquí';
             fetchSources();
         } else {
             showNotification('Error al subir el archivo', 'error');
         }
-    } catch (error) {
+        resetUploadUI();
+    });
+
+    // Error Event
+    xhr.addEventListener('error', () => {
         showNotification('Error de conexión', 'error');
-    }
+        resetUploadUI();
+    });
+
+    xhr.open('POST', `${API_BASE_URL}/upload`);
+    xhr.send(formData);
 });
+
+function resetUploadUI() {
+    progressContainer.classList.add('hidden');
+    uploadBtn.disabled = false;
+    uploadBtn.innerText = 'Subir Fuente';
+    progressBar.style.width = '0%';
+}
 
 rtspForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -186,18 +268,14 @@ function openPreview(id) {
     modalTitle.innerText = `Reproduciendo: ${source.name}`;
     videoWrapper.innerHTML = ''; // Clear previous content
 
-    if (source.type === 'file') {
-        const video = document.createElement('video');
-        video.src = `${STREAM_BASE_URL}/file/${id}`;
-        video.controls = true;
-        video.autoplay = true;
-        videoWrapper.appendChild(video);
-    } else if (source.type === 'rtsp') {
-        const img = document.createElement('img');
-        img.src = `${STREAM_BASE_URL}/rtsp/${id}`;
-        img.alt = 'RTSP Stream';
-        videoWrapper.appendChild(img);
-    }
+    // Both file and rtsp return MJPEG streams from stream.py
+    // Append a timestamp to bypass browser caching of broken previous streams
+    const img = document.createElement('img');
+    img.src = `${STREAM_BASE_URL}/${source.type}/${id}?t=${Date.now()}`;
+    img.alt = `${source.type.toUpperCase()} Stream`;
+    // Add classes for better responsiveness if previous styles applied
+    img.className = 'w-full h-auto object-contain bg-black';
+    videoWrapper.appendChild(img);
 
     previewModal.classList.add('active');
 }

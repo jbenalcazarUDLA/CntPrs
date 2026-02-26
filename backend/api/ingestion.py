@@ -38,13 +38,14 @@ def register_rtsp(
         
     import cv2
     import os
-    # Set timeout options so it doesn't hang indefinitely
-    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental"
-    os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
-    os.environ["AV_LOG_LEVEL"] = "-8"
-    os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
+    # Set timeout options so it doesn't hang indefinitely 
+    os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental|analyzeduration;0|probesize;32"
     
     cap = cv2.VideoCapture(source.path_url)
+    
+    if "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
+        del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
+        
     if not cap.isOpened():
         raise HTTPException(status_code=400, detail="Could not connect to the RTSP stream.")
         

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeopleCounter AI - Sistema de Gestión</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -59,12 +59,22 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Archivo de Video</label>
-                                    <div class="file-upload">
+                                    <div class="file-upload" id="drop-zone">
                                         <input type="file" name="file" id="video-file" accept="video/*" required>
                                         <label for="video-file">
                                             <i class="fas fa-cloud-upload-alt"></i>
-                                            <span>Click para subir o arrastra aquí</span>
+                                            <span id="file-name-display">Click para subir o arrastra aquí</span>
                                         </label>
+                                    </div>
+                                    <div id="upload-progress-container" class="hidden" style="margin-top: 10px;">
+                                        <div class="progress-bar-bg"
+                                            style="background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; height: 8px;">
+                                            <div id="upload-progress-bar"
+                                                style="background: #10b981; width: 0%; height: 100%; transition: width 0.2s;">
+                                            </div>
+                                        </div>
+                                        <small id="upload-progress-text"
+                                            style="color: #94a3b8; display: block; margin-top: 4px; text-align: right;">0%</small>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn-primary">Subir Fuente</button>
@@ -168,7 +178,7 @@
     <!-- Notification system -->
     <div id="notification" class="notification"></div>
 
-    <script src="/static/js/app.js?v=2"></script>
+    <script src="/static/js/app.js?v=3"></script>
 </body>
 
 </html>

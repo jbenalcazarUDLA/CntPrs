@@ -213,8 +213,10 @@ input[type="text"]:focus {
     transition: border-color 0.3s;
 }
 
-.file-upload:hover {
+.file-upload:hover,
+.file-upload.highlight {
     border-color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
 }
 
 .file-upload input {

@@ -47,7 +47,15 @@ def get_source_frame(source_id: int, db: Session = Depends(get_db)):
             else:
                 raise HTTPException(status_code=404, detail=f"File not found at {path}")
 
+    if db_source.type == "rtsp":
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental|analyzeduration;0|probesize;32"
+        
     cap = cv2.VideoCapture(path)
+    
+    # Clean up right after opening
+    if "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
+        del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
+        
     if not cap.isOpened():
         print(f"ERROR: Could not open video source: {path}")
         raise HTTPException(status_code=400, detail=f"Could not open video source: {path}")

@@ -1,0 +1,27 @@
+# Entornos virtuales
+venv/
+.env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Modelos IA
+*.pt
+*.onnx
+*.engine
+models/
+
+# Datos
+datasets/
+videos/
+*.mp4
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+*.tar
