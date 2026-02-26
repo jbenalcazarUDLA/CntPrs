@@ -3,105 +3,102 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 import cv2
 import os
-import threading
 import time
-from ..database import get_db
+from ..database import get_db, SessionLocal
 from .. import crud, models
-from ..services.detection import detector # Import the new detector
+from ..services.async_yolo import MultiprocessYOLO
 
 router = APIRouter()
 
-class RTSPStreamReader:
-    def __init__(self, source_id, rtsp_url, db_session_maker):
-        self.source_id = source_id
-        self.rtsp_url = rtsp_url
-        self.db_session_maker = db_session_maker
-        self.cap = None
-        self.frame = None
-        self.running = False
-        self.lock = threading.Lock()
-        self.thread = None
-        self.tripwire_data = None
-        self.last_tripwire_check = 0
-        
-        # Optimize OpenCV connection and disable FFMPEG logging for HEVC/RTP errors globally
+# Global dictionary to hold multiprocessing instances (one per camera)
+yolo_processors = {}
+
+def get_tripwire_data(source_id):
+    db = SessionLocal()
+    try:
+        return crud.get_tripwire(db, source_id=source_id)
+    finally:
+        db.close()
+
+def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
+    """
+    Pipeline de Streaming Súper Eficiente (Multi-Procesos).
+    La lectura de la cámara y la web corren en el thread actual libremente.
+    El cálculo pesado de YOLO e IA corre en otro proceso 100% independiente.
+    """
+    if is_rtsp:
+        # Optimizar conexión RTSP sin los parámetros que causaban OOM y suprimir logs HEVC
         os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
         os.environ["AV_LOG_LEVEL"] = "-8"
         os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay"
+        
+    cap = cv2.VideoCapture(source_path)
+    
+    if is_rtsp and "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
+        del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
+        os.environ.pop("OPENCV_FFMPEG_LOGLEVEL", None)
+        os.environ.pop("AV_LOG_LEVEL", None)
+        
+    if not cap.isOpened():
+        print(f"[STREAM-{source_id}] ERROR: No se pudo conectar a la fuente de video {source_path}")
+        return
 
+    # Forzar bajo buffering para que la cámara siempre entregue el present frame (evita delay)
+    cap.set(cv2.CAP_PROP_BUFFERSIZE, 2)
+    
+    tripwire_data = get_tripwire_data(source_id)
+    last_tripwire_update = time.time()
 
-    def start(self):
-        self.running = True
-        self.thread = threading.Thread(target=self._update, daemon=True)
-        self.thread.start()
-        return self
-
-    def _update_tripwire(self):
-        # Refresh tripwire data every 5 seconds to avoid constant DB hitting
-        current_time = time.time()
-        if current_time - self.last_tripwire_check > 5:
-            try:
-                # We need a fresh session here because this runs in a separate thread
-                db = self.db_session_maker()
-                self.tripwire_data = crud.get_tripwire(db, source_id=self.source_id)
-                db.close()
-            except Exception as e:
-                print(f"Error fetching tripwire: {e}")
-            self.last_tripwire_check = current_time
-
-    def _update(self):
-        while self.running:
-            if self.cap is None or not self.cap.isOpened():
-                # Enforce RTSP-specific options safely, minimizing probe time
-                os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental|analyzeduration;0|probesize;32"
-                self.cap = cv2.VideoCapture(self.rtsp_url)
-                if "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
-                    del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
-                    
-                if not self.cap.isOpened():
-                    time.sleep(2) # Wait before retrying connection
-                    continue
-                    
-            success, frame = self.cap.read()
-            if success:
-                self._update_tripwire()
-                # Process frame with YOLO before storing it
-                processed_frame = detector.process_frame(frame, self.source_id, self.tripwire_data)
-                
-                with self.lock:
-                    self.frame = processed_frame
-            else:
-                self.cap.release()
-                self.cap = None
-                time.sleep(1) # Wait before retrying if stream dropped
-
-    def read_jpeg(self):
-        with self.lock:
-            if self.frame is not None:
-                ret, buffer = cv2.imencode('.jpg', self.frame)
-                if ret:
-                    return buffer.tobytes()
-        return None
-
-    def stop(self):
-        self.running = False
-        if self.thread:
-            self.thread.join(timeout=2)
-        if self.cap:
-            self.cap.release()
-
-def rtsp_gen_frames(source_id: int, rtsp_url: str):
-    from ..database import SessionLocal # Local import to avoid circular dep
-    reader = RTSPStreamReader(source_id, rtsp_url, SessionLocal).start()
+    # Iniciar motor IA en segundo plano aislado para esta cámara específica
+    if source_id not in yolo_processors:
+        yolo_processors[source_id] = MultiprocessYOLO(source_id)
+    
+    processor = yolo_processors[source_id]
+    
     try:
         while True:
-            frame_bytes = reader.read_jpeg()
-            if frame_bytes is not None:
+            # 1. Ingesta a FPS Máximos Libres
+            success, frame = cap.read()
+            if not success:
+                # Si es un archivo local o stream se corta, manejarlo
+                if not is_rtsp:
+                    cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+                    continue
+                else:
+                    time.sleep(1)
+                    continue
+            
+            # Recargar metadata cada 5s
+            if time.time() - last_tripwire_update > 5:
+                tripwire_data = get_tripwire_data(source_id)
+                last_tripwire_update = time.time()
+
+            # 2. IA Delegada (No Bloqueante)
+            # a) Mandamos frame crudo a la tubería del Worker (este lo procesará si está desocupado)
+            processor.update_frame(frame, tripwire_data)
+            
+            # b) Pedimos inmediatamente el último dibujo disponible (0 delay)
+            processed_frame = processor.get_latest_processed_frame(frame)
+
+            # 3. Salida a Cliente Web
+            # Reducir quality baja brutalmente el ancho de banda y uso de CPU en codificación
+            ret, buffer = cv2.imencode('.jpg', processed_frame, [int(cv2.IMWRITE_JPEG_QUALITY), 65])
+            if ret:
+                frame_bytes = buffer.tobytes()
                 yield (b'--frame\r\n'
                        b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-            time.sleep(0.03) # Cap at ~30 FPS to save CPU
+                
+            # Restricción obligada para no consumir el 100% CPU del hilo principal en VOD
+            if not is_rtsp:
+                time.sleep(1.0 / 30.0) 
+                
     finally:
-        reader.stop()
+        print(f"[STREAM-{source_id}] Conexión de cliente cerrada. Liberando stream...")
+        cap.release()
+        # Si somos el último usuario, podríamos detener el processor, pero de momento
+        # los mantenemos vivos para conexiones rápidas sucesivas.
+
 
 @router.get("/rtsp/{source_id}")
 def stream_rtsp(source_id: int, db: Session = Depends(get_db)):
@@ -109,224 +106,18 @@ def stream_rtsp(source_id: int, db: Session = Depends(get_db)):
     if not db_source or db_source.type != "rtsp":
         raise HTTPException(status_code=404, detail="RTSP source not found")
     
-    return StreamingResponse(rtsp_gen_frames(source_id, db_source.path_url),
+    return StreamingResponse(generate_frames(source_id, db_source.path_url, is_rtsp=True),
                              media_type="multipart/x-mixed-replace; boundary=frame")
 
-
-# --- FILE STREAMING WITH YOLO ---
-
-def file_gen_frames(source_id: int, file_path: str):
-    from ..database import SessionLocal
-    print(f"[STREAM-FILE-{source_id}] Starting file generator thread for path: {file_path}")
-    cap = cv2.VideoCapture(file_path)
-    
-    if not cap.isOpened():
-        print(f"[STREAM-FILE-{source_id}] ERROR: Cannot open file path: {file_path}")
-        return
-        
-    print(f"[STREAM-FILE-{source_id}] System successfully opened cv2.VideoCapture descriptor.")
-        
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    if not fps or fps <= 0:
-        fps = 30.0
-    frame_time = 1.0 / fps
-
-    consecutive_failures = 0
-    frame_count = 0
-    
-    # --- Asynchronous Processing Cache Setup ---
-    # The main thread reads and streams the video at its native FPS.
-    # The background thread runs the heavy YOLO detection asynchronously.
-    # The main thread simply draws whatever bounding boxes are currently in the cache.
-    class AsyncYOLOProcessor:
-        def __init__(self):
-            self.running = True
-            self.current_frame = None
-            self.processed_frame_cache = None
-            self.lock = threading.Lock()
-            self.tripwire_data = None
-            self.last_tripwire_check = 0
-            
-            self.thread = threading.Thread(target=self._process_loop, daemon=True)
-            self.thread.start()
-
-        def update_frame(self, frame):
-            with self.lock:
-                # We only want to process the *latest* frame, not build a queue
-                self.current_frame = frame.copy()
-
-        def _process_loop(self):
-            while self.running:
-                frame_to_process = None
-                with self.lock:
-                    if self.current_frame is not None:
-                        frame_to_process = self.current_frame
-                        self.current_frame = None # Consume it
-                
-                if frame_to_process is not None:
-                    # Update tripwire
-                    current_time = time.time()
-                    if current_time - self.last_tripwire_check > 5:
-                        db = SessionLocal()
-                        try:
-                            self.tripwire_data = crud.get_tripwire(db, source_id=source_id)
-                        finally:
-                            db.close()
-                        self.last_tripwire_check = current_time
-
-                    # Run heavy inference
-                    processed = detector.process_frame(frame_to_process, source_id, self.tripwire_data)
-                    with self.lock:
-                        self.processed_frame_cache = processed
-                else:
-                    time.sleep(0.01) # Wait for a new frame
-
-        def stop(self):
-            self.running = False
-            self.thread.join(timeout=2)
-
-    yolo_processor = AsyncYOLOProcessor()
-    
-    import asyncio
-    import queue
-    
-    # We will use a thread-safe Queue to pass frames to the network.
-    # We keep the maxsize small (e.g. 2) to ensure we always stream the freshest frame
-    # and drop frames if the network client is too slow.
-    frame_queue = queue.Queue(maxsize=3)
-    
-    # We must run the video file reader in its own synchronous thread,
-    # because opencv `cap.read()` blocks, and we don't want to block FastAPI's event loop.
-    def video_reader_thread():
-        nonlocal consecutive_failures, frame_count
-        print(f"[STREAM-FILE-{source_id}] video_reader_thread started!")
-        
-        try:
-            playback_start_time = time.time()
-            while cap.isOpened() and yolo_processor.running:
-                start_time = time.time()
-                
-                # Catch up to real-time if we are falling behind
-                elapsed_playback = start_time - playback_start_time
-                expected_frame_count = int(elapsed_playback * fps)
-                
-                if expected_frame_count > frame_count:
-                    skip_count = expected_frame_count - frame_count
-                    if skip_count > 5:
-                        cap.set(cv2.CAP_PROP_POS_FRAMES, expected_frame_count)
-                        frame_count = expected_frame_count
-                    else:
-                        for _ in range(skip_count):
-                            cap.grab()
-                        frame_count += skip_count
-                
-                t_r1 = time.time()
-                success, frame = cap.read()
-                t_r2 = time.time()
-                
-                if not success:
-                   current_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
-                   total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-                   
-                   # Loop video
-                   if total_frames > 0 and current_frame >= total_frames - 1:
-                       cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-                       consecutive_failures = 0
-                       playback_start_time = time.time()
-                       frame_count = 0
-                       continue
-                       
-                   consecutive_failures += 1
-                   if consecutive_failures > 30:
-                       print(f"[STREAM-FILE-{source_id}] ERROR: 30 consecutive failures. Break.")
-                       break
-                   continue
-                   
-                consecutive_failures = 0
-                frame_count += 1
-                
-                # Dispatch frame to YOLO
-                yolo_processor.update_frame(frame)
-                
-                # Get latest bounding boxes
-                with yolo_processor.lock:
-                    frame_to_stream = yolo_processor.processed_frame_cache if yolo_processor.processed_frame_cache is not None else frame
-                
-                # Encode (lower quality = faster network transfer)
-                t_e1 = time.time()
-                ret, buffer = cv2.imencode('.jpg', frame_to_stream, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
-                t_e2 = time.time()
-                
-                if ret:
-                    frame_bytes = buffer.tobytes()
-                    chunk = (b'--frame\r\n'
-                           b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-                    
-                    # Try to put data in the queue for the network thread. 
-                    # If network is slow and queue is full, we literally drop the frame to keep video playing real-time
-                    try:
-                        frame_queue.put_nowait(chunk)
-                    except queue.Full:
-                        pass
-                    except Exception as e:
-                        print(f"[STREAM-FILE-{source_id}] Queue put error: {e}")
-                        pass
-
-                # Maintain video speed
-                elapsed_time = time.time() - start_time
-                sleep_time = frame_time - elapsed_time
-                if sleep_time > 0:
-                    time.sleep(sleep_time)
-                
-                if frame_count % 30 == 0:
-                    print(f"[STREAM-FILE-{source_id}] FPS={fps:.1f} | Frame={frame_count} | read={(t_r2-t_r1)*1000:.1f}ms | encode={(t_e2-t_e1)*1000:.1f}ms | loop={(time.time()-start_time)*1000:.1f}ms")
-                    
-        finally:
-            print(f"[STREAM-FILE-{source_id}] Closing video thread...")
-            # Signal the async generator to stop
-            try:
-                frame_queue.put_nowait(None)
-            except Exception:
-                pass
-            yolo_processor.stop()
-            cap.release()
-
-    # Start the background reading thread
-    reader_thread = threading.Thread(target=video_reader_thread, daemon=True)
-    reader_thread.start()
-    
-    # Asynchronous generator for FastAPI to yield to HTTP client non-blocking
-    async def async_generator():
-        print(f"[STREAM-FILE-{source_id}] async_generator started!")
-        try:
-            while True:
-                # We use run_in_executor to avoid blocking the asyncio event loop while waiting for the thread-safe Queue
-                chunk = await asyncio.get_event_loop().run_in_executor(None, frame_queue.get)
-                if chunk is None: # EOF signal
-                    print(f"[STREAM-FILE-{source_id}] async_generator received EOF.")
-                    break
-                yield chunk
-        finally:
-            print(f"[STREAM-FILE-{source_id}] async_generator stopping.")
-            # If the user disconnected early, make sure we clean up the reader
-            yolo_processor.running = False
-            
-    return async_generator()
 
 @router.get("/file/{source_id}")
 def stream_file(source_id: int, db: Session = Depends(get_db)):
-    print(f"[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/{source_id}...")
     db_source = crud.get_video_source(db, source_id=source_id)
     if not db_source or db_source.type != "file":
-        print(f"[STREAM-ENDPOINT] ERROR: Source {source_id} is not a valid video file in DB.")
         raise HTTPException(status_code=404, detail="Video file not found")
     
     if not os.path.exists(db_source.path_url):
-        print(f"[STREAM-ENDPOINT] ERROR: The physical file at {db_source.path_url} does not exist.")
         raise HTTPException(status_code=404, detail="File does not exist on disk")
     
-    print(f"[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for {db_source.path_url}...")
-    # We now stream the file exactly like we do RTSP so YOLO processing can be viewed real-time
-    return StreamingResponse(file_gen_frames(source_id, db_source.path_url),
+    return StreamingResponse(generate_frames(source_id, db_source.path_url, is_rtsp=False),
                              media_type="multipart/x-mixed-replace; boundary=frame")
-

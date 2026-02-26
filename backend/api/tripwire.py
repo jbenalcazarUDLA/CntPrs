@@ -48,29 +48,36 @@ def get_source_frame(source_id: int, db: Session = Depends(get_db)):
                 raise HTTPException(status_code=404, detail=f"File not found at {path}")
 
     if db_source.type == "rtsp":
-        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|flags;low_delay|strict;experimental|analyzeduration;0|probesize;32"
+        # Skip probesize/analyzeduration=0 to prevent av_frame_get_buffer OOM on HEVC streams
+        os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
+        os.environ["AV_LOG_LEVEL"] = "-8"
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay"
         
     cap = cv2.VideoCapture(path)
     
     # Clean up right after opening
     if "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
         del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
+        os.environ.pop("OPENCV_FFMPEG_LOGLEVEL", None)
+        os.environ.pop("AV_LOG_LEVEL", None)
         
     if not cap.isOpened():
         print(f"ERROR: Could not open video source: {path}")
         raise HTTPException(status_code=400, detail=f"Could not open video source: {path}")
     
-    # Set a timeout for RTSP if possible (backend dependent)
-    # cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000)
-    
-    print("DEBUG: Skipping 5 frames...")
-    # Try to skip some frames to avoid black frames at the beginning of some streams
-    for i in range(5):
-        cap.grab()
-    
-    print("DEBUG: Reading frame...")
-    success, frame = cap.read()
-    cap.release()
+    try:
+        # Set a timeout for RTSP if possible (backend dependent)
+        # cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000)
+        
+        print("DEBUG: Skipping 5 frames...")
+        # Try to skip some frames to avoid black frames at the beginning of some streams
+        for i in range(5):
+            cap.grab()
+        
+        print("DEBUG: Reading frame...")
+        success, frame = cap.read()
+    finally:
+        cap.release()
     
     if not success:
         print("ERROR: Could not read frame from source")

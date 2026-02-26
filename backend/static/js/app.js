@@ -282,6 +282,8 @@ function openPreview(id) {
 
 function closeModal(type) {
     if (type === 'preview') {
+        const img = videoWrapper.querySelector('img');
+        if (img) img.src = '';
         previewModal.classList.remove('active');
         videoWrapper.innerHTML = '';
     } else if (type === 'tripwire') {

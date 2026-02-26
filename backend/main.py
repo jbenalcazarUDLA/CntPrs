@@ -1,9 +1,13 @@
+import os
+# Suprimir advertencias de FFMPEG (HEVC RPS) antes de que cualquier módulo importe OpenCV
+os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
+os.environ["AV_LOG_LEVEL"] = "-8"
+os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-import os
-
 from .database import engine, get_db
 from . import models, schemas, crud
 from .api import ingestion, stream, tripwire
