@@ -9169,3 +9169,665 @@ DEBUG: Saving tripwire for source_id=14: {'x1': 0.9941883584062656, 'y1': 0.8501
 DEBUG: Creating new tripwire for source_id=14
 INFO:     172.16.80.72:52916 - "POST /api/tripwires/ HTTP/1.1" 200 OK
 INFO:     172.16.80.72:52916 - "GET /api/stream/rtsp/14?t=1772118376003 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:52894 - "GET /api/stream/rtsp/6?t=1772118531675 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.72:59689 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59689 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:59689 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:59689 - "GET /api/tripwires/source/15 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260224200628668_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:59689 - "GET /api/tripwires/frame/15?t=1772118675866 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:53423 - "GET /api/tripwires/source/15 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260224200628668_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:53423 - "GET /api/tripwires/frame/15?t=1772118688115 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:53423 - "GET /api/tripwires/source/15 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260224200628668_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:53423 - "GET /api/tripwires/frame/15?t=1772118693267 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:65297 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=15: {'x1': 0.008216414518490105, 'y1': 0.7362989242390806, 'x2': 0.9931863543982496, 'y2': 0.494306041676803, 'direction': 'IN', 'source_id': 15}
+DEBUG: Creating new tripwire for source_id=15
+INFO:     172.16.80.72:65297 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:65297 - "GET /api/stream/file/15?t=1772118706191 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:58316 - "GET /api/stream/file/15?t=1772120050795 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:55549 - "GET /api/stream/file/15?t=1772120729637 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:57293 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57293 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:57293 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:57293 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57293 - "GET /api/stream/file/15?t=1772121520029 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:63048 - "GET /api/stream/rtsp/6?t=1772121560668 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [108853]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [141725]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:50382 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50382 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:50382 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50382 - "GET /api/stream/file/15?t=1772121694769 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+DEBUG: Fetching tripwire for source_id=15
+INFO:     172.16.80.72:55314 - "DELETE /api/sources/15 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55314 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+[STREAM-15] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:55314 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55142 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55142 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:55142 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:54162 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:54162 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:54162 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50144 - "GET /api/stream/file/16?t=1772121843314 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+INFO:     172.16.80.72:57205 - "GET /api/tripwires/source/16 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.136.19_01_20260224195749100_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:57205 - "GET /api/tripwires/frame/16?t=1772121883570 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57069 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=16: {'x1': 0.9931863543982496, 'y1': 0.9907473228155931, 'x2': 0.4801603022940412, 'y2': 0.34839856836719446, 'direction': 'IN', 'source_id': 16}
+[STREAM-16] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Creating new tripwire for source_id=16
+INFO:     172.16.80.72:57069 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57069 - "GET /api/stream/file/16?t=1772121906190 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+[STREAM-16] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:52676 - "GET /api/tripwires/source/16 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: uploads/172.16.136.19_01_20260224195749100_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:52676 - "GET /api/tripwires/frame/16?t=1772121946932 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59101 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=16: {'x1': 1.0, 'y1': 0.7843416288654151, 'x2': 0.5392785387669871, 'y2': 0.2754448317123902, 'direction': 'IN', 'source_id': 16}
+DEBUG: Updating existing tripwire ID=14
+INFO:     172.16.80.72:59101 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59101 - "GET /api/stream/file/16?t=1772121961258 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+INFO:     172.16.80.72:52734 - "GET /api/stream/rtsp/3?t=1772122059653 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+[STREAM-16] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+[STREAM-3] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:49915 - "GET /api/tripwires/source/3 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:49915 - "GET /api/tripwires/frame/3?t=1772122119298 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:54820 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=3: {'x1': 0.4350701219333198, 'y1': 0.193594297904561, 'x2': 0.3108216249393318, 'y2': 0.9854092445237781, 'direction': 'IN', 'source_id': 3}
+DEBUG: Updating existing tripwire ID=5
+INFO:     172.16.80.72:54820 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:54820 - "GET /api/stream/rtsp/3?t=1772122137931 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+DEBUG: Fetching tripwire for source_id=3
+INFO:     172.16.80.72:59997 - "DELETE /api/sources/3 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59997 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:59997 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:61739 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.72:61739 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:61739 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.72:61739 - "GET /api/tripwires/source/17 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:61739 - "GET /api/tripwires/frame/17?t=1772122208721 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57890 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=17: {'x1': 0.43406811792530375, 'y1': 0.21138789221061083, 'x2': 0.30380759688321957, 'y2': 0.992526682246198, 'direction': 'IN', 'source_id': 17}
+DEBUG: Creating new tripwire for source_id=17
+INFO:     172.16.80.72:57890 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57890 - "GET /api/stream/rtsp/17?t=1772122224621 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+[STREAM-3] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.72:50179 - "GET /api/stream/rtsp/13?t=1772122283329 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=13
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:51016 - "GET /api/stream/rtsp/14?t=1772122328345 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:55015 - "GET /api/tripwires/source/14 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:55015 - "GET /api/tripwires/frame/14?t=1772122441336 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55015 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=14: {'x1': 0.9941883584062656, 'y1': 0.8501779277977994, 'x2': 0.5002003824543618, 'y2': 0.0032028388298279025, 'direction': 'IN', 'source_id': 14}
+DEBUG: Updating existing tripwire ID=12
+INFO:     172.16.80.72:55015 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55015 - "GET /api/stream/rtsp/14?t=1772122450648 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [141725]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [149048]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:50288 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50288 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:50288 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:50288 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50288 - "GET /api/stream/rtsp/6?t=1772122790742 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.72:50692 - "GET /api/stream/rtsp/13?t=1772122832653 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:62232 - "GET /api/tripwires/source/13 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.100.151:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:62232 - "GET /api/tripwires/frame/13?t=1772122889843 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:62232 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=13: {'x1': 0.505210402494442, 'y1': 0.992526682246198, 'x2': 0.9901803423742015, 'y2': 0.03523130858071758, 'direction': 'IN', 'source_id': 13}
+DEBUG: Updating existing tripwire ID=10
+[STREAM-13] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:62232 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:62232 - "GET /api/stream/rtsp/13?t=1772122898114 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:51238 - "GET /api/stream/rtsp/14?t=1772122945185 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:57490 - "GET /api/tripwires/source/14 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:57490 - "GET /api/tripwires/frame/14?t=1772123011162 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:50503 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=14: {'x1': 0.9971943704303138, 'y1': 0.6811387818903262, 'x2': 0.5482965748391314, 'y2': 0.26654803455936527, 'direction': 'IN', 'source_id': 14}
+DEBUG: Updating existing tripwire ID=12
+[STREAM-13] Conexión de cliente cerrada. Liberando stream...
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:50503 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:56114 - "GET /api/stream/rtsp/14?t=1772123044966 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [149048]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [152542]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:51331 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:51331 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:51331 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:51331 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:56992 - "GET /api/stream/rtsp/14?t=1772123308682 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:52345 - "GET /api/stream/rtsp/13?t=1772123376645 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:63253 - "GET /api/stream/rtsp/17?t=1772123433256 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+[STREAM-13] Conexión de cliente cerrada. Liberando stream...
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:54242 - "GET /api/tripwires/source/13 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.100.151:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:54242 - "GET /api/tripwires/frame/13?t=1772123496807 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:60335 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=13: {'x1': 0.48416831832610535, 'y1': 0.9818505256625681, 'x2': 0.9901803423742015, 'y2': 0.03523130858071758, 'direction': 'IN', 'source_id': 13}
+DEBUG: Updating existing tripwire ID=10
+INFO:     172.16.80.72:60335 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:60335 - "GET /api/stream/rtsp/13?t=1772123507697 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+DEBUG: Fetching tripwire for source_id=13
+INFO:     172.16.80.72:55806 - "DELETE /api/sources/13 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55806 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:55806 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-13] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:57506 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.72:57506 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:57506 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.72:57506 - "GET /api/tripwires/source/18 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.100.151:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:57506 - "GET /api/tripwires/frame/18?t=1772123577888 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:64149 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=18: {'x1': 0.7747494806507547, 'y1': 0.695373657335166, 'x2': 0.9891783383661855, 'y2': 0.2505337996839204, 'direction': 'IN', 'source_id': 18}
+DEBUG: Creating new tripwire for source_id=18
+INFO:     172.16.80.72:64149 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:64149 - "GET /api/stream/rtsp/18?t=1772123594879 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.72:55198 - "GET /api/stream/rtsp/6?t=1772128050641 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.72:52527 - "GET /api/stream/rtsp/14?t=1772128890528 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:60105 - "GET /api/stream/rtsp/17?t=1772130010480 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [152542]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [193652]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:54839 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:54839 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:61523 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:61523 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:61523 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:61523 - "GET /api/stream/rtsp/17?t=1772130110187 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17

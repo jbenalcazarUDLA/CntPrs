@@ -25,7 +25,18 @@ def yolo_worker(frame_queue, result_queue, source_id):
             frame, tripwire_data = data
             
             # Procesar el frame (Aproximadamente 100-200ms en CPU)
-            last_processed_frame = detector.process_frame(frame, source_id, tripwire_data)
+            # tripwire_data will arrive as a raw dictionary over the Queue, because SQLAlchemy models fail Pickling.
+            class DummyTripwire: pass
+            tw_obj = None
+            if tripwire_data:
+                tw_obj = DummyTripwire()
+                tw_obj.x1 = tripwire_data.get('x1', 0)
+                tw_obj.y1 = tripwire_data.get('y1', 0)
+                tw_obj.x2 = tripwire_data.get('x2', 0)
+                tw_obj.y2 = tripwire_data.get('y2', 0)
+                tw_obj.direction = tripwire_data.get('direction', 'any')
+                
+            last_processed_frame = detector.process_frame(frame, source_id, tw_obj)
             
             # Enviar resultado de vuelta
             # Vaciamos la cola de resultados vieja para asegurar insertar el último
