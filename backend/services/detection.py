@@ -67,8 +67,8 @@ class YoloDetector:
 
         if run_inference:
             # Downscale for faster inference
-            # 640 is the standard size, but we can go lower (e.g. 320) if CPU is still saturated
-            inference_size = 640 
+            # 320 instead of 640 dramatically speeds up YOLO on CPU, preserving real-time playback
+            inference_size = 320 
             
             results = self.model(
                 frame, 

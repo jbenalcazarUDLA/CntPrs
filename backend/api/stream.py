@@ -126,14 +126,76 @@ def file_gen_frames(source_id: int, file_path: str):
         
     print(f"[STREAM-FILE-{source_id}] System successfully opened cv2.VideoCapture descriptor.")
         
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    if not fps or fps <= 0:
+        fps = 30.0
+    frame_time = 1.0 / fps
+
     consecutive_failures = 0
-    last_tripwire_check = 0
-    tripwire_data = None
     frame_count = 0
+    
+    # --- Asynchronous Processing Cache Setup ---
+    # The main thread reads and streams the video at its native FPS.
+    # The background thread runs the heavy YOLO detection asynchronously.
+    # The main thread simply draws whatever bounding boxes are currently in the cache.
+    class AsyncYOLOProcessor:
+        def __init__(self):
+            self.running = True
+            self.current_frame = None
+            self.processed_frame_cache = None
+            self.lock = threading.Lock()
+            self.tripwire_data = None
+            self.last_tripwire_check = 0
+            
+            self.thread = threading.Thread(target=self._process_loop, daemon=True)
+            self.thread.start()
+
+        def update_frame(self, frame):
+            with self.lock:
+                # We only want to process the *latest* frame, not build a queue
+                self.current_frame = frame.copy()
+
+        def _process_loop(self):
+            while self.running:
+                frame_to_process = None
+                with self.lock:
+                    if self.current_frame is not None:
+                        frame_to_process = self.current_frame
+                        self.current_frame = None # Consume it
+                
+                if frame_to_process is not None:
+                    # Update tripwire
+                    current_time = time.time()
+                    if current_time - self.last_tripwire_check > 5:
+                        db = SessionLocal()
+                        try:
+                            self.tripwire_data = crud.get_tripwire(db, source_id=source_id)
+                        finally:
+                            db.close()
+                        self.last_tripwire_check = current_time
+
+                    # Run heavy inference
+                    processed = detector.process_frame(frame_to_process, source_id, self.tripwire_data)
+                    with self.lock:
+                        self.processed_frame_cache = processed
+                else:
+                    time.sleep(0.01) # Wait for a new frame
+
+        def stop(self):
+            self.running = False
+            self.thread.join(timeout=2)
+
+    yolo_processor = AsyncYOLOProcessor()
     
     try:
         while cap.isOpened():
+            start_time = time.time()
+            
+            # --- MEASURE READ ---
+            t_r1 = time.time()
             success, frame = cap.read()
+            t_r2 = time.time()
+            
             if not success:
                current_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
                total_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
@@ -159,33 +221,46 @@ def file_gen_frames(source_id: int, file_path: str):
             frame_count += 1
             
             if frame_count == 1:
-                print(f"[STREAM-FILE-{source_id}] First frame decoded successfully! Sending to YOLO...")
-            elif frame_count % 300 == 0:
-                print(f"[STREAM-FILE-{source_id}] Processed {frame_count} frames so far...")
+                print(f"[STREAM-FILE-{source_id}] First frame decoded successfully! Starting async YOLO...")
+            elif frame_count % 30 == 0:
+                pass # We will print debug logs below instead
             
-            current_time = time.time()
-            if current_time - last_tripwire_check > 5:
-                db = SessionLocal()
-                try:
-                    tripwire_data = crud.get_tripwire(db, source_id=source_id)
-                finally:
-                    db.close()
-                last_tripwire_check = current_time
+            # 1. Dispatch frame to background thread for YOLO (non-blocking)
+            yolo_processor.update_frame(frame)
             
-            processed_frame = detector.process_frame(frame, source_id, tripwire_data)
-            ret, buffer = cv2.imencode('.jpg', processed_frame)
+            # 2. Retrieve the *latest available* processed frame from cache
+            # If YOLO is slow, this will just return a slightly older frame with older bounding boxes
+            with yolo_processor.lock:
+                frame_to_stream = yolo_processor.processed_frame_cache if yolo_processor.processed_frame_cache is not None else frame
+
+            # 3. Stream to browser immediately
+            # --- MEASURE ENCODE ---
+            t_e1 = time.time()
+            ret, buffer = cv2.imencode('.jpg', frame_to_stream, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
+            t_e2 = time.time()
             
+            t_y1 = time.time()
+            t_y2 = time.time()
             if ret:
                 frame_bytes = buffer.tobytes()
+                # --- MEASURE NETWORK YIELD ---
+                t_y1 = time.time()
                 yield (b'--frame\r\n'
                        b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+                t_y2 = time.time()
             
-            if frame_count == 1:
-                print(f"[STREAM-FILE-{source_id}] First frame successfully encoded to MJPEG and yielded to network.")
+            # 4. Synchronize native video speed
+            elapsed_time = time.time() - start_time
+            sleep_time = frame_time - elapsed_time
+            if sleep_time > 0:
+                time.sleep(sleep_time)
                 
-            time.sleep(0.03) # Try to maintain ~30fps playback speed
+            if frame_count % 30 == 0:
+                print(f"[STREAM-FILE-{source_id}] FPS={fps:.1f} | Frame={frame_count} | read={(t_r2-t_r1)*1000:.1f}ms | encode={(t_e2-t_e1)*1000:.1f}ms | yield={(t_y2-t_y1)*1000:.1f}ms | total_loop={elapsed_time*1000:.1f}ms")
+                
     finally:
         print(f"[STREAM-FILE-{source_id}] Closing video capture descriptor...")
+        yolo_processor.stop()
         cap.release()
 
 @router.get("/file/{source_id}")

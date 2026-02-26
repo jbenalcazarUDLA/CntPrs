@@ -106,3 +106,1557 @@ INFO:     172.16.80.80:64013 - "GET /api/sources/ HTTP/1.1" 200 OK
 [STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/8...
 [STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202711213_yolo.mp4...
 INFO:     172.16.80.80:64013 - "GET /api/stream/file/8?t=1772072481808 HTTP/1.1" 200 OK
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [7097]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.80:61103 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:61103 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:59807 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:59807 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:59807 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.80:53859 - "DELETE /api/sources/7 HTTP/1.1" 200 OK
+INFO:     172.16.80.80:53859 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:53859 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.80:64092 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.80:64092 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:64092 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/9...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195459410_yolo.mp4...
+INFO:     172.16.80.80:64092 - "GET /api/stream/file/9?t=1772074562509 HTTP/1.1" 200 OK
+[STREAM-FILE-9] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195459410_yolo.mp4
+[STREAM-FILE-9] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-9] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 300 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 600 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 900 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 1200 frames so far...
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 1500 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+INFO:     172.16.80.80:64649 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:64649 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:64649 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:64649 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:64649 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/9...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195459410_yolo.mp4...
+INFO:     172.16.80.80:64649 - "GET /api/stream/file/9?t=1772074912290 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [10260]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.80:49670 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:49670 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.80:52006 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.80:52006 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:52006 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/10...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202329880_yolo.mp4...
+INFO:     172.16.80.80:52006 - "GET /api/stream/file/10?t=1772074993637 HTTP/1.1" 200 OK
+[STREAM-FILE-10] Starting file generator thread for path: uploads/172.16.144.20_01_20260224202329880_yolo.mp4
+[STREAM-FILE-10] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-10] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=10
+INFO:     172.16.80.80:49914 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.80:49914 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:49914 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/11...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195637326_yolo.mp4...
+INFO:     172.16.80.80:49914 - "GET /api/stream/file/11?t=1772075232855 HTTP/1.1" 200 OK
+[STREAM-FILE-11] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195637326_yolo.mp4
+[STREAM-FILE-11] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-11] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-10] DEBUG: Read failed. pos: 530.0, total: 530.0
+[STREAM-FILE-10] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-10] Processed 600 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-11] Processed 600 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+INFO:     172.16.80.80:60914 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.80:60914 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:60914 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+INFO:     172.16.80.80:60914 - "GET /api/tripwires/source/12 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260224200926629_yolo.mp4 (type: file)
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.80:60914 - "GET /api/tripwires/frame/12?t=1772075590866 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+INFO:     172.16.80.80:64290 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=12: {'x1': 0.017234450590634394, 'y1': 0.8466192089365895, 'x2': 0.9981963744383298, 'y2': 0.37508895982626916, 'direction': 'IN', 'source_id': 12}
+DEBUG: Creating new tripwire for source_id=12
+INFO:     172.16.80.80:64290 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/12...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.154.20_03_20260224200926629_yolo.mp4...
+INFO:     172.16.80.80:64290 - "GET /api/stream/file/12?t=1772075608353 HTTP/1.1" 200 OK
+[STREAM-FILE-12] Starting file generator thread for path: uploads/172.16.154.20_03_20260224200926629_yolo.mp4
+[STREAM-FILE-12] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-12] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] Processed 900 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] Processed 900 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-11] Processed 1200 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] DEBUG: Read failed. pos: 530.0, total: 530.0
+[STREAM-FILE-10] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] Processed 1500 frames so far...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] Processed 1200 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/9...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195459410_yolo.mp4...
+INFO:     172.16.80.80:56245 - "GET /api/stream/file/9?t=1772076094847 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [18403]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/12...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.154.20_03_20260224200926629_yolo.mp4...
+INFO:     172.16.80.80:60925 - "GET /api/stream/file/12?t=1772076253966 HTTP/1.1" 200 OK
+[STREAM-FILE-12] Starting file generator thread for path: uploads/172.16.154.20_03_20260224200926629_yolo.mp4
+[STREAM-FILE-12] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-12] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+INFO:     172.16.80.80:56592 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:56592 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:55284 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:55284 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:55284 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/12...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.154.20_03_20260224200926629_yolo.mp4...
+INFO:     172.16.80.80:55284 - "GET /api/stream/file/12?t=1772076539272 HTTP/1.1" 200 OK
+[STREAM-FILE-12] Starting file generator thread for path: uploads/172.16.154.20_03_20260224200926629_yolo.mp4
+[STREAM-FILE-12] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-12] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] Closing video capture descriptor...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=12
+INFO:     172.16.80.80:59310 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:59310 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:59310 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/9...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195459410_yolo.mp4...
+INFO:     172.16.80.80:59310 - "GET /api/stream/file/9?t=1772076894495 HTTP/1.1" 200 OK
+[STREAM-FILE-9] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195459410_yolo.mp4
+[STREAM-FILE-9] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-9] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-12] Closing video capture descriptor...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/12...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.154.20_03_20260224200926629_yolo.mp4...
+INFO:     172.16.80.80:61143 - "GET /api/stream/file/12?t=1772076936287 HTTP/1.1" 200 OK
+[STREAM-FILE-12] Starting file generator thread for path: uploads/172.16.154.20_03_20260224200926629_yolo.mp4
+[STREAM-FILE-12] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-12] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-12] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 300 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+[STREAM-FILE-9] Processed 600 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] Processed 900 frames so far...
+[STREAM-FILE-9] DEBUG: Read failed. pos: 300.0, total: 300.0
+[STREAM-FILE-9] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=12
+INFO:     172.16.80.80:63025 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:63025 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:61125 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:61125 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:61125 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/11...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195637326_yolo.mp4...
+INFO:     172.16.80.80:61125 - "GET /api/stream/file/11?t=1772077291353 HTTP/1.1" 200 OK
+[STREAM-FILE-11] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195637326_yolo.mp4
+[STREAM-FILE-11] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-11] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/8...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202711213_yolo.mp4...
+INFO:     172.16.80.80:64882 - "GET /api/stream/file/8?t=1772077347680 HTTP/1.1" 200 OK
+[STREAM-FILE-8] Starting file generator thread for path: uploads/172.16.144.20_01_20260224202711213_yolo.mp4
+[STREAM-FILE-8] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-8] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-8] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-9] Closing video capture descriptor...
+[STREAM-FILE-12] Closing video capture descriptor...
+DEBUG: Fetching tripwire for source_id=8
+INFO:     172.16.80.80:50573 - "GET /api/tripwires/source/8 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.144.20_01_20260224202711213_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.80:50573 - "GET /api/tripwires/frame/8?t=1772077464941 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+INFO:     172.16.80.80:63681 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=8: {'x1': 0.4490981780455442, 'y1': 0.11708184238854677, 'x2': 0.30581160489925163, 'y2': 0.9996441199686179, 'direction': 'IN', 'source_id': 8}
+DEBUG: Creating new tripwire for source_id=8
+INFO:     172.16.80.80:63681 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/8...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202711213_yolo.mp4...
+INFO:     172.16.80.80:63681 - "GET /api/stream/file/8?t=1772077484244 HTTP/1.1" 200 OK
+[STREAM-FILE-8] Starting file generator thread for path: uploads/172.16.144.20_01_20260224202711213_yolo.mp4
+[STREAM-FILE-8] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-8] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-8] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-11] Processed 600 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-11] Processed 900 frames so far...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-8] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/10...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202329880_yolo.mp4...
+INFO:     172.16.80.80:53981 - "GET /api/stream/file/10?t=1772077794675 HTTP/1.1" 200 OK
+[STREAM-FILE-10] Starting file generator thread for path: uploads/172.16.144.20_01_20260224202329880_yolo.mp4
+[STREAM-FILE-10] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-10] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-FILE-10] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-11] Processed 1200 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/9...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195459410_yolo.mp4...
+INFO:     172.16.80.80:60836 - "GET /api/stream/file/9?t=1772077946106 HTTP/1.1" 200 OK
+[STREAM-FILE-9] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195459410_yolo.mp4
+[STREAM-FILE-9] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-9] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=9
+[STREAM-FILE-9] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-8] Processed 300 frames so far...
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=11
+DEBUG: Fetching tripwire for source_id=9
+DEBUG: Fetching tripwire for source_id=10
+DEBUG: Fetching tripwire for source_id=8
+INFO:     172.16.80.80:53652 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:53652 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:54735 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.80:54735 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:54735 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.80:54735 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.80:54735 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.80:54735 - "GET /api/sources/ HTTP/1.1" 200 OK
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/8...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202711213_yolo.mp4...
+INFO:     172.16.80.80:54735 - "GET /api/stream/file/8?t=1772078120469 HTTP/1.1" 200 OK
+[STREAM-FILE-8] Starting file generator thread for path: uploads/172.16.144.20_01_20260224202711213_yolo.mp4
+[STREAM-FILE-8] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-8] First frame decoded successfully! Sending to YOLO...
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-FILE-8] First frame successfully encoded to MJPEG and yielded to network.
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+DEBUG: Fetching tripwire for source_id=8
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/10...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.144.20_01_20260224202329880_yolo.mp4...
+INFO:     172.16.80.80:56330 - "GET /api/stream/file/10?t=1772078159105 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [32083]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/11...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.136.19_01_20260224195637326_yolo.mp4...
+INFO:     172.16.80.80:60500 - "GET /api/stream/file/11?t=1772078443688 HTTP/1.1" 200 OK
+[STREAM-FILE-11] Starting file generator thread for path: uploads/172.16.136.19_01_20260224195637326_yolo.mp4
+[STREAM-FILE-11] System successfully opened cv2.VideoCapture descriptor.
+[STREAM-FILE-11] First frame decoded successfully! Starting async YOLO...
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=30 | read=1.6ms | encode=4.7ms | yield=20.3ms | total_loop=27.3ms
+[STREAM-FILE-11] FPS=15.0 | Frame=60 | read=2.3ms | encode=9.8ms | yield=27.5ms | total_loop=40.5ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=90 | read=1.6ms | encode=10.0ms | yield=29.7ms | total_loop=42.2ms
+[STREAM-FILE-11] FPS=15.0 | Frame=120 | read=1.5ms | encode=5.5ms | yield=1.0ms | total_loop=8.9ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=150 | read=1.7ms | encode=13.1ms | yield=1.1ms | total_loop=16.9ms
+[STREAM-FILE-11] FPS=15.0 | Frame=180 | read=1.4ms | encode=6.5ms | yield=53.2ms | total_loop=61.8ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=210 | read=1.9ms | encode=10.7ms | yield=1.3ms | total_loop=14.8ms
+[STREAM-FILE-11] FPS=15.0 | Frame=240 | read=3.2ms | encode=8.8ms | yield=1.0ms | total_loop=13.9ms
+[STREAM-FILE-11] FPS=15.0 | Frame=270 | read=2.0ms | encode=11.8ms | yield=1.4ms | total_loop=16.1ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=300 | read=1.9ms | encode=10.1ms | yield=1.1ms | total_loop=13.9ms
+[STREAM-FILE-11] FPS=15.0 | Frame=330 | read=1.7ms | encode=8.8ms | yield=1.1ms | total_loop=12.7ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=360 | read=2.1ms | encode=5.6ms | yield=31.8ms | total_loop=40.4ms
+[STREAM-FILE-11] FPS=15.0 | Frame=390 | read=1.7ms | encode=10.1ms | yield=23.6ms | total_loop=36.4ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=420 | read=2.2ms | encode=10.1ms | yield=29.5ms | total_loop=42.7ms
+[STREAM-FILE-11] FPS=15.0 | Frame=450 | read=1.8ms | encode=10.8ms | yield=65.6ms | total_loop=79.2ms
+[STREAM-FILE-11] FPS=15.0 | Frame=480 | read=1.3ms | encode=9.4ms | yield=111.8ms | total_loop=123.4ms
+[STREAM-FILE-11] DEBUG: Read failed. pos: 481.0, total: 481.0
+[STREAM-FILE-11] Reached end of video file. Looping back to frame 0...
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=510 | read=1.7ms | encode=10.3ms | yield=101.0ms | total_loop=114.0ms
+[STREAM-FILE-11] FPS=15.0 | Frame=540 | read=1.8ms | encode=8.7ms | yield=1.7ms | total_loop=13.0ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=570 | read=1.8ms | encode=11.4ms | yield=1.4ms | total_loop=15.9ms
+[STREAM-FILE-11] FPS=15.0 | Frame=600 | read=1.5ms | encode=10.0ms | yield=29.6ms | total_loop=42.1ms
+[STREAM-FILE-11] FPS=15.0 | Frame=630 | read=1.8ms | encode=10.3ms | yield=30.2ms | total_loop=43.1ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-FILE-11] FPS=15.0 | Frame=660 | read=1.7ms | encode=10.5ms | yield=281.2ms | total_loop=294.4ms
+DEBUG: Fetching tripwire for source_id=11
+[STREAM-ENDPOINT] Received HTTP GET request for /api/stream/file/12...
+[STREAM-ENDPOINT] Returning MJPEG StreamingResponse for uploads/172.16.154.20_03_20260224200926629_yolo.mp4...
+INFO:     172.16.80.80:57927 - "GET /api/stream/file/12?t=1772078495601 HTTP/1.1" 200 OK
