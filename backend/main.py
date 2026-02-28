@@ -4,6 +4,13 @@ os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
 os.environ["AV_LOG_LEVEL"] = "-8"
 os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
 
+import multiprocessing as mp
+# Use spawn to prevent deadlocks with OpenCV background threads on Linux
+try:
+    mp.set_start_method('spawn', force=True)
+except RuntimeError:
+    pass
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles

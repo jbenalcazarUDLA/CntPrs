@@ -9831,3 +9831,4009 @@ INFO:     172.16.80.72:61523 - "GET /api/sources HTTP/1.1" 307 Temporary Redirec
 INFO:     172.16.80.72:61523 - "GET /api/sources/ HTTP/1.1" 200 OK
 INFO:     172.16.80.72:61523 - "GET /api/stream/rtsp/17?t=1772130110187 HTTP/1.1" 200 OK
 DEBUG: Fetching tripwire for source_id=17
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [193652]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [197224]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:62148 - "GET /api/stream/rtsp/6?t=1772130686030 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+[31m[1mrequirements:[0m Ultralytics requirement ['lap>=0.5.12'] not found, attempting AutoUpdate...
+Collecting lap>=0.5.12
+  Downloading lap-0.5.13-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.6 kB)
+Requirement already satisfied: numpy>=1.21.6 in ./venv/lib/python3.12/site-packages (from lap>=0.5.12) (2.4.2)
+Downloading lap-0.5.13-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 2.2 MB/s eta 0:00:00
+Installing collected packages: lap
+Successfully installed lap-0.5.13
+
+[31m[1mrequirements:[0m AutoUpdate success ✅ 3.6s
+WARNING ⚠️ [31m[1mrequirements:[0m [1mRestart runtime or rerun command for updates to take effect[0m
+
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.72:53194 - "GET /api/stream/rtsp/14?t=1772130980294 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:62942 - "GET /api/tripwires/source/14 HTTP/1.1" 200 OK
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:62942 - "GET /api/tripwires/frame/14?t=1772131128182 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:63388 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=14: {'x1': 0.9971943704303138, 'y1': 0.6811387818903262, 'x2': 0.3519037892679891, 'y2': 0.01032027655224783, 'direction': 'IN', 'source_id': 14}
+DEBUG: Updating existing tripwire ID=12
+INFO:     172.16.80.72:63388 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:63388 - "GET /api/stream/rtsp/14?t=1772131146253 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.72:51723 - "GET /api/stream/rtsp/17?t=1772131399035 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.72:62482 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:62482 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:62482 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=19
+INFO:     172.16.80.72:60543 - "GET /api/tripwires/source/19 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260226134518580.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:60543 - "GET /api/tripwires/frame/19?t=1772131693800 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:61201 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=19: {'x1': 0.0012023864623778807, 'y1': 0.6295373584027817, 'x2': 0.9971943704303138, 'y2': 0.41245550786897384, 'direction': 'IN', 'source_id': 19}
+DEBUG: Creating new tripwire for source_id=19
+INFO:     172.16.80.72:61201 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:61201 - "GET /api/stream/file/19?t=1772131712687 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=19
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [197224]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [205998]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:59796 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59796 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:59796 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59796 - "GET /api/stream/file/19?t=1772132093376 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+INFO:     172.16.80.72:55821 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55821 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:55821 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:55821 - "GET /api/stream/file/20?t=1772132312778 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=20
+[STREAM-19] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+INFO:     172.16.80.72:61941 - "GET /api/tripwires/source/20 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260226134233902.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:61941 - "GET /api/tripwires/frame/20?t=1772132354813 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59254 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=20: {'x1': 0.003206394478409945, 'y1': 0.7345195648084756, 'x2': 0.9951903624142817, 'y2': 0.49964411996861796, 'direction': 'IN', 'source_id': 20}
+DEBUG: Creating new tripwire for source_id=20
+[STREAM-20] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.72:59254 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:59254 - "GET /api/stream/file/20?t=1772132370093 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+INFO:     172.16.80.72:61579 - "GET /api/stream/file/20?t=1772132411476 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [205998]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [214880]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.72:62793 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.72:62793 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.72:62793 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:62793 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:62793 - "GET /api/stream/file/20?t=1772133374289 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+INFO:     172.16.80.72:64701 - "POST /api/sources/upload HTTP/1.1" 200 OK
+INFO:     172.16.80.72:64701 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.72:64701 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=21
+INFO:     172.16.80.72:64701 - "GET /api/tripwires/source/21 HTTP/1.1" 404 Not Found
+[STREAM-20] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260226134435810.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.72:64701 - "GET /api/tripwires/frame/21?t=1772133571991 HTTP/1.1" 200 OK
+INFO:     172.16.80.72:64149 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=21: {'x1': 0.004208398486425977, 'y1': 0.8056939420326749, 'x2': 0.9941883584062656, 'y2': 0.4017793512853439, 'direction': 'IN', 'source_id': 21}
+DEBUG: Creating new tripwire for source_id=21
+INFO:     172.16.80.72:64149 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.72:64149 - "GET /api/stream/file/21?t=1772133584896 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=21
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [214880]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [226840]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.103:62424 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.103:62424 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.103:62424 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.103:62424 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.103:62424 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.103:52276 - "GET /api/stream/rtsp/6?t=1772140121224 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=16
+INFO:     172.16.80.103:54390 - "GET /api/tripwires/source/16 HTTP/1.1" 200 OK
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Attempting to capture frame from: uploads/172.16.136.19_01_20260224195749100_yolo.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.103:54390 - "GET /api/tripwires/frame/16?t=1772141001381 HTTP/1.1" 200 OK
+INFO:     172.16.80.103:49672 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=16: {'x1': 0.9941883584062656, 'y1': 0.8679715221038492, 'x2': 0.47815629427800915, 'y2': 0.19537365733516598, 'direction': 'IN', 'source_id': 16}
+DEBUG: Updating existing tripwire ID=14
+INFO:     172.16.80.103:49672 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.103:49673 - "GET /api/stream/file/16?t=1772141038571 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+DEBUG: Fetching tripwire for source_id=16
+INFO:     172.16.80.103:59530 - "GET /api/stream/rtsp/17?t=1772141207774 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.103:54096 - "GET /api/tripwires/source/17 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.103:54096 - "GET /api/tripwires/frame/17?t=1772141332010 HTTP/1.1" 200 OK
+INFO:     172.16.80.103:59659 - "GET /api/stream/rtsp/17?t=1772141342933 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.103:54716 - "GET /api/stream/file/20?t=1772141461532 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=20
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+[STREAM-16] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+DEBUG: Fetching tripwire for source_id=20
+INFO:     172.16.80.103:51165 - "GET /api/stream/rtsp/18?t=1772141679827 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     127.0.0.1:41770 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.103:55858 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.103:55858 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.103:63207 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.103:55858 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.103:55858 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=19
+INFO:     172.16.80.103:49818 - "GET /api/tripwires/source/19 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: uploads/172.16.154.20_03_20260226134518580.mp4 (type: file)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.103:49818 - "GET /api/tripwires/frame/19?t=1772152228400 HTTP/1.1" 200 OK
+INFO:     172.16.80.103:53417 - "GET /api/stream/file/19?t=1772152235316 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+[STREAM-20] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+DEBUG: Fetching tripwire for source_id=19
+INFO:     172.16.80.85:65522 - "GET /api/stream/rtsp/6?t=1772197368634 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.85:56010 - "GET /api/tripwires/source/6 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:56010 - "GET /api/tripwires/frame/6?t=1772201152818 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:60191 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=6: {'x1': 0.003206394478409945, 'y1': 0.7576512374063403, 'x2': 0.9931863543982496, 'y2': 0.3412811306447745, 'direction': 'IN', 'source_id': 6}
+DEBUG: Updating existing tripwire ID=3
+INFO:     172.16.80.85:60191 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:60191 - "GET /api/stream/rtsp/6?t=1772201170289 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.85:55582 - "GET /api/stream/rtsp/6?t=1772201285679 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+[STREAM-19] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.85:52367 - "GET /api/stream/rtsp/14?t=1772201390313 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+DEBUG: Fetching tripwire for source_id=14
+INFO:     172.16.80.85:57526 - "GET /api/tripwires/source/14 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:57526 - "GET /api/tripwires/frame/14?t=1772202043134 HTTP/1.1" 200 OK
+[STREAM-14] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.85:64372 - "DELETE /api/sources/14 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:64372 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:64372 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:64569 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.85:64569 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:64569 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=22
+INFO:     172.16.80.85:49670 - "GET /api/tripwires/source/22 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:49670 - "GET /api/tripwires/frame/22?t=1772202079229 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:65104 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=22: {'x1': 0.9931863543982496, 'y1': 0.9160142267301837, 'x2': 0.6565130077048629, 'y2': 0.5370106680113226, 'direction': 'IN', 'source_id': 22}
+DEBUG: Creating new tripwire for source_id=22
+INFO:     172.16.80.85:65104 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:52386 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.85:52386 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.85:52386 - "GET /static/js/app.js?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:52386 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:52386 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:54476 - "GET /api/stream/rtsp/22?t=1772202344044 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+DEBUG: Fetching tripwire for source_id=22
+INFO:     172.16.80.85:63171 - "GET /api/stream/rtsp/6?t=1772202996720 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+[STREAM-22] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.85:53322 - "DELETE /api/sources/21 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:53322 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:53322 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:53322 - "DELETE /api/sources/20 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:53322 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:53322 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "DELETE /api/sources/19 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:51178 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "DELETE /api/sources/16 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:51178 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "DELETE /api/sources/15 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:51178 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51178 - "GET /api/stream/rtsp/17?t=1772205341618 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+DEBUG: Fetching tripwire for source_id=17
+INFO:     172.16.80.85:65266 - "DELETE /api/sources/17 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:65266 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:65266 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:61879 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.85:61879 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:61879 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.85:61879 - "GET /api/tripwires/source/23 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:61879 - "GET /api/tripwires/frame/23?t=1772205437772 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:54930 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=23: {'x1': 0.4300601018932396, 'y1': 0.2042704544881909, 'x2': 0.29378755680305924, 'y2': 0.9996441199686179, 'direction': 'IN', 'source_id': 23}
+DEBUG: Creating new tripwire for source_id=23
+INFO:     172.16.80.85:54930 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:54930 - "GET /api/stream/rtsp/23?t=1772205456904 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+[STREAM-17] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.85:53838 - "GET /api/tripwires/source/23 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:53838 - "GET /api/tripwires/frame/23?t=1772205635263 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:64184 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=23: {'x1': 0.4651302421738007, 'y1': 0.006761557691037867, 'x2': 0.29378755680305924, 'y2': 0.9996441199686179, 'direction': 'IN', 'source_id': 23}
+DEBUG: Updating existing tripwire ID=21
+INFO:     172.16.80.85:64184 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:64184 - "GET /api/stream/rtsp/23?t=1772205653432 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.85:60132 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:51071 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:59393 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.85:59393 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:59393 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=24
+INFO:     172.16.80.85:49283 - "GET /api/tripwires/source/24 HTTP/1.1" 404 Not Found
+[STREAM-23] Conexión de cliente cerrada. Liberando stream...
+[STREAM-23] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.136.19:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:49283 - "GET /api/tripwires/frame/24?t=1772206515792 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:55951 - "DELETE /api/sources/24 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:55951 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:55951 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:61229 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:49820 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.85:49820 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:49820 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=24
+INFO:     172.16.80.85:49820 - "GET /api/tripwires/source/24 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.116.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:49820 - "GET /api/tripwires/frame/24?t=1772206809399 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:50594 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=24: {'x1': 0.2797595006908348, 'y1': 0.006761557691037867, 'x2': 0.18857713596137587, 'y2': 0.686476860182141, 'direction': 'IN', 'source_id': 24}
+DEBUG: Creating new tripwire for source_id=24
+INFO:     172.16.80.85:50594 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:50594 - "GET /api/stream/rtsp/24?t=1772206839385 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+INFO:     172.16.80.85:51729 - "GET /api/stream/rtsp/23?t=1772206969883 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.85:51015 - "GET /api/tripwires/source/23 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:51015 - "GET /api/tripwires/frame/23?t=1772207033051 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:62807 - "GET /api/stream/rtsp/23?t=1772207113124 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [226840]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [351142]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.85:60424 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.85:60424 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.85:60424 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:60424 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:60424 - "GET /api/stream/rtsp/23?t=1772207948644 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+[STREAM-23] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.85:59781 - "DELETE /api/sources/22 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:59781 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:59781 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:50412 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.85:50412 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:50412 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.85:50412 - "GET /api/tripwires/source/25 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/302 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.85:50412 - "GET /api/tripwires/frame/25?t=1772208170815 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:65495 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=25: {'x1': 0.5963927672239009, 'y1': 0.16156582815367132, 'x2': 0.0022043904703939127, 'y2': 0.5316725897195076, 'direction': 'IN', 'source_id': 25}
+DEBUG: Creating new tripwire for source_id=25
+INFO:     172.16.80.85:65495 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:65495 - "GET /api/stream/rtsp/25?t=1772208225773 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.85:56843 - "DELETE /api/sources/25 HTTP/1.1" 200 OK
+INFO:     172.16.80.85:56843 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:56843 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:57834 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:64589 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:52268 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:56526 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [351142]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [355730]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.85:51747 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.85:51747 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.85:51747 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.85:51747 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.85:58630 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:56111 - "POST /api/sources/rtsp HTTP/1.1" 400 Bad Request
+INFO:     172.16.80.85:56736 - "GET /api/stream/rtsp/6?t=1772212300444 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.69:52974 - "POST /api/sources/rtsp HTTP/1.1" 200 OK
+INFO:     172.16.80.69:52974 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:52974 - "GET /api/sources/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.69:52974 - "GET /api/tripwires/source/25 HTTP/1.1" 404 Not Found
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.17.80.20:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.69:52974 - "GET /api/tripwires/frame/25?t=1772240098063 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:53241 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=25: {'x1': 0.6855711239373278, 'y1': 1.0, 'x2': 0.8108216249393317, 'y2': 0.18647686018214107, 'direction': 'IN', 'source_id': 25}
+DEBUG: Creating new tripwire for source_id=25
+INFO:     172.16.80.69:53241 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.69:53241 - "GET /api/tripwires/source/25 HTTP/1.1" 200 OK
+DEBUG: Attempting to capture frame from: rtsp://Sistemas:sistemas.2021@172.17.80.20:554/Streaming/Channels/202 (type: rtsp)
+DEBUG: Skipping 5 frames...
+DEBUG: Reading frame...
+DEBUG: Encoding frame as JPEG...
+DEBUG: Frame capture successful
+INFO:     172.16.80.69:53241 - "GET /api/tripwires/frame/25?t=1772240129994 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:62356 - "POST /api/tripwires HTTP/1.1" 307 Temporary Redirect
+DEBUG: Saving tripwire for source_id=25: {'x1': 0.5513025868631795, 'y1': 0.997864760538013, 'x2': 0.7637274365625782, 'y2': 0.17402134416790618, 'direction': 'IN', 'source_id': 25}
+DEBUG: Updating existing tripwire ID=24
+INFO:     172.16.80.69:62356 - "POST /api/tripwires/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:56461 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:56461 - "GET /static/css/style.css?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:56461 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:56461 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:56461 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:56461 - "GET /api/stream/rtsp/6?t=1772241908217 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:50858 - "GET /api/stream/rtsp/18?t=1772241977544 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:57522 - "GET /api/stream/rtsp/25?t=1772242053538 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.69:60745 - "GET /api/stream/rtsp/6?t=1772242821248 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:53510 - "GET /api/stream/rtsp/25?t=1772242885371 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+DEBUG: Fetching tripwire for source_id=25
+INFO:     172.16.80.69:61460 - "GET /api/stream/rtsp/24?t=1772243011598 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=24
+[STREAM-25] Conexión de cliente cerrada. Liberando stream...
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+[STREAM-25] Conexión de cliente cerrada. Liberando stream...
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+INFO:     172.16.80.69:58226 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:58226 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:58226 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:58226 - "GET /api/stream/rtsp/18?t=1772243615948 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [355730]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [498398]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:62920 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:62920 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:62920 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:62920 - "GET /api/stream/rtsp/6?t=1772245205858 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:63543 - "GET /api/stream/rtsp/18?t=1772245317444 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=18
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [498398]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [500472]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:55081 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:55081 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:55081 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:56106 - "GET /api/stream/rtsp/24?t=1772245516064 HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=24
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [500472]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [503217]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:50940 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50940 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:50940 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:50940 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:55017 - "GET /api/stream/rtsp/23?t=1772245954941 HTTP/1.1" 200 OK
+[STREAM-23] [METRICA] Iniciando solicitud de conexión RTSP/File a las 21:33:12
+[STREAM-23] [METRICA] VideoCapture inicializado en 1.89 segundos.
+[STREAM-23] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=23
+[STREAM-23] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 1.94 segundos.
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.69:61182 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:61182 - "GET /static/css/style.css?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:58309 - "GET /static/js/app.js?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:58309 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+[STREAM-23] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.69:58309 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:58309 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.16.80.69:58309 - "GET /api/stream/rtsp/6?t=1772246569683 HTTP/1.1" 200 OK
+[STREAM-6] [METRICA] Iniciando solicitud de conexión RTSP/File a las 21:43:26
+[STREAM-6] [METRICA] VideoCapture inicializado en 0.96 segundos.
+[STREAM-6] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=6
+[STREAM-6] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 1.02 segundos.
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:53510 - "GET /api/stream/rtsp/24?t=1772246721903 HTTP/1.1" 200 OK
+[STREAM-24] [METRICA] Iniciando solicitud de conexión RTSP/File a las 21:45:58
+[STREAM-24] [METRICA] VideoCapture inicializado en 1.93 segundos.
+[STREAM-24] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=24
+[STREAM-24] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 1.97 segundos.
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+DEBUG: Fetching tripwire for source_id=24
+INFO:     172.16.80.69:52709 - "GET /api/stream/rtsp/23?t=1772247249361 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [503217]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 18 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 12 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 12 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 24 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2261]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:51500 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:51500 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:51500 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:51500 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:51500 - "GET /api/stream/rtsp/18?t=1772247674488 HTTP/1.1" 200 OK
+[STREAM-18] [METRICA] Iniciando solicitud de conexión RTSP/File a las 22:01:51
+[STREAM-18] [METRICA] VideoCapture inicializado en 1.97 segundos.
+[STREAM-18] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=18
+[STREAM-18] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 2.04 segundos.
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:53224 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:53224 - "GET /static/css/style.css?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:62230 - "GET /static/js/app.js?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:62230 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+INFO:     172.16.80.69:62230 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:53224 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.16.80.69:53224 - "GET /api/stream/rtsp/18?t=1772248242078 HTTP/1.1" 200 OK
+[STREAM-18] [METRICA] Iniciando solicitud de conexión RTSP/File a las 22:11:19
+[STREAM-18] [METRICA] VideoCapture inicializado en 1.99 segundos.
+[STREAM-18] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=18
+[STREAM-18] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 2.03 segundos.
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:49768 - "POST /api/stream/metrics HTTP/1.1" 404 Not Found
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:60835 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:60835 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:60835 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:60835 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:60835 - "GET /api/stream/rtsp/18?t=1772248595598 HTTP/1.1" 200 OK
+[STREAM-18] [METRICA] Iniciando solicitud de conexión RTSP/File a las 22:17:12
+[STREAM-18] [METRICA] VideoCapture inicializado en 1.89 segundos.
+[STREAM-18] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=18
+[STREAM-18] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 1.91 segundos.
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:54158 - "POST /api/stream/metrics HTTP/1.1" 404 Not Found
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+DEBUG: Fetching tripwire for source_id=18
+INFO:     172.16.80.69:53198 - "GET /api/stream/rtsp/23?t=1772248920698 HTTP/1.1" 200 OK
+[STREAM-23] [METRICA] Iniciando solicitud de conexión RTSP/File a las 22:22:37
+[STREAM-23] [METRICA] VideoCapture inicializado en 1.97 segundos.
+[STREAM-23] [METRICA] Esperando el primer frame...
+DEBUG: Fetching tripwire for source_id=23
+[STREAM-23] [METRICA] PRIMER FRAME OBTENIDO. Tiempo total de carga: 2.00 segundos.
+DEBUG: Fetching tripwire for source_id=23
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+[STREAM-18] Conexión de cliente cerrada. Liberando stream...
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.69:51229 - "POST /api/stream/metrics HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2261]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [12032]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:53483 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:53483 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:53483 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:53483 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:53483 - "GET /api/stream/rtsp/23?t=1772249126896 HTTP/1.1" 200 OK
+[BACKEND STREAM-23] Iniciando solicitud de conexión RTSP/File a rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102
+[BACKEND STREAM-23] Pinging 172.16.144.20:554...
+[BACKEND STREAM-23] Ping OK, delegando a OpenCV...
+[BACKEND STREAM-23] VideoCapture inicializado en 1.89 segundos.
+[BACKEND STREAM-23] Esperando el primer frame real...
+DEBUG: Fetching tripwire for source_id=23
+[BACKEND STREAM-23] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: 1.94 segundos.
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.69:51757 - "POST /api/stream/metrics HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.69:50083 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50083 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:50083 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:50083 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50083 - "GET /api/stream/rtsp/6?t=1772249484491 HTTP/1.1" 200 OK
+[BACKEND STREAM-6] Iniciando solicitud de conexión RTSP/File a rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302
+[BACKEND STREAM-6] Pinging 172.16.154.20:554...
+[BACKEND STREAM-6] Ping OK, delegando a OpenCV...
+[BACKEND STREAM-6] VideoCapture inicializado en 0.93 segundos.
+[BACKEND STREAM-6] Esperando el primer frame real...
+DEBUG: Fetching tripwire for source_id=6
+[BACKEND STREAM-6] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: 0.95 segundos.
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:53589 - "POST /api/stream/metrics HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:50626 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50626 - "GET /static/js/app.js?v=3 HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50626 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:50626 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:50626 - "GET /api/stream/rtsp/25?t=1772249750725 HTTP/1.1" 200 OK
+[BACKEND STREAM-25] Iniciando solicitud de conexión RTSP/File a rtsp://Sistemas:sistemas.2021@172.17.80.20:554/Streaming/Channels/202
+[BACKEND STREAM-25] Pinging 172.17.80.20:554...
+[BACKEND STREAM-25] FALLO PRE-RED O TIMEOUT (3s): Host 172.17.80.20:554 inalcanzable. Evitando hang de 180s. (timed out)
+INFO:     172.16.80.69:58649 - "GET /api/stream/rtsp/6?t=1772250149471 HTTP/1.1" 200 OK
+[BACKEND STREAM-6] Iniciando solicitud de conexión RTSP/File a rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302
+[BACKEND STREAM-6] Pinging 172.16.154.20:554...
+[BACKEND STREAM-6] Ping OK, delegando a OpenCV...
+[BACKEND STREAM-6] VideoCapture inicializado en 0.97 segundos.
+[BACKEND STREAM-6] Esperando el primer frame real...
+DEBUG: Fetching tripwire for source_id=6
+[STREAM-6] Conexión de cliente cerrada. Liberando stream...
+[STREAM-23] Conexión de cliente cerrada. Liberando stream...
+[BACKEND STREAM-6] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: 1.00 segundos.
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:55129 - "POST /api/stream/metrics HTTP/1.1" 200 OK

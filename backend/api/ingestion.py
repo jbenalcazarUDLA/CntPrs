@@ -51,13 +51,19 @@ def register_rtsp(
         os.environ.pop("AV_LOG_LEVEL", None)
         
     if not cap.isOpened():
-        raise HTTPException(status_code=400, detail="Could not connect to the RTSP stream.")
+        raise HTTPException(status_code=400, detail=f"Could not connect to the RTSP stream: {source.path_url}")
         
-    success, frame = cap.read()
+    success = False
+    for _ in range(10):
+        cap.grab()
+        success, frame = cap.read()
+        if success:
+            break
+            
     cap.release()
     
     if not success:
-        raise HTTPException(status_code=400, detail="Connected to RTSP stream but failed to read a frame.")
+        raise HTTPException(status_code=400, detail=f"Connected to RTSP stream '{source.path_url}' but failed to read a frame.")
         
     return crud.create_video_source(db=db, source=source)
 

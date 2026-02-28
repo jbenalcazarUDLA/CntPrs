@@ -7,14 +7,17 @@ def yolo_worker(frame_queue, result_queue, source_id):
     Este Worker corre en su *propio proceso* (núcleo de CPU).
     Mantiene su propia instancia del detector YOLO para evadir el GIL de Python.
     """
-    from .detection import YoloDetector # Import lazy para no inicializar CUDA/MPS en proceso padre
-    
-    # Cada proceso tiene su detector independiente
-    detector = YoloDetector()
-    
     # Mantendremos la memoria de la última detección para devolverla rápido si no hay nuevo frame
     last_processed_frame = None
     
+    try:
+        from .detection import YoloDetector # Import lazy para no inicializar CUDA/MPS en proceso padre
+        detector = YoloDetector()
+    except Exception as e:
+        import traceback
+        print(f"Init Error: {e}")
+        return
+
     while True:
         try:
             # Obtiene el frame más reciente. Bloquea hasta tener algo que hacer.
@@ -28,13 +31,13 @@ def yolo_worker(frame_queue, result_queue, source_id):
             # tripwire_data will arrive as a raw dictionary over the Queue, because SQLAlchemy models fail Pickling.
             class DummyTripwire: pass
             tw_obj = None
-            if tripwire_data:
+            if tripwire_data and tripwire_data.get('x1') is not None:
                 tw_obj = DummyTripwire()
-                tw_obj.x1 = tripwire_data.get('x1', 0)
-                tw_obj.y1 = tripwire_data.get('y1', 0)
-                tw_obj.x2 = tripwire_data.get('x2', 0)
-                tw_obj.y2 = tripwire_data.get('y2', 0)
-                tw_obj.direction = tripwire_data.get('direction', 'any')
+                tw_obj.x1 = float(tripwire_data.get('x1', 0.0) or 0.0)
+                tw_obj.y1 = float(tripwire_data.get('y1', 0.0) or 0.0)
+                tw_obj.x2 = float(tripwire_data.get('x2', 0.0) or 0.0)
+                tw_obj.y2 = float(tripwire_data.get('y2', 0.0) or 0.0)
+                tw_obj.direction = tripwire_data.get('direction', 'any') or 'any'
                 
             last_processed_frame = detector.process_frame(frame, source_id, tw_obj)
             
@@ -52,6 +55,7 @@ def yolo_worker(frame_queue, result_queue, source_id):
             break
         except Exception as e:
             import traceback
+            print(f"!!! CRASH IN YOLO WORKER !!!")
             print(f"[YOLO-WORKER-{source_id}] Exception: {e}")
             traceback.print_exc()
             time.sleep(0.5)

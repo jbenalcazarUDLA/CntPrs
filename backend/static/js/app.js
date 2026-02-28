@@ -73,7 +73,13 @@ function switchTab(tab) {
 async function fetchSources() {
     try {
         const response = await fetch(API_BASE_URL);
-        sources = await response.json();
+        const data = await response.json();
+        // Ordenar por tipo: primero 'file', luego 'rtsp', alfabéticamente si es otro
+        sources = data.sort((a, b) => {
+            if (a.type === 'file' && b.type !== 'file') return -1;
+            if (a.type !== 'file' && b.type === 'file') return 1;
+            return a.type.localeCompare(b.type);
+        });
         renderSources();
     } catch (error) {
         showNotification('Error al cargar las fuentes', 'error');
@@ -268,13 +274,64 @@ function openPreview(id) {
     modalTitle.innerText = `Reproduciendo: ${source.name}`;
     videoWrapper.innerHTML = ''; // Clear previous content
 
+    const startTime = Date.now();
+
+    // Indicador UI para la Métrica Frontend
+    const loadingDiv = document.createElement('div');
+    loadingDiv.style.position = 'absolute';
+    loadingDiv.style.top = '50%';
+    loadingDiv.style.left = '50%';
+    loadingDiv.style.transform = 'translate(-50%, -50%)';
+    loadingDiv.style.color = 'white';
+    loadingDiv.style.backgroundColor = 'rgba(0,0,0,0.8)';
+    loadingDiv.style.padding = '15px 25px';
+    loadingDiv.style.borderRadius = '8px';
+    loadingDiv.style.zIndex = '100';
+    loadingDiv.style.fontSize = '18px';
+    loadingDiv.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Solicitando video...`;
+
+    videoWrapper.style.position = 'relative';
+    videoWrapper.appendChild(loadingDiv);
+
     // Both file and rtsp return MJPEG streams from stream.py
     // Append a timestamp to bypass browser caching of broken previous streams
     const img = document.createElement('img');
-    img.src = `${STREAM_BASE_URL}/${source.type}/${id}?t=${Date.now()}`;
+    img.src = `${STREAM_BASE_URL}/${source.type}/${id}?t=${startTime}`;
     img.alt = `${source.type.toUpperCase()} Stream`;
     // Add classes for better responsiveness if previous styles applied
     img.className = 'w-full h-auto object-contain bg-black';
+    img.style.opacity = '0'; // Ocultar mientras carga
+
+    img.onload = () => {
+        const endTime = Date.now();
+        const totalFrontendDelay = ((endTime - startTime) / 1000).toFixed(2);
+        console.log(`[FRONTEND METRICA] Tiempo total desde Clic hasta 1er Frame: ${totalFrontendDelay} seg`);
+
+        fetch('/api/stream/metrics', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                source_id: source.id,
+                camera_name: source.name,
+                load_time_sec: parseFloat(totalFrontendDelay)
+            })
+        }).catch(err => console.error("Error logging metrics", err));
+
+        if (loadingDiv.parentNode) {
+            loadingDiv.style.backgroundColor = 'rgba(0, 128, 0, 0.8)';
+            loadingDiv.innerHTML = `<i class="fas fa-check mr-2"></i> Cargado en: ${totalFrontendDelay} seg`;
+            setTimeout(() => { if (loadingDiv.parentNode) loadingDiv.remove(); }, 4000);
+        }
+        img.style.opacity = '1';
+    };
+
+    img.onerror = () => {
+        if (loadingDiv.parentNode) {
+            loadingDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+            loadingDiv.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> Error de conexión.`;
+        }
+    };
+
     videoWrapper.appendChild(img);
 
     previewModal.classList.add('active');

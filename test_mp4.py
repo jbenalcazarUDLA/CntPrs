@@ -1,0 +1,24 @@
+import sys
+import os
+import cv2
+import time
+sys.path.append('.')
+from backend.services.async_yolo import MultiprocessYOLO
+
+source_id = 999
+processor = MultiprocessYOLO(source_id)
+
+tw_dict = {
+    'x1': 0.1, 'y1': 0.5, 'x2': 0.9, 'y2': 0.5, 'direction': 'IN'
+}
+
+frame = __import__('numpy').zeros((1080, 1920, 3), dtype='uint8')
+processor.update_frame(frame, tw_dict)
+print("Waiting 10s...")
+for i in range(10):
+    processor.update_frame(frame, tw_dict)
+    time.sleep(1)
+
+processed = processor.get_latest_processed_frame(frame)
+print("Is processed identical to raw array?", id(processed) == id(frame))
+processor.stop()

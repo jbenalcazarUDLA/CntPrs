@@ -1,14 +1,35 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 import cv2
 import os
 import time
+import logging
+import socket
+from urllib.parse import urlparse
 from ..database import get_db, SessionLocal
 from .. import crud, models
 from ..services.async_yolo import MultiprocessYOLO
 
 router = APIRouter()
+
+metrics_logger = logging.getLogger("stream_metrics")
+metrics_logger.setLevel(logging.INFO)
+if not metrics_logger.handlers:
+    rfh = logging.FileHandler("stream_metrics.log")
+    rfh.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+    metrics_logger.addHandler(rfh)
+
+class FrontendMetric(BaseModel):
+    source_id: int
+    camera_name: str
+    load_time_sec: float
+
+@router.post("/metrics")
+def save_frontend_metric(metric: FrontendMetric):
+    metrics_logger.info(f"[FRONTEND Metrics] Camera '{metric.camera_name}' (ID: {metric.source_id}) loaded in {metric.load_time_sec:.2f} seconds.")
+    return {"status": "logged"}
 
 # Global dictionary to hold multiprocessing instances (one per camera)
 yolo_processors = {}
@@ -27,13 +48,48 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     El cálculo pesado de YOLO e IA corre en otro proceso 100% independiente.
     """
     if is_rtsp:
-        # Optimizar conexión RTSP sin los parámetros que causaban OOM y suprimir logs HEVC
+        # Rollback: Las opciones extremadamente agresivas de 'analyzeduration' causan que algunas cámaras se ahoguen
+        # Revertimos a la cadena TCP original súper estable, agregando solo TIMEOUTS para evitar colgarse
         os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
         os.environ["AV_LOG_LEVEL"] = "-8"
         os.environ["OPENCV_LOG_LEVEL"] = "SILENT"
-        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay"
+        # stimeout = socket timeout en microsegundos. 10,000,000 us = 10 segundos (rompe los 180s de espera)
+        os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay|stimeout;10000000|rw_timeout;10000000"
         
-    cap = cv2.VideoCapture(source_path)
+    msg_init = f"[BACKEND STREAM-{source_id}] Iniciando solicitud de conexión RTSP/File a {source_path}"
+    print(msg_init)
+    metrics_logger.info(msg_init)
+    connect_start_time = time.time()
+    
+    if is_rtsp:
+        # Pre-chequeo de red directo con Sockets para evadir el timeout de 180s de TCP del sistema operativo
+        try:
+            parsed = urlparse(source_path)
+            host = parsed.hostname
+            # Puerto 554 es el default de RTSP
+            port = parsed.port or 554
+            if host:
+                msg_ping = f"[BACKEND STREAM-{source_id}] Pinging {host}:{port}..."
+                print(msg_ping)
+                metrics_logger.info(msg_ping)
+                sock = socket.create_connection((host, port), timeout=3.0)
+                sock.close()
+                msg_ping_ok = f"[BACKEND STREAM-{source_id}] Ping OK, delegando a OpenCV..."
+                print(msg_ping_ok)
+                metrics_logger.info(msg_ping_ok)
+        except Exception as e:
+            msg_fail = f"[BACKEND STREAM-{source_id}] FALLO PRE-RED O TIMEOUT (3s): Host {host}:{port} inalcanzable. Evitando hang de 180s. ({e})"
+            print(msg_fail)
+            metrics_logger.error(msg_fail)
+            return
+
+    # Usar explícitamente el backend de FFMPEG para forzar que respete las variables de entorno
+    cap = cv2.VideoCapture(source_path, cv2.CAP_FFMPEG) if is_rtsp else cv2.VideoCapture(source_path)
+    
+    connect_end_time = time.time()
+    msg_vc = f"[BACKEND STREAM-{source_id}] VideoCapture inicializado en {connect_end_time - connect_start_time:.2f} segundos."
+    print(msg_vc)
+    metrics_logger.info(msg_vc)
     
     if is_rtsp and "OPENCV_FFMPEG_CAPTURE_OPTIONS" in os.environ:
         del os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"]
@@ -43,6 +99,11 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     if not cap.isOpened():
         print(f"[STREAM-{source_id}] ERROR: No se pudo conectar a la fuente de video {source_path}")
         return
+
+    msg_wait = f"[BACKEND STREAM-{source_id}] Esperando el primer frame real..."
+    print(msg_wait)
+    metrics_logger.info(msg_wait)
+    first_frame_start = time.time()
 
     # Forzar bajo buffering para que la cámara siempre entregue el present frame (evita delay)
     cap.set(cv2.CAP_PROP_BUFFERSIZE, 2)
@@ -62,36 +123,39 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     
     processor = yolo_processors[source_id]
     
-    # Virtual clock para VOD usando conteo de frames en lugar de MSEC (que falla en algunos codecs MP4)
+    # Virtual clock para VOD usando conteo de frames en lugar de MSEC o POS_FRAMES (que falla en algunos codecs MP4)
     start_time_real = time.time()
+    frame_idx = 0
     
+    # Contador para limitar los fotogramas codificados hacia la web
+    skip_encode_counter = 0
+    
+    first_frame_rendered = False
+    total_load_time = 0.0
+
     try:
         while True:
-            # 1. Ingesta
-            # Si es VOD, adelantamos el puntero (grab) si el video físico se quedó atrás del tiempo real
-            if not is_rtsp:
-                curr_real = (time.time() - start_time_real)
-                curr_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
-                curr_video_time = curr_frame / video_fps
-                
-                # Si el reloj real va más rápido que los frames mostrados
-                diff = curr_real - curr_video_time
-                if diff > (1.0 / video_fps):
-                    # Calcular cuántos frames estamos atrasados
-                    frames_to_skip = int(diff * video_fps)
-                    for _ in range(frames_to_skip):
-                        if not cap.grab():
-                            break
-                    
+            # 1. Ingesta secuencial
             success, frame = cap.read()
             if not success:
                 if not is_rtsp:
                     cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
                     start_time_real = time.time()
+                    frame_idx = 0
                     continue
                 else:
                     time.sleep(1)
                     continue
+            
+            if not first_frame_rendered:
+                total_load_time = time.time() - connect_start_time
+                msg_ff = f"[BACKEND STREAM-{source_id}] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: {total_load_time:.2f} segundos."
+                print(msg_ff)
+                metrics_logger.info(msg_ff)
+                first_frame_rendered = True
+            
+            if not is_rtsp:
+                frame_idx += 1
 
             # Recargar metadata cada 5s
             if time.time() - last_tripwire_update > 5:
@@ -108,21 +172,26 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
                 }
 
             # 2. IA Delegada (No Bloqueante)
+            # Siempre enviamos el frame a la IA para que mantenga el conteo sin perder movimiento
             processor.update_frame(frame, tw_dict)
             processed_frame = processor.get_latest_processed_frame(frame)
-
+            
             # 3. Salida a Cliente Web
-            ret, buffer = cv2.imencode('.jpg', processed_frame, [int(cv2.IMWRITE_JPEG_QUALITY), 65])
-            if ret:
-                frame_bytes = buffer.tobytes()
-                yield (b'--frame\r\n'
-                       b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+            # Optimización: En hardware limitado, codificar JPG (cv2.imencode) 30 veces por segundo destroza el CPU.
+            # Solo codificamos y enviamos la imagen al navegador a ~15 FPS (la mitad de los frames).
+            # El conteo y la IA seguirán viendo todos los frames de forma independiente.
+            skip_encode_counter += 1
+            if skip_encode_counter % 2 == 0:
+                ret, buffer = cv2.imencode('.jpg', processed_frame, [int(cv2.IMWRITE_JPEG_QUALITY), 65])
+                if ret:
+                    frame_bytes = buffer.tobytes()
+                    yield (b'--frame\r\n'
+                           b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
                 
             # Restricción obligada para VOD: Si procesamos muy RÁPIDO, dormimos para no ir en cámara rápida.
             if not is_rtsp:
                 curr_real = (time.time() - start_time_real)
-                curr_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
-                curr_video_time = curr_frame / video_fps
+                curr_video_time = frame_idx / video_fps
                 sleep_time = curr_video_time - curr_real
                 if sleep_time > 0:
                     time.sleep(sleep_time)
