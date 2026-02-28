@@ -8,6 +8,7 @@ import time
 import logging
 import socket
 from urllib.parse import urlparse
+import threading
 from ..database import get_db, SessionLocal
 from .. import crud, models
 from ..services.async_yolo import MultiprocessYOLO
@@ -33,6 +34,11 @@ def save_frontend_metric(metric: FrontendMetric):
 
 # Global dictionary to hold multiprocessing instances (one per camera)
 yolo_processors = {}
+# Global tracking for active viewers per source
+active_viewers = {}
+# Lock to prevent race conditions when starting/stopping processors
+processor_lock = threading.Lock()
+
 
 def get_tripwire_data(source_id):
     db = SessionLocal()
@@ -117,16 +123,25 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     tripwire_data = get_tripwire_data(source_id)
     last_tripwire_update = time.time()
 
-    # Iniciar motor IA en segundo plano aislado para esta cámara específica
-    if source_id not in yolo_processors:
-        yolo_processors[source_id] = MultiprocessYOLO(source_id)
-    
-    processor = yolo_processors[source_id]
-    
     # Virtual clock para VOD usando conteo de frames en lugar de MSEC o POS_FRAMES (que falla en algunos codecs MP4)
     start_time_real = time.time()
     frame_idx = 0
     
+    # Register this active connection
+    with processor_lock:
+        if source_id not in active_viewers:
+            active_viewers[source_id] = 0
+        active_viewers[source_id] += 1
+        
+        # Iniciar motor IA en segundo plano aislado para esta cámara específica
+        if source_id not in yolo_processors:
+            yolo_processors[source_id] = MultiprocessYOLO(source_id)
+            msg_ai = f"[BACKEND STREAM-{source_id}] Inciado nuevo proceso YOLO en GPU/CPU."
+            print(msg_ai)
+            metrics_logger.info(msg_ai)
+        
+        processor = yolo_processors[source_id]
+
     # Contador para limitar los fotogramas codificados hacia la web
     skip_encode_counter = 0
     
@@ -199,8 +214,19 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     finally:
         print(f"[STREAM-{source_id}] Conexión de cliente cerrada. Liberando stream...")
         cap.release()
-        # Si somos el último usuario, podríamos detener el processor, pero de momento
-        # los mantenemos vivos para conexiones rápidas sucesivas.
+        
+        # Safe termination of YOLO processor if no one else is watching this camera
+        with processor_lock:
+            if source_id in active_viewers:
+                active_viewers[source_id] -= 1
+                if active_viewers[source_id] <= 0:
+                    del active_viewers[source_id]
+                    if source_id in yolo_processors:
+                        msg_del = f"[BACKEND STREAM-{source_id}] Último espectador desconectado. Apagando modelo YOLO para liberar Memoria RAM."
+                        print(msg_del)
+                        metrics_logger.info(msg_del)
+                        yolo_processors[source_id].stop()
+                        del yolo_processors[source_id]
 
 
 @router.get("/rtsp/{source_id}")

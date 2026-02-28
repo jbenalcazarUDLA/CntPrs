@@ -172,7 +172,7 @@ class YoloDetector:
         text_exits = f"Salidas: {self.exit_count}"
         
         font = cv2.FONT_HERSHEY_SIMPLEX
-        font_scale = 0.6
+        font_scale = 0.45  # Reducido un 25% respecto a 0.6
         thickness = 1
         
         # Get text dimensions

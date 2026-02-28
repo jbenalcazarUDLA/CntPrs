@@ -13837,3 +13837,99 @@ DEBUG: Fetching tripwire for source_id=6
 DEBUG: Fetching tripwire for source_id=6
 DEBUG: Fetching tripwire for source_id=6
 INFO:     172.16.80.69:55129 - "POST /api/stream/metrics HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12032]
+/home/jbenalcazar/TITA/CntPrs/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:383: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [20634]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.16.80.69:64426 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:64426 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:64426 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:64426 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:64426 - "GET /api/stream/rtsp/6?t=1772250498241 HTTP/1.1" 200 OK
+[BACKEND STREAM-6] Iniciando solicitud de conexión RTSP/File a rtsp://admin:Sistemas.20@172.16.154.20:554/Streaming/Channels/302
+[BACKEND STREAM-6] Pinging 172.16.154.20:554...
+[BACKEND STREAM-6] Ping OK, delegando a OpenCV...
+[BACKEND STREAM-6] VideoCapture inicializado en 0.99 segundos.
+[BACKEND STREAM-6] Esperando el primer frame real...
+DEBUG: Fetching tripwire for source_id=6
+[BACKEND STREAM-6] Inciado nuevo proceso YOLO en GPU/CPU.
+[BACKEND STREAM-6] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: 1.02 segundos.
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:49310 - "POST /api/stream/metrics HTTP/1.1" 200 OK
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+DEBUG: Fetching tripwire for source_id=6
+INFO:     172.16.80.69:52438 - "GET / HTTP/1.1" 200 OK
+INFO:     172.16.80.69:52438 - "GET /static/js/app.js?v=3 HTTP/1.1" 304 Not Modified
+INFO:     172.16.80.69:52438 - "GET /api/sources HTTP/1.1" 307 Temporary Redirect
+INFO:     172.16.80.69:52438 - "GET /api/sources/ HTTP/1.1" 200 OK
+INFO:     172.16.80.69:52438 - "GET /api/stream/rtsp/23?t=1772250687349 HTTP/1.1" 200 OK
+[BACKEND STREAM-23] Iniciando solicitud de conexión RTSP/File a rtsp://Sistemas:sistemas.2021@172.16.144.20:554/Streaming/Channels/102
+[BACKEND STREAM-23] Pinging 172.16.144.20:554...
+[BACKEND STREAM-23] Ping OK, delegando a OpenCV...
+[BACKEND STREAM-23] VideoCapture inicializado en 1.93 segundos.
+[BACKEND STREAM-23] Esperando el primer frame real...
+DEBUG: Fetching tripwire for source_id=23
+[BACKEND STREAM-23] Inciado nuevo proceso YOLO en GPU/CPU.
+[BACKEND STREAM-23] PRIMER FRAME PROCESADO. Tiempo total TTFF Backend: 1.96 segundos.
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+DEBUG: Fetching tripwire for source_id=23
+INFO:     172.16.80.69:63994 - "POST /api/stream/metrics HTTP/1.1" 200 OK

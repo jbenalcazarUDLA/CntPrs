@@ -60,6 +60,20 @@ def yolo_worker(frame_queue, result_queue, source_id):
             traceback.print_exc()
             time.sleep(0.5)
 
+    # Cleanup phase when breaking out of loop
+    print(f"[YOLO-WORKER-{source_id}] Cleaning up detector memory...")
+    try:
+        if 'detector' in locals() and detector is not None:
+            if hasattr(detector, 'model') and detector.model is not None:
+                del detector.model
+            del detector
+            
+        import gc
+        gc.collect()
+    except Exception as e:
+        print(f"[YOLO-WORKER-{source_id}] Cleanup Error: {e}")
+
+
 class MultiprocessYOLO:
     """
     Contenedor para delegar inferencia a un núcleo del CPU independiente.
@@ -107,10 +121,24 @@ class MultiprocessYOLO:
         return self.latest_result if self.latest_result is not None else fallback_frame
 
     def stop(self):
-        """Apaga el proceso y libera memoria."""
+        """Apaga el proceso y libera memoria explícitamente."""
         try:
             self.frame_queue.put(None) # Enviar señal de muerte
+            self.frame_queue.close()
         except:
             pass
-        self.process.terminate()
-        self.process.join()
+        
+        # Give worker a brief moment to finish its current frame and cleanup
+        self.process.join(timeout=1.0)
+        
+        if self.process.is_alive():
+            print(f"[YOLO-PROCESS] Force terminating process for camera {self.source_id}")
+            self.process.terminate()
+            self.process.join()
+            
+        try:
+            self.result_queue.close()
+        except:
+            pass
+        
+        self.latest_result = None
