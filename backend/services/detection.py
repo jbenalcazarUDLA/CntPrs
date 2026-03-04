@@ -14,7 +14,22 @@ class YoloDetector:
         # Load a lightweight model, downloading if necessary
         # We use yolo11n as the user specifically requested YOLOv11 and we need it to be fast on CPU
         try:
-            self.model = YOLO('yolo11n.pt')
+            import os
+            # Intenta cargar ONNX si existe para inferencia ultrarrápida y bajo consumo de memoria
+            onnx_path = 'yolo11n.onnx'
+            pt_path = 'yolo11n.pt'
+            
+            if os.path.exists(onnx_path):
+                self.model = YOLO(onnx_path, task='detect')
+                print("Loaded optimized ONNX model.")
+            else:
+                self.model = YOLO(pt_path)
+                try:
+                    # Exportar automáticamente a ONNX en el primer run, ahorra CPU y RAM
+                    print("Exporting model to ONNX for future optimized inference...")
+                    self.model.export(format='onnx', imgsz=320, dynamic=True)
+                except Exception as ex:
+                    print(f"Failed to export ONNX, continuing with PyTorch model: {ex}")
         except Exception as e:
             print(f"Error loading YOLO model: {e}")
             self.model = None
@@ -28,7 +43,7 @@ class YoloDetector:
                 print(f"Error warming up YOLO model: {e}")
 
         # Optimization settings
-        self.conf_threshold = 0.35
+        self.conf_threshold = 0.40
         self.classes = [0] # 0 is 'person' in COCO dataset
         
         # Tracking history and tripwire state
@@ -56,6 +71,11 @@ class YoloDetector:
         # 320 instead of 640 dramatically speeds up YOLO on CPU
         inference_size = 320 
         
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        backend_dir = os.path.dirname(current_dir)
+        tracker_path = os.path.join(backend_dir, "custom_bytetrack.yaml")
+        
         # Use model.track with ByteTrack for high performance CPU ID assigning
         results = self.model.track(
             frame, 
@@ -65,7 +85,7 @@ class YoloDetector:
             verbose=False,
             device='cpu',
             persist=True,
-            tracker="bytetrack.yaml"
+            tracker=tracker_path
         )
         
         new_boxes = []
@@ -143,7 +163,8 @@ class YoloDetector:
         active_ids = {tid for _, tid in new_boxes}
         for track_id in list(self.tracks.keys()):
             if track_id not in active_ids:
-                pass
+                del self.tracks[track_id]
+                self.counted_ids.discard(track_id)
         
         # Render tracking visually
         for box, track_id in self.last_boxes:

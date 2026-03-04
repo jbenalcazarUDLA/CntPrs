@@ -17,7 +17,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from .database import engine, get_db
 from . import models, schemas, crud
-from .api import ingestion, stream, tripwire
+from .api import ingestion, stream, tripwire, schedule
+from .scheduler import start_scheduler, stop_scheduler
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -35,6 +36,7 @@ app.add_middleware(
 app.include_router(ingestion.router, prefix="/api/sources", tags=["ingestion"])
 app.include_router(stream.router, prefix="/api/stream", tags=["streaming"])
 app.include_router(tripwire.router, prefix="/api/tripwires", tags=["tripwire"])
+app.include_router(schedule.router, prefix="/api/schedules", tags=["schedules"])
 
 # Static Files
 app.mount("/static", StaticFiles(directory="backend/static"), name="static")
@@ -42,6 +44,15 @@ app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 @app.get("/")
 def read_root():
     return FileResponse("backend/static/index.html")
+
+@app.on_event("startup")
+def startup_event():
+    start_scheduler()
+
+@app.on_event("shutdown")
+def shutdown_event():
+    stop_scheduler()
+    stream.cleanup_all_processes()
 
 if __name__ == "__main__":
     import uvicorn

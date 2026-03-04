@@ -40,6 +40,17 @@ active_viewers = {}
 processor_lock = threading.Lock()
 
 
+def cleanup_all_processes():
+    print("[STREAM] Limpiando todos los procesos YOLO de visualización web...")
+    with processor_lock:
+        for p in list(yolo_processors.values()):
+            try:
+                p.stop()
+            except Exception:
+                pass
+        yolo_processors.clear()
+        active_viewers.clear()
+
 def get_tripwire_data(source_id):
     db = SessionLocal()
     try:
@@ -90,7 +101,9 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
             return
 
     # Usar explícitamente el backend de FFMPEG para forzar que respete las variables de entorno
-    cap = cv2.VideoCapture(source_path, cv2.CAP_FFMPEG) if is_rtsp else cv2.VideoCapture(source_path)
+    raw_cap = cv2.VideoCapture(source_path, cv2.CAP_FFMPEG) if is_rtsp else cv2.VideoCapture(source_path)
+    from ..services.video_reader import VideoReaderWrapper
+    cap = VideoReaderWrapper(raw_cap, is_rtsp=is_rtsp)
     
     connect_end_time = time.time()
     msg_vc = f"[BACKEND STREAM-{source_id}] VideoCapture inicializado en {connect_end_time - connect_start_time:.2f} segundos."
@@ -135,8 +148,20 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
         
         # Iniciar motor IA en segundo plano aislado para esta cámara específica
         if source_id not in yolo_processors:
-            yolo_processors[source_id] = MultiprocessYOLO(source_id)
-            msg_ai = f"[BACKEND STREAM-{source_id}] Inciado nuevo proceso YOLO en GPU/CPU."
+            initial_in, initial_out = 0, 0
+            if is_rtsp:
+                try:
+                    # Traer los acumulados de hoy de la BD si la cámara tiene historial
+                    db = SessionLocal()
+                    db_in, db_out = crud.get_todays_historico_totals(db, source_id)
+                    initial_in += db_in
+                    initial_out += db_out
+                    db.close()
+                except Exception as e:
+                    print(f"Error cargando conteos historicos: {e}")
+                    
+            yolo_processors[source_id] = MultiprocessYOLO(source_id, initial_in, initial_out)
+            msg_ai = f"[BACKEND STREAM-{source_id}] Inciado nuevo proceso YOLO en GPU/CPU con iniciales IN:{initial_in} OUT:{initial_out}."
             print(msg_ai)
             metrics_logger.info(msg_ai)
         
@@ -214,6 +239,8 @@ def generate_frames(source_id: int, source_path: str, is_rtsp: bool):
     finally:
         print(f"[STREAM-{source_id}] Conexión de cliente cerrada. Liberando stream...")
         cap.release()
+        import gc
+        gc.collect()
         
         # Safe termination of YOLO processor if no one else is watching this camera
         with processor_lock:

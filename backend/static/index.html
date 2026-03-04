@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeopleCounter AI - Sistema de Gestión</title>
-    <link rel="stylesheet" href="/static/css/style.css?v=3">
+    <link rel="stylesheet" href="/static/css/style.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -175,10 +175,68 @@
         </div>
     </div>
 
+    <!-- Schedule Configuration Modal -->
+    <div id="schedule-modal" class="modal">
+        <div class="modal-content glass" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 id="schedule-modal-title">Configuración de Horario</h3>
+                <button class="close-btn" onclick="closeModal('schedule')">&times;</button>
+            </div>
+            <div class="schedule-body" style="padding: 1.5rem;">
+                <form id="schedule-form">
+                    <input type="hidden" id="schedule-source-id">
+
+                    <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                        <label style="margin: 0; color: white;">Activar Programación</label>
+                        <label class="switch">
+                            <input type="checkbox" id="schedule-active">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color: white; margin-bottom: 0.5rem; display: block;">Días de la semana</label>
+                        <div class="days-grid"
+                            style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; color: #94a3b8; font-size: 0.875rem;">
+                            <label><input type="checkbox" id="sch-mon"> Lunes</label>
+                            <label><input type="checkbox" id="sch-tue"> Martes</label>
+                            <label><input type="checkbox" id="sch-wed"> Miércoles</label>
+                            <label><input type="checkbox" id="sch-thu"> Jueves</label>
+                            <label><input type="checkbox" id="sch-fri"> Viernes</label>
+                            <label><input type="checkbox" id="sch-sat"> Sábado</label>
+                            <label><input type="checkbox" id="sch-sun"> Domingo</label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label style="color: white;">Hora Inicio</label>
+                            <input type="time" id="schedule-start"
+                                style="padding: 0.5rem; border-radius: 0.5rem; width: 100%; border: 1px solid var(--border); background: rgba(0,0,0,0.2); color: white;"
+                                required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label style="color: white;">Hora Fin</label>
+                            <input type="time" id="schedule-end"
+                                style="padding: 0.5rem; border-radius: 0.5rem; width: 100%; border: 1px solid var(--border); background: rgba(0,0,0,0.2); color: white;"
+                                required>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Guardar Horario
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Notification system -->
     <div id="notification" class="notification"></div>
 
-    <script src="/static/js/app.js?v=3"></script>
+    <script src="/static/js/app.js?v=5"></script>
 </body>
 
 </html>

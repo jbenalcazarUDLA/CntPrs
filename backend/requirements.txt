@@ -1,10 +1,9 @@
 fastapi
 uvicorn
 sqlalchemy
+opencv-python
+ultralytics
 pydantic
 python-multipart
-aiofiles
-sqlite-utils
-opencv-python-headless
-ultralytics
 numpy
+requests

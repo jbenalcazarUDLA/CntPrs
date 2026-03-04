@@ -86,6 +86,23 @@ function stop_service() {
             echo "Service is not running."
         fi
     fi
+    
+    # NUEVO OBLIGATORIO: Matar procesos huerfanos (Multiprocessing workers o cámaras atascadas)
+    echo "Buscando procesos huérfanos de IA o streaming..."
+    
+    ORPHANS=$(ps aux | grep "[p]ython" | grep -E "async_yolo|backend|yolo_worker|multiprocessing" | awk '{print $2}')
+    if [ -n "$ORPHANS" ]; then
+        echo "Eliminando trabajadores huérfanos en memoria (PIDs: $(echo $ORPHANS | tr '\n' ' '))..."
+        kill -9 $ORPHANS 2>/dev/null
+    fi
+    
+    FFMPEG_ORPHANS=$(ps aux | grep "[f]fmpeg" | awk '{print $2}')
+    if [ -n "$FFMPEG_ORPHANS" ]; then
+        echo "Limpiando conexiones de cámara FFMPEG atascadas..."
+        kill -9 $FFMPEG_ORPHANS 2>/dev/null
+    fi
+    
+    echo "Limpieza profunda finalizada."
 }
 
 function status_service() {

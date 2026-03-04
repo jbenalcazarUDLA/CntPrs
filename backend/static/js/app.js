@@ -100,6 +100,9 @@ function renderSources() {
                 <p>${source.path_url}</p>
             </div>
             <div class="source-actions">
+                <button class="btn-schedule ${source.is_scheduled ? 'active-schedule' : ''}" onclick="openScheduleConfig(${source.id})" title="${source.is_scheduled ? 'Horario Activo' : 'Configurar Horario'}">
+                    <i class="far fa-clock"></i> Schedule
+                </button>
                 <button class="btn-tripwire" onclick="openTripwireConfig(${source.id})">
                     <i class="fas fa-draw-polygon"></i> Tripwire
                 </button>
@@ -345,8 +348,79 @@ function closeModal(type) {
         videoWrapper.innerHTML = '';
     } else if (type === 'tripwire') {
         tripwireModal.classList.remove('active');
+    } else if (type === 'schedule') {
+        document.getElementById('schedule-modal').classList.remove('active');
     }
 }
+
+// --- Schedule Logic ---
+async function openScheduleConfig(id) {
+    const source = sources.find(s => s.id === id);
+    if (!source) return;
+
+    document.getElementById('schedule-modal-title').innerText = `Horario: ${source.name}`;
+    document.getElementById('schedule-source-id').value = id;
+    const modal = document.getElementById('schedule-modal');
+    modal.classList.add('active');
+
+    try {
+        const response = await fetch(`/api/schedules/${id}`);
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById('schedule-active').checked = data.is_active;
+            document.getElementById('sch-mon').checked = data.monday;
+            document.getElementById('sch-tue').checked = data.tuesday;
+            document.getElementById('sch-wed').checked = data.wednesday;
+            document.getElementById('sch-thu').checked = data.thursday;
+            document.getElementById('sch-fri').checked = data.friday;
+            document.getElementById('sch-sat').checked = data.saturday;
+            document.getElementById('sch-sun').checked = data.sunday;
+            document.getElementById('schedule-start').value = data.start_time;
+            document.getElementById('schedule-end').value = data.end_time;
+        } else {
+            showNotification('Error obteniendo horario, usando por defecto', 'error');
+        }
+    } catch (error) {
+        console.error('API Error:', error);
+    }
+}
+
+document.getElementById('schedule-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('schedule-source-id').value;
+
+    const payload = {
+        source_id: parseInt(id),
+        is_active: document.getElementById('schedule-active').checked,
+        monday: document.getElementById('sch-mon').checked,
+        tuesday: document.getElementById('sch-tue').checked,
+        wednesday: document.getElementById('sch-wed').checked,
+        thursday: document.getElementById('sch-thu').checked,
+        friday: document.getElementById('sch-fri').checked,
+        saturday: document.getElementById('sch-sat').checked,
+        sunday: document.getElementById('sch-sun').checked,
+        start_time: document.getElementById('schedule-start').value,
+        end_time: document.getElementById('schedule-end').value
+    };
+
+    try {
+        const response = await fetch(`/api/schedules/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            showNotification('Horario guardado correctamente', 'success');
+            closeModal('schedule');
+            fetchSources(); // Recharge list to update colors
+        } else {
+            showNotification('Error al guardar el horario', 'error');
+        }
+    } catch (error) {
+        showNotification('Error de conexión', 'error');
+    }
+});
 
 // --- Tripwire Logic ---
 
@@ -580,5 +654,8 @@ window.onclick = (event) => {
     }
     if (event.target == tripwireModal) {
         closeModal('tripwire');
+    }
+    if (event.target == document.getElementById('schedule-modal')) {
+        closeModal('schedule');
     }
 }

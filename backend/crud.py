@@ -5,7 +5,11 @@ def get_video_source(db: Session, source_id: int):
     return db.query(models.VideoSource).filter(models.VideoSource.id == source_id).first()
 
 def get_video_sources(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.VideoSource).offset(skip).limit(limit).all()
+    sources = db.query(models.VideoSource).offset(skip).limit(limit).all()
+    # Populate the virtual is_scheduled field
+    for s in sources:
+        s.is_scheduled = s.schedule is not None and s.schedule.is_active
+    return sources
 
 def create_video_source(db: Session, source: schemas.VideoSourceCreate):
     db_source = models.VideoSource(
@@ -55,3 +59,45 @@ def delete_tripwire(db: Session, source_id: int):
         db.commit()
         return True
     return False
+
+def get_camera_schedule(db: Session, source_id: int):
+    return db.query(models.CameraSchedule).filter(models.CameraSchedule.source_id == source_id).first()
+
+def create_or_update_camera_schedule(db: Session, schedule: schemas.CameraScheduleCreate):
+    db_schedule = db.query(models.CameraSchedule).filter(models.CameraSchedule.source_id == schedule.source_id).first()
+    if db_schedule:
+        db_schedule.monday = schedule.monday
+        db_schedule.tuesday = schedule.tuesday
+        db_schedule.wednesday = schedule.wednesday
+        db_schedule.thursday = schedule.thursday
+        db_schedule.friday = schedule.friday
+        db_schedule.saturday = schedule.saturday
+        db_schedule.sunday = schedule.sunday
+        db_schedule.start_time = schedule.start_time
+        db_schedule.end_time = schedule.end_time
+        db_schedule.is_active = schedule.is_active
+    else:
+        db_schedule = models.CameraSchedule(**schedule.dict())
+        db.add(db_schedule)
+    db.commit()
+    db.refresh(db_schedule)
+    return db_schedule
+
+def create_historico_conteo(db: Session, historico: schemas.HistoricoConteoCreate):
+    db_historico = models.HistoricoConteo(**historico.dict())
+    db.add(db_historico)
+    db.commit()
+    db.refresh(db_historico)
+    return db_historico
+
+def get_todays_historico_totals(db: Session, source_id: int):
+    import datetime
+    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    records = db.query(models.HistoricoConteo).filter(
+        models.HistoricoConteo.source_id == source_id,
+        models.HistoricoConteo.fecha_registro == today_str
+    ).all()
+    
+    total_in = sum(r.total_in for r in records)
+    total_out = sum(r.total_out for r in records)
+    return total_in, total_out
