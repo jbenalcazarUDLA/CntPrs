@@ -270,6 +270,7 @@ async function deleteSource(id) {
 
 // --- Video Preview ---
 
+
 function openPreview(id) {
     const source = sources.find(s => s.id === id);
     if (!source) return;
@@ -296,46 +297,45 @@ function openPreview(id) {
     videoWrapper.style.position = 'relative';
     videoWrapper.appendChild(loadingDiv);
 
-    // Both file and rtsp return MJPEG streams from stream.py
-    // Append a timestamp to bypass browser caching of broken previous streams
-    const img = document.createElement('img');
-    img.src = `${STREAM_BASE_URL}/${source.type}/${id}?t=${startTime}`;
-    img.alt = `${source.type.toUpperCase()} Stream`;
-    // Add classes for better responsiveness if previous styles applied
-    img.className = 'w-full h-auto object-contain bg-black';
-    img.style.opacity = '0'; // Ocultar mientras carga
+    if (source.type === 'rtsp' || source.type === 'file') {
+        const img = document.createElement('img');
+        img.src = `${STREAM_BASE_URL}/${source.type}/${id}?t=${startTime}`;
+        img.alt = `${source.type.toUpperCase()} Stream`;
+        img.className = 'w-full h-auto object-contain bg-black';
+        img.style.opacity = '0';
 
-    img.onload = () => {
-        const endTime = Date.now();
-        const totalFrontendDelay = ((endTime - startTime) / 1000).toFixed(2);
-        console.log(`[FRONTEND METRICA] Tiempo total desde Clic hasta 1er Frame: ${totalFrontendDelay} seg`);
+        img.onload = () => {
+            const endTime = Date.now();
+            const totalFrontendDelay = ((endTime - startTime) / 1000).toFixed(2);
+            console.log(`[FRONTEND METRICA] Tiempo total desde Clic hasta 1er Frame: ${totalFrontendDelay} seg`);
 
-        fetch('/api/stream/metrics', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                source_id: source.id,
-                camera_name: source.name,
-                load_time_sec: parseFloat(totalFrontendDelay)
-            })
-        }).catch(err => console.error("Error logging metrics", err));
+            fetch('/api/stream/metrics', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    source_id: source.id,
+                    camera_name: source.name,
+                    load_time_sec: parseFloat(totalFrontendDelay)
+                })
+            }).catch(err => console.error("Error logging metrics", err));
 
-        if (loadingDiv.parentNode) {
-            loadingDiv.style.backgroundColor = 'rgba(0, 128, 0, 0.8)';
-            loadingDiv.innerHTML = `<i class="fas fa-check mr-2"></i> Cargado en: ${totalFrontendDelay} seg`;
-            setTimeout(() => { if (loadingDiv.parentNode) loadingDiv.remove(); }, 4000);
-        }
-        img.style.opacity = '1';
-    };
+            if (loadingDiv.parentNode) {
+                loadingDiv.style.backgroundColor = 'rgba(0, 128, 0, 0.8)';
+                loadingDiv.innerHTML = `<i class="fas fa-check mr-2"></i> Cargado en: ${totalFrontendDelay} seg`;
+                setTimeout(() => { if (loadingDiv.parentNode) loadingDiv.remove(); }, 4000);
+            }
+            img.style.opacity = '1';
+        };
 
-    img.onerror = () => {
-        if (loadingDiv.parentNode) {
-            loadingDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-            loadingDiv.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> Error de conexión.`;
-        }
-    };
+        img.onerror = () => {
+            if (loadingDiv.parentNode) {
+                loadingDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+                loadingDiv.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> Error de conexión.`;
+            }
+        };
 
-    videoWrapper.appendChild(img);
+        videoWrapper.appendChild(img);
+    }
 
     previewModal.classList.add('active');
 }
@@ -344,6 +344,9 @@ function closeModal(type) {
     if (type === 'preview') {
         const img = videoWrapper.querySelector('img');
         if (img) img.src = '';
+        const vid = videoWrapper.querySelector('video');
+        if (vid) vid.srcObject = null;
+
         previewModal.classList.remove('active');
         videoWrapper.innerHTML = '';
     } else if (type === 'tripwire') {

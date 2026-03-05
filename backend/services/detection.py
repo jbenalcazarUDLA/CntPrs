@@ -219,7 +219,16 @@ class YoloDetector:
         cv2.putText(frame, text_entries, (x_offset + 20, y_offset + h_ent + 15), font, font_scale, (100, 255, 100), thickness)
         cv2.putText(frame, text_exits, (x_offset + 20, y_offset + h_ent + h_ext + 25), font, font_scale, (100, 100, 255), thickness)
 
-        return frame
+        metadata = {
+            "boxes": self.last_boxes,
+            "orig_shape": (original_w, original_h),
+            "entry_count": self.entry_count,
+            "exit_count": self.exit_count,
+            "tripwire": tripwire_data,
+            "tracks": dict(self.tracks)
+        }
+
+        return frame, metadata
 
 # Export a single dummy instance for backward compatibility just in case, but processes will make their own.
 detector = YoloDetector()

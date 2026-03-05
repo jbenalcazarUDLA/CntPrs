@@ -2,6 +2,9 @@ import multiprocessing as mp
 import time
 import numpy as np
 
+class DummyTripwire:
+    pass
+
 def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_counter=None, initial_in=0, initial_out=0):
     """
     Este Worker corre en su *propio proceso* (núcleo de CPU).
@@ -32,7 +35,6 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
             
             # Procesar el frame (Aproximadamente 100-200ms en CPU)
             # tripwire_data will arrive as a raw dictionary over the Queue, because SQLAlchemy models fail Pickling.
-            class DummyTripwire: pass
             tw_obj = None
             if tripwire_data and tripwire_data.get('x1') is not None:
                 tw_obj = DummyTripwire()
@@ -42,7 +44,11 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
                 tw_obj.y2 = float(tripwire_data.get('y2', 0.0) or 0.0)
                 tw_obj.direction = tripwire_data.get('direction', 'any') or 'any'
                 
-            last_processed_frame = detector.process_frame(frame, source_id, tw_obj)
+            res = detector.process_frame(frame, source_id, tw_obj)
+            if isinstance(res, tuple):
+                last_processed_frame, metadata = res
+            else:
+                last_processed_frame, metadata = res, {}
             
             if entry_counter is not None and exit_counter is not None:
                 entry_counter.value = detector.entry_count
@@ -56,7 +62,7 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
                 except Exception:
                     pass
             
-            result_queue.put(last_processed_frame)
+            result_queue.put((last_processed_frame, metadata))
                 
         except KeyboardInterrupt:
             break
@@ -104,6 +110,7 @@ class MultiprocessYOLO:
         self.process.start()
         
         self.latest_result = None
+        self.latest_metadata = {}
 
     def get_counts(self):
         return self.entry_counter.value, self.exit_counter.value
@@ -127,11 +134,18 @@ class MultiprocessYOLO:
         try:
             # Verificar si el worker terminó de procesar un nuevo frame
             if not self.result_queue.empty():
-                self.latest_result = self.result_queue.get_nowait()
+                data = self.result_queue.get_nowait()
+                if isinstance(data, tuple):
+                    self.latest_result, self.latest_metadata = data
+                else:
+                    self.latest_result = data
         except Exception:
             pass
             
         return self.latest_result if self.latest_result is not None else fallback_frame
+        
+    def get_latest_metadata(self):
+        return self.latest_metadata
 
     def stop(self):
         """Apaga el proceso de golpe para asegurar liberación de memoria OS-level sin deadlocks."""

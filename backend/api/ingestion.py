@@ -64,7 +64,7 @@ def register_rtsp(
     
     if not success:
         raise HTTPException(status_code=400, detail=f"Connected to RTSP stream '{source.path_url}' but failed to read a frame.")
-        
+
     return crud.create_video_source(db=db, source=source)
 
 @router.get("/", response_model=list[schemas.VideoSource])
