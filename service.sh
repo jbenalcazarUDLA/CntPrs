@@ -55,8 +55,8 @@ function stop_service() {
                     sleep 1
                 else
                     echo "Service stopped successfully."
-                    rm "$PID_FILE"
-                    return
+                    rm -f "$PID_FILE"
+                    break
                 fi
             done
             

@@ -77,7 +77,8 @@ def camera_worker(source_id: int, source_path: str, is_rtsp: bool):
         if is_rtsp:
             os.environ["OPENCV_FFMPEG_LOGLEVEL"] = "-8"
             os.environ["AV_LOG_LEVEL"] = "-8"
-            os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay|stimeout;10000000|rw_timeout;10000000"
+            # Optimiza tiempo de conexion reduciendo probing y timeouts
+            os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp|fflags;nobuffer|fflags;discardcorrupt|flags;low_delay|analyzeduration;500000|probesize;50000|stimeout;3000000|rw_timeout;3000000"
             
         raw_cap = cv2.VideoCapture(source_path, cv2.CAP_FFMPEG) if is_rtsp else cv2.VideoCapture(source_path)
         from ..services.video_reader import VideoReaderWrapper

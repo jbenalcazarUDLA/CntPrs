@@ -55,6 +55,9 @@ class HeadlessStreamTask(threading.Thread):
         last_tripwire_update = 0
         tw_dict = None
         
+        last_saved_in = -1
+        last_saved_out = -1
+        
         while not self.stop_event.is_set():
             success, frame = cap.read()
             if not success:
@@ -81,6 +84,27 @@ class HeadlessStreamTask(threading.Thread):
             self.processor.update_frame(frame, tw_dict)
             self.processor.get_latest_processed_frame(frame)
             
+            # Real-time synchronization
+            curr_in, curr_out = self.processor.get_counts()
+            if curr_in != last_saved_in or curr_out != last_saved_out:
+                try:
+                    db = SessionLocal()
+                    curr_datetime = datetime.datetime.now()
+                    crud.update_historico_conteo_realtime(
+                        db=db,
+                        source_id=self.source_id,
+                        fecha_registro=self.start_time_record.strftime("%Y-%m-%d"),
+                        hora_apertura=self.start_time_record.strftime("%H:%M:%S"),
+                        hora_cierre=curr_datetime.strftime("%H:%M:%S"),
+                        total_in=curr_in,
+                        total_out=curr_out
+                    )
+                    db.close()
+                    last_saved_in = curr_in
+                    last_saved_out = curr_out
+                except Exception as e:
+                    scheduler_logger.error(f"[SCHEDULER] Error saving realtime count for camera {self.source_id}: {e}")
+            
             if not self.is_rtsp:
                 time.sleep(0.033)
                 
@@ -96,11 +120,12 @@ class HeadlessStreamTask(threading.Thread):
         gc.collect()
             
         if self.processor:
-            # Guardamos historial
+            # Guardamos historial final asegurándonos que quede asentado
             db = SessionLocal()
             end_time_record = datetime.datetime.now()
             try:
-                historico = schemas.HistoricoConteoCreate(
+                crud.update_historico_conteo_realtime(
+                    db=db,
                     source_id=self.source_id,
                     fecha_registro=self.start_time_record.strftime("%Y-%m-%d"),
                     hora_apertura=self.start_time_record.strftime("%H:%M:%S"),
@@ -108,10 +133,9 @@ class HeadlessStreamTask(threading.Thread):
                     total_in=total_in,
                     total_out=total_out
                 )
-                crud.create_historico_conteo(db, historico)
-                scheduler_logger.info(f"[SCHEDULER] Historial guardado: IN {total_in}, OUT {total_out}")
+                scheduler_logger.info(f"[SCHEDULER] Historial finalizado: IN {total_in}, OUT {total_out}")
             except Exception as e:
-                scheduler_logger.error(f"[SCHEDULER] Error guardando historial: {e}")
+                scheduler_logger.error(f"[SCHEDULER] Error guardando historial final: {e}")
             finally:
                 db.close()
 

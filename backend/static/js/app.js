@@ -662,3 +662,324 @@ window.onclick = (event) => {
         closeModal('schedule');
     }
 }
+
+// --- Dashboard Logic ---
+
+// Chart Instances
+let timeSeriesChartInstance = null;
+let locationsChartInstance = null;
+let periodsChartInstance = null;
+let accumulatedChartInstance = null;
+
+// Initialize Dashboard UI & Charts
+function initDashboard() {
+    console.log("Initializing Dashboard...");
+    // 1. Populate Filters
+    // Dates (default to last 7 days)
+    const end = new Date();
+    const start = new Date();
+    start.setDate(end.getDate() - 7);
+
+    document.getElementById('filter-end-date').valueAsDate = end;
+    document.getElementById('filter-start-date').valueAsDate = start;
+
+    // Cameras
+    const cameraSelect = document.getElementById('filter-cameras');
+    cameraSelect.innerHTML = '';
+    sources.forEach(src => {
+        const option = document.createElement('option');
+        option.value = src.id;
+        option.text = src.name;
+        cameraSelect.appendChild(option);
+    });
+
+    // 2. Initial Setup for Charts
+    setupChartsBase();
+
+    // 3. Load initial data
+    updateDashboard();
+}
+
+function setupChartsBase() {
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = 'Inter';
+    const gridColor = 'rgba(255, 255, 255, 0.05)';
+
+    const timeCtx = document.getElementById('timeSeriesChart').getContext('2d');
+    timeSeriesChartInstance = new Chart(timeCtx, {
+        type: 'line',
+        data: { labels: [], datasets: [] },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+                x: { grid: { color: gridColor }, title: { display: true, text: 'Fechas' } },
+                y: { grid: { color: gridColor }, beginAtZero: true, title: { display: true, text: 'Tráfico' } }
+            },
+            plugins: { tooltip: { enabled: true }, legend: { position: 'top' } },
+            elements: {
+                line: { tension: 0.4, borderWidth: 3 },
+                point: { radius: 3, hitRadius: 10, hoverRadius: 6 }
+            }
+        }
+    });
+
+    const locCtx = document.getElementById('locationsChart').getContext('2d');
+    locationsChartInstance = new Chart(locCtx, {
+        type: 'bar',
+        data: { labels: [], datasets: [] },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: 'y', // Horizontal bars for locations
+            scales: {
+                x: { grid: { color: gridColor }, beginAtZero: true },
+                y: { grid: { display: false } }
+            },
+            plugins: { legend: { position: 'bottom' } },
+            elements: { bar: { borderRadius: 6 } }
+        }
+    });
+
+    const perCtx = document.getElementById('periodsChart').getContext('2d');
+    periodsChartInstance = new Chart(perCtx, {
+        type: 'bar',
+        data: { labels: [], datasets: [] },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { color: gridColor }, beginAtZero: true }
+            },
+            plugins: { legend: { display: true, position: 'bottom' } },
+            elements: { bar: { borderRadius: 8, maxBarThickness: 50 } }
+        }
+    });
+
+    const accCtx = document.getElementById('accumulatedChart').getContext('2d');
+    accumulatedChartInstance = new Chart(accCtx, {
+        type: 'bar',
+        data: { labels: [], datasets: [] },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { color: gridColor }, beginAtZero: true }
+            },
+            plugins: { legend: { display: false } },
+            elements: { bar: { borderRadius: 6, maxBarThickness: 40 } }
+        }
+    });
+}
+
+function getFilterParams() {
+    const startDate = document.getElementById('filter-start-date').value;
+    const endDate = document.getElementById('filter-end-date').value;
+
+    const cameraSelect = document.getElementById('filter-cameras');
+    const selectedCameras = Array.from(cameraSelect.selectedOptions).map(opt => opt.value);
+
+    const slotSelect = document.getElementById('filter-timeslots');
+    const selectedSlots = Array.from(slotSelect.selectedOptions).map(opt => opt.value);
+
+    return {
+        start_date: startDate,
+        end_date: endDate,
+        cameras: selectedCameras.join(','),
+        time_slots: selectedSlots.join(',')
+    };
+}
+
+async function updateDashboard() {
+    const params = getFilterParams();
+
+    if (!params.start_date || !params.end_date) {
+        showNotification('Debe seleccionar fechas válidas', 'error');
+        return;
+    }
+
+    // Show Loading Skeleton
+    const dataContainer = document.getElementById('dashboard-data');
+    const emptyContainer = document.getElementById('dashboard-empty');
+    const loadContainer = document.getElementById('dashboard-loading');
+
+    if (dataContainer && loadContainer && emptyContainer) {
+        dataContainer.classList.add('hidden');
+        emptyContainer.classList.add('hidden');
+        loadContainer.classList.remove('hidden');
+    }
+
+    const queryParams = new URLSearchParams(params).toString();
+    try {
+        const response = await fetch(`/api/analytics/dashboard?${queryParams}`);
+        if (!response.ok) throw new Error("Error fetching data");
+        const data = await response.json();
+
+        // Check for Empty State
+        const isDataEmpty = data.kpis.total_in === 0 && data.kpis.total_out === 0;
+
+        if (dataContainer && loadContainer && emptyContainer) {
+            loadContainer.classList.add('hidden');
+            if (isDataEmpty) {
+                emptyContainer.classList.remove('hidden');
+            } else {
+                dataContainer.classList.remove('hidden');
+                renderDashboardData(data);
+
+                // Update Last Updated Timestamp
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                const lastUpdatedEl = document.getElementById('last-updated');
+                if (lastUpdatedEl) {
+                    lastUpdatedEl.innerText = `Última actualización: ${timeStr}`;
+                }
+            }
+        } else {
+            renderDashboardData(data);
+        }
+
+        showNotification('Dashboard actualizado', 'success');
+    } catch (error) {
+        console.error(error);
+        if (loadContainer && dataContainer) {
+            loadContainer.classList.add('hidden');
+            dataContainer.classList.remove('hidden');
+        }
+        showNotification('Error actualizando dashboard', 'error');
+    }
+}
+
+function clearFilters() {
+    const end = new Date();
+    const start = new Date();
+    start.setDate(end.getDate() - 7);
+
+    document.getElementById('filter-end-date').valueAsDate = end;
+    document.getElementById('filter-start-date').valueAsDate = start;
+
+    const cameraSelect = document.getElementById('filter-cameras');
+    Array.from(cameraSelect.options).forEach(opt => opt.selected = false);
+
+    const slotSelect = document.getElementById('filter-timeslots');
+    Array.from(slotSelect.options).forEach(opt => opt.selected = false);
+
+    updateDashboard();
+}
+
+function renderDashboardData(data) {
+    // 1. KPI Cards
+    const safeFormat = (val) => {
+        if (val === undefined || val === null) return '0';
+        // Add thousands separator for better readability
+        return Number(val).toLocaleString('es-ES');
+    };
+
+    document.getElementById('kpi-total-in').innerText = safeFormat(data.kpis.total_in);
+    document.getElementById('kpi-total-out').innerText = safeFormat(data.kpis.total_out);
+    document.getElementById('kpi-avg-occupancy').innerText = safeFormat(data.kpis.aforo_promedio);
+
+    let rate = data.kpis.stay_rate !== undefined ? `${data.kpis.stay_rate.toLocaleString('es-ES')}%` : '0%';
+    document.getElementById('kpi-stay-rate').innerText = rate;
+
+    // Trend Indicators
+    function updateTrend(id, val) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = 'trend-indicator'; // reset base class
+        if (val > 0) {
+            el.innerHTML = `<i class="fas fa-arrow-up"></i> ${val}% vs ant.`;
+            el.classList.add('positive');
+        } else if (val < 0) {
+            el.innerHTML = `<i class="fas fa-arrow-down"></i> ${Math.abs(val)}% vs ant.`;
+            el.classList.add('negative');
+        } else {
+            el.innerHTML = `<i class="fas fa-minus"></i> Sin cambios`;
+            el.classList.add('neutral');
+        }
+    }
+
+    if (data.kpis.trends) {
+        updateTrend('trend-total-in', data.kpis.trends.total_in);
+        updateTrend('trend-total-out', data.kpis.trends.total_out);
+        updateTrend('trend-avg-occupancy', data.kpis.trends.aforo_promedio);
+    }
+
+    // 2. Charts
+    const defaultColors = [
+        { border: '#6366f1', bg: 'rgba(99, 102, 241, 0.2)' },
+        { border: '#10b981', bg: 'rgba(16, 185, 129, 0.2)' },
+        { border: '#f59e0b', bg: 'rgba(245, 158, 11, 0.2)' },
+        { border: '#ef4444', bg: 'rgba(239, 68, 68, 0.2)' },
+        { border: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.2)' },
+        { border: '#06b6d4', bg: 'rgba(6, 182, 212, 0.2)' }
+    ];
+
+    if (data.charts.time_series.datasets) {
+        data.charts.time_series.datasets.forEach((ds, i) => {
+            const colorObj = defaultColors[i % defaultColors.length];
+            ds.borderColor = colorObj.border;
+            ds.backgroundColor = colorObj.bg;
+            ds.fill = true;
+            ds.tension = 0.4; // Smooth lines
+        });
+        timeSeriesChartInstance.data = data.charts.time_series;
+        timeSeriesChartInstance.update();
+    }
+
+    if (data.charts.compare_locations.datasets) {
+        if (data.charts.compare_locations.datasets.length > 0) {
+            data.charts.compare_locations.datasets[0].backgroundColor = 'rgba(16, 185, 129, 0.8)'; // IN
+        }
+        if (data.charts.compare_locations.datasets.length > 1) {
+            data.charts.compare_locations.datasets[1].backgroundColor = 'rgba(239, 68, 68, 0.8)'; // OUT
+        }
+        locationsChartInstance.data = data.charts.compare_locations;
+        locationsChartInstance.update();
+    }
+
+    if (data.charts.compare_periods.datasets) {
+        data.charts.compare_periods.datasets.forEach((ds, i) => {
+            ds.backgroundColor = i === 0 ? 'rgba(148, 163, 184, 0.6)' : 'rgba(99, 102, 241, 0.9)';
+            ds.borderWidth = 0;
+        });
+        periodsChartInstance.data = data.charts.compare_periods;
+        periodsChartInstance.update();
+    }
+
+    if (data.charts.accumulated.datasets) {
+        if (data.charts.accumulated.datasets.length > 0) {
+            // Gradient-like colors for days of week
+            data.charts.accumulated.datasets[0].backgroundColor = [
+                'rgba(245, 158, 11, 0.9)', 'rgba(217, 119, 6, 0.9)',
+                'rgba(180, 83, 9, 0.9)', 'rgba(234, 88, 12, 0.9)',
+                'rgba(194, 65, 12, 0.9)', 'rgba(99, 102, 241, 0.9)', 'rgba(79, 70, 229, 0.9)'
+            ];
+        }
+        accumulatedChartInstance.data = data.charts.accumulated;
+        accumulatedChartInstance.update();
+    }
+}
+
+function downloadReport() {
+    const params = getFilterParams();
+    const queryParams = new URLSearchParams(params).toString();
+    window.location.href = `/api/analytics/export?${queryParams}`;
+}
+
+// Hook navigation to initialize dashboard when first switched
+const navLinks = document.querySelectorAll('.nav-link');
+let dashboardInitialized = false;
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const view = link.getAttribute('data-view');
+        if (view === 'visualization' && !dashboardInitialized && sources.length > 0) {
+            initDashboard();
+            dashboardInitialized = true;
+        }
+    });
+});
+

@@ -34,6 +34,7 @@ class VideoReaderWrapper:
                 time.sleep(0.005)
                 
     def read(self):
+        ret, frame = False, None
         if self.is_rtsp:
             with self.cond:
                 if len(self.q) == 0:
@@ -41,11 +42,18 @@ class VideoReaderWrapper:
                     self.cond.wait(timeout=1.0)
                 
                 if len(self.q) > 0:
-                    return True, self.q.pop()
-                else:
-                    return False, None
+                    ret, frame = True, self.q.pop()
         else:
-            return self.cap.read()
+            ret, frame = self.cap.read()
+            
+        # Reducir el tamano del frame si es muy grande para optimizar el stream y la red
+        if ret and frame is not None:
+            h, w = frame.shape[:2]
+            if w > 800:
+                scale = 800 / float(w)
+                frame = cv2.resize(frame, (800, int(h * scale)))
+                
+        return ret, frame
             
     def release(self):
         self.running = False

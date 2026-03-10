@@ -10,3 +10,4 @@ requests
 apscheduler
 aiortc
 av
+pandas

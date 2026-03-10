@@ -17,7 +17,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from .database import engine, get_db
 from . import models, schemas, crud
-from .api import ingestion, stream, tripwire, schedule
+from .api import ingestion, stream, tripwire, schedule, analytics
 from .scheduler import start_scheduler, stop_scheduler
 
 models.Base.metadata.create_all(bind=engine)
@@ -37,6 +37,7 @@ app.include_router(ingestion.router, prefix="/api/sources", tags=["ingestion"])
 app.include_router(stream.router, prefix="/api/stream", tags=["streaming"])
 app.include_router(tripwire.router, prefix="/api/tripwires", tags=["tripwire"])
 app.include_router(schedule.router, prefix="/api/schedules", tags=["schedules"])
+app.include_router(analytics.router, prefix="/api/analytics", tags=["analytics"])
 
 # Static Files
 app.mount("/static", StaticFiles(directory="backend/static"), name="static")

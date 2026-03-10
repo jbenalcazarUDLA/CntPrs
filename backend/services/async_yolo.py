@@ -10,10 +10,24 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
     Este Worker corre en su *propio proceso* (núcleo de CPU).
     Mantiene su propia instancia del detector YOLO para evadir el GIL de Python.
     """
+    import os
+    os.environ["OMP_NUM_THREADS"] = "2"
+    os.environ["OPENBLAS_NUM_THREADS"] = "2"
+    os.environ["MKL_NUM_THREADS"] = "2"
+    
+    # Target 12 FPS to significantly reduce CPU usage when multiple cameras run
+    target_fps = 12.0
+    frame_interval = 1.0 / target_fps
+    
     # Mantendremos la memoria de la última detección para devolverla rápido si no hay nuevo frame
     last_processed_frame = None
     
     try:
+        import torch
+        torch.set_num_threads(2)
+        import cv2
+        cv2.setNumThreads(2)
+        
         from .detection import YoloDetector # Import lazy para no inicializar CUDA/MPS en proceso padre
         detector = YoloDetector()
         
@@ -30,7 +44,8 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
             data = frame_queue.get()
             if data is None:
                 break # Señal de apagado
-                
+            
+            loop_start = time.time()
             frame, tripwire_data = data
             
             # Procesar el frame (Aproximadamente 100-200ms en CPU)
@@ -63,8 +78,15 @@ def yolo_worker(frame_queue, result_queue, source_id, entry_counter=None, exit_c
                     pass
             
             result_queue.put((last_processed_frame, metadata))
+            
+            # Limitar FPS para evitar saturar el CPU al 100%
+            elapsed = time.time() - loop_start
+            sleep_time = frame_interval - elapsed
+            if sleep_time > 0:
+                time.sleep(sleep_time)
                 
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, EOFError, BrokenPipeError, FileNotFoundError):
+            # The parent process died or queue was closed. Exit gracefully.
             break
         except Exception as e:
             import traceback

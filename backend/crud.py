@@ -101,3 +101,33 @@ def get_todays_historico_totals(db: Session, source_id: int):
     total_in = sum(r.total_in for r in records)
     total_out = sum(r.total_out for r in records)
     return total_in, total_out
+
+def update_historico_conteo_realtime(db: Session, source_id: int, fecha_registro: str, hora_apertura: str, hora_cierre: str, total_in: int, total_out: int):
+    """
+    Looks for the historic record for this specific streaming session (started at hora_apertura today)
+    and updates it. If it doesn't exist, it creates it. This allows real-time updates without spamming new rows.
+    """
+    record = db.query(models.HistoricoConteo).filter(
+        models.HistoricoConteo.source_id == source_id,
+        models.HistoricoConteo.fecha_registro == fecha_registro,
+        models.HistoricoConteo.hora_apertura == hora_apertura
+    ).first()
+    
+    if record:
+        record.hora_cierre = hora_cierre
+        record.total_in = total_in
+        record.total_out = total_out
+    else:
+        record = models.HistoricoConteo(
+            source_id=source_id,
+            fecha_registro=fecha_registro,
+            hora_apertura=hora_apertura,
+            hora_cierre=hora_cierre,
+            total_in=total_in,
+            total_out=total_out
+        )
+        db.add(record)
+        
+    db.commit()
+    db.refresh(record)
+    return record
