@@ -1,23 +1,15 @@
 :root {
-    --primary: #1e3a8a;
-    /* Navy Blue */
-    --primary-hover: #1e40af;
-    --bg-dark: #f8f9fa;
-    /* Light Grey */
-    --card-bg: #ffffff;
-    /* White */
-    --text-main: #1e293b;
-    /* Slate 800 */
-    --text-muted: #64748b;
-    /* Slate 500 */
-    --border: #e2e8f0;
-    /* Slate 200 */
-    --glass-bg: #f1f5f9;
-    /* Slate 100 */
-    --success: #10b981;
-    /* Emerald */
-    --error: #ef4444;
-    /* Coral */
+    --primary: #1E293B;
+    --primary-hover: #334155;
+    --bg-dark: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --glass-bg: #F8FAFC;
+    --success: #10B981;
+    --error: #F43F5E;
+    --sidebar-bg: #0F172A;
 }
 
 * {
@@ -42,11 +34,12 @@ body {
 /* Sidebar */
 .sidebar {
     width: 260px;
-    background: #ffffff;
-    border-right: 1px solid var(--border);
+    background: var(--sidebar-bg);
+    border-right: none;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1.5rem;
+    padding: 24px;
+    color: #ffffff;
 }
 
 .logo {
@@ -59,12 +52,12 @@ body {
 }
 
 .logo i {
-    color: var(--primary);
+    color: var(--success);
     font-size: 1.5rem;
 }
 
 .logo span span {
-    color: var(--primary);
+    color: var(--success);
 }
 
 .nav-menu {
@@ -76,7 +69,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 0.85rem 1rem;
-    color: var(--text-muted);
+    color: #94A3B8;
     text-decoration: none;
     border-radius: 0.75rem;
     transition: all 0.3s ease;
@@ -85,8 +78,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    background: var(--glass-bg);
-    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 .nav-link.active {
@@ -139,9 +132,9 @@ body {
 .card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 .card h3 {
@@ -740,10 +733,10 @@ input:checked+.slider:before {
 /* --- Sleek Filter Bar --- */
 .filter-bar {
     background: var(--card-bg);
-    border-radius: 1.25rem;
+    border-radius: 12px;
     border: 1px solid var(--border);
-    padding: 1.25rem 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -901,20 +894,20 @@ input:checked+.slider:before {
 }
 
 .kpi-card {
-    padding: 1.5rem;
-    border-radius: 1.25rem;
+    padding: 24px;
+    border-radius: 12px;
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     gap: 1.25rem;
     background: var(--card-bg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 .kpi-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     border-color: var(--primary);
 }
 
@@ -958,6 +951,7 @@ input:checked+.slider:before {
 .kpi-data h2 {
     font-size: 1.75rem;
     font-weight: 700;
+    color: var(--text-main);
 }
 
 .trend-indicator {
@@ -1001,19 +995,19 @@ input:checked+.slider:before {
 }
 
 .chart-card {
-    padding: 1.5rem;
-    border-radius: 1.25rem;
+    padding: 24px;
+    border-radius: 12px;
     border: 1px solid var(--border);
     background: var(--card-bg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     display: flex;
     flex-direction: column;
 }
 
 .chart-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }
 
 .chart-card.full-width {
@@ -1038,6 +1032,41 @@ input:checked+.slider:before {
     margin: 0.25rem 0 0 1.7rem;
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+/* Skeleton Loading */
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.skeleton-title {
+    width: 60%;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+
+.chart-skeleton {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .chart-container {

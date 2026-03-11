@@ -701,9 +701,16 @@ function initDashboard() {
 }
 
 function setupChartsBase() {
-    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.color = '#64748B';
     Chart.defaults.font.family = 'Inter';
-    const gridColor = 'rgba(255, 255, 255, 0.05)';
+    const gridColor = 'rgba(0, 0, 0, 0.05)';
+
+    // Modern Tooltips
+    Chart.defaults.plugins.tooltip.backgroundColor = '#1E293B';
+    Chart.defaults.plugins.tooltip.titleColor = '#FFFFFF';
+    Chart.defaults.plugins.tooltip.bodyColor = '#E2E8F0';
+    Chart.defaults.plugins.tooltip.cornerRadius = 8;
+    Chart.defaults.plugins.tooltip.padding = 12;
 
     const timeCtx = document.getElementById('timeSeriesChart').getContext('2d');
     timeSeriesChartInstance = new Chart(timeCtx, {
@@ -738,7 +745,7 @@ function setupChartsBase() {
                 y: { grid: { display: false } }
             },
             plugins: { legend: { position: 'bottom' } },
-            elements: { bar: { borderRadius: 6 } }
+            elements: { bar: { borderRadius: 8, borderSkipped: false } }
         }
     });
 
@@ -918,10 +925,27 @@ function renderDashboardData(data) {
     ];
 
     if (data.charts.time_series.datasets) {
+        const timeCtx = document.getElementById('timeSeriesChart').getContext('2d');
+        const gradientIn = timeCtx.createLinearGradient(0, 0, 0, 400);
+        gradientIn.addColorStop(0, 'rgba(16, 185, 129, 0.4)');
+        gradientIn.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+
+        const gradientOut = timeCtx.createLinearGradient(0, 0, 0, 400);
+        gradientOut.addColorStop(0, 'rgba(244, 63, 94, 0.4)');
+        gradientOut.addColorStop(1, 'rgba(244, 63, 94, 0.0)');
+
         data.charts.time_series.datasets.forEach((ds, i) => {
-            const colorObj = defaultColors[i % defaultColors.length];
-            ds.borderColor = colorObj.border;
-            ds.backgroundColor = colorObj.bg;
+            if (ds.label && ds.label.toLowerCase().includes('ingreso')) {
+                ds.borderColor = '#10B981';
+                ds.backgroundColor = gradientIn;
+            } else if (ds.label && ds.label.toLowerCase().includes('salida')) {
+                ds.borderColor = '#F43F5E';
+                ds.backgroundColor = gradientOut;
+            } else {
+                const colorObj = defaultColors[i % defaultColors.length];
+                ds.borderColor = colorObj.border;
+                ds.backgroundColor = colorObj.bg;
+            }
             ds.fill = true;
             ds.tension = 0.4; // Smooth lines
         });
@@ -934,7 +958,7 @@ function renderDashboardData(data) {
             data.charts.compare_locations.datasets[0].backgroundColor = 'rgba(16, 185, 129, 0.8)'; // IN
         }
         if (data.charts.compare_locations.datasets.length > 1) {
-            data.charts.compare_locations.datasets[1].backgroundColor = 'rgba(239, 68, 68, 0.8)'; // OUT
+            data.charts.compare_locations.datasets[1].backgroundColor = 'rgba(244, 63, 94, 0.8)'; // OUT
         }
         locationsChartInstance.data = data.charts.compare_locations;
         locationsChartInstance.update();
