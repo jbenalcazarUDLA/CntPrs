@@ -1,0 +1,56 @@
+graph TD
+    classDef frontend fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;
+    classDef backend fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff;
+    classDef async fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff;
+    classDef data fill:#8b5cf6,stroke:#5b21b6,stroke-width:2px,color:#fff;
+    classDef source fill:#64748b,stroke:#334155,stroke-width:2px,color:#fff;
+    
+    subgraph Fuentes de Video
+        C1["Cámara RTSP"]:::source
+        C2["Video Local VOD"]:::source
+    end
+    
+    subgraph Procesamiento Inteligente Asíncrono
+        AY["Async YOLO Worker<br/>Multiprocessing Manager"]:::async
+        DET["Módulo Detection<br/>YOLOv11 + ByteTrack"]:::async
+        TR["Módulo Tripwire<br/>Lógica de Cruce y Conteo"]:::async
+    end
+    
+    subgraph Backend FastAPI
+        VR["Video Reader<br/>Captura de Frames OpenCV"]:::backend
+        API_S["Stream API<br/>Distribución de Video en Vivo"]:::backend
+        API_A["Analytics API<br/>Consulta de Métricas"]:::backend
+        API_I["Ingestion & Config API<br/>Gestión de Cámaras y Tareas"]:::backend
+        SCH["APScheduler<br/>Procesos en Segundo Plano"]:::backend
+    end
+    
+    subgraph Almacenamiento Persistente
+        CRUD["Capa CRUD / SQLAlchemy<br/>Modelos Lógicos"]:::data
+        DB[("Base de Datos SQLite<br/>people_counter.db")]:::data
+    end
+    
+    subgraph Cliente Final
+        UI["Dashboard Interactivo<br/>Web Browser"]:::frontend
+    end
+    
+    C1 -->|"RTSP Stream"| VR
+    C2 -->|"Archivo Local"| VR
+
+    VR -->|"Envío Frame Crudo (Cola HTTP)"| AY
+    AY -->|"Inferencia y Tracking"| DET
+    DET -->|"Coordenadas Bounding Boxes"| TR
+    TR -->|"Datos de Detección"| AY
+    AY -->|"Devuelve Frame Anotado"| VR
+
+    VR -->|"Transmisión HTTP Chunked"| API_S
+    API_S -->|"Visualización de Video"| UI
+
+    TR -.->|"Eventos en Memoria"| SCH
+    SCH -->|"Guardado Periódico"| CRUD
+    CRUD <-->|"Lectura / Escritura"| DB
+
+    API_A <-->|"Consulta ORM"| CRUD
+    API_I <-->|"Modificación ORM"| CRUD
+
+    UI <-->|"Peticiones REST (JSON)"| API_A
+    UI <-->|"Peticiones REST (JSON)"| API_I
