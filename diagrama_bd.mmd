@@ -1,0 +1,48 @@
+erDiagram
+    VIDEO_SOURCES {
+        int id PK
+        string name
+        string type "file or rtsp"
+        string path_url
+        datetime created_at
+    }
+
+    TRIPWIRES {
+        int id PK
+        int source_id FK "unique"
+        float x1
+        float y1
+        float x2
+        float y2
+        string direction "IN or OUT"
+        datetime updated_at
+    }
+
+    CAMERA_SCHEDULES {
+        int id PK
+        int source_id FK "unique"
+        boolean monday
+        boolean tuesday
+        boolean wednesday
+        boolean thursday
+        boolean friday
+        boolean saturday
+        boolean sunday
+        string start_time
+        string end_time
+        boolean is_active
+    }
+
+    HISTORICO_CONTEO {
+        int id PK
+        int source_id FK
+        string fecha_registro
+        string hora_apertura
+        string hora_cierre
+        int total_in
+        int total_out
+    }
+
+    VIDEO_SOURCES ||--|| TRIPWIRES : "has configuration (1:1)"
+    VIDEO_SOURCES ||--|| CAMERA_SCHEDULES : "has schedule (1:1)"
+    VIDEO_SOURCES ||--o{ HISTORICO_CONTEO : "generates metrics (1:N)"
