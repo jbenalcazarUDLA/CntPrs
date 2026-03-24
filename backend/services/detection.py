@@ -43,7 +43,7 @@ class YoloDetector:
                 print(f"Error warming up YOLO model: {e}")
 
         # Optimization settings
-        self.conf_threshold = 0.40
+        self.conf_threshold = 0.35
         self.classes = [0] # 0 is 'person' in COCO dataset
         
         # Tracking history and tripwire state
@@ -51,9 +51,13 @@ class YoloDetector:
         self.entry_count = 0
         self.exit_count = 0
         self.counted_ids = set() # To avoid double counting the same ID crossing multiple times
+        self.total_unique_ids = set() # To track the absolute total of unique people seen globally
         
         self.frame_count = 0
         self.last_boxes = [] # tuple of (box, track_id)
+        self.frame_avg_conf = 0.0
+        self.frame_detections = 0
+        self.frame_tracked = 0
         
         # We process 1 in every N frames to save CPU. Tracking algorithm stabilizes it.
         self.frame_skip = 5
@@ -68,8 +72,8 @@ class YoloDetector:
         self.frame_count += 1
         original_h, original_w = frame.shape[:2]
 
-        # 320 instead of 640 dramatically speeds up YOLO on CPU
-        inference_size = 320 
+        # 640 improves detection accuracy significantly over 320
+        inference_size = 640 
         
         import os
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -105,11 +109,22 @@ class YoloDetector:
         
         for r in results:
             boxes = r.boxes
+            
+            # Metrics de deteccion puros vs tracker
+            self.frame_detections = len(boxes)
+            self.frame_tracked = 0
+            if self.frame_detections > 0 and boxes.conf is not None:
+                self.frame_avg_conf = float(boxes.conf.mean().cpu())
+            else:
+                self.frame_avg_conf = 0.0
+
             if boxes.id is not None:
                 track_ids = boxes.id.int().cpu().tolist()
                 xyxys = boxes.xyxy.cpu().numpy().astype(int)
+                self.frame_tracked = len(track_ids)
                 
                 for box, track_id in zip(xyxys, track_ids):
+                    self.total_unique_ids.add(track_id)
                     new_boxes.append((box, track_id))
                     
                     # Calculate center mass of the person
@@ -123,7 +138,7 @@ class YoloDetector:
                         history.pop(0)
 
                     # Try to intersect with Tripwire if available and this ID hasn't been counted recently
-                    if valid_tripwire and len(history) >= 2 and track_id not in self.counted_ids:
+                    if valid_tripwire and len(history) >= 4 and track_id not in self.counted_ids:
                         P_prev = history[-2]
                         P_curr = history[-1]
                         
@@ -191,17 +206,26 @@ class YoloDetector:
         # Draw Counts (Improved HUD in Top-Right Corner)
         text_entries = f"Entradas: {self.entry_count}"
         text_exits = f"Salidas: {self.exit_count}"
+        text_precision = f"Precision: {self.frame_avg_conf * 100:.1f}%"
+        text_det_trk = f"Det/Trk: {self.frame_detections} / {self.frame_tracked}"
+        text_unique = f"Total Unicos: {len(self.total_unique_ids)}"
         
         font = cv2.FONT_HERSHEY_SIMPLEX
         font_scale = 0.45  # Reducido un 25% respecto a 0.6
         thickness = 1
         
-        # Get text dimensions
-        (w_ent, h_ent), _ = cv2.getTextSize(text_entries, font, font_scale, thickness)
-        (w_ext, h_ext), _ = cv2.getTextSize(text_exits, font, font_scale, thickness)
-        
-        box_width = max(w_ent, w_ext) + 40
-        box_height = h_ent + h_ext + 40
+        # Get text dimensions for the largest text
+        texts = [text_entries, text_exits, text_precision, text_det_trk, text_unique]
+        max_w = 0
+        total_h = 0
+        h_margin = 8
+        for t in texts:
+            (w, h), _ = cv2.getTextSize(t, font, font_scale, thickness)
+            max_w = max(max_w, w)
+            total_h += h + h_margin
+            
+        box_width = max_w + 40
+        box_height = total_h + 20
         
         # Position: Top Right
         x_offset = original_w - box_width - 20
@@ -216,8 +240,16 @@ class YoloDetector:
         cv2.rectangle(frame, (x_offset, y_offset), (x_offset + box_width, y_offset + box_height), (255, 255, 255), 1)
         
         # Render Text
-        cv2.putText(frame, text_entries, (x_offset + 20, y_offset + h_ent + 15), font, font_scale, (100, 255, 100), thickness)
-        cv2.putText(frame, text_exits, (x_offset + 20, y_offset + h_ent + h_ext + 25), font, font_scale, (100, 100, 255), thickness)
+        current_y = y_offset + 20
+        cv2.putText(frame, text_entries, (x_offset + 20, current_y), font, font_scale, (100, 255, 100), thickness)
+        current_y += 18
+        cv2.putText(frame, text_exits, (x_offset + 20, current_y), font, font_scale, (100, 100, 255), thickness)
+        current_y += 18
+        cv2.putText(frame, text_precision, (x_offset + 20, current_y), font, font_scale, (255, 220, 100), thickness)
+        current_y += 18
+        cv2.putText(frame, text_det_trk, (x_offset + 20, current_y), font, font_scale, (255, 255, 255), thickness)
+        current_y += 18
+        cv2.putText(frame, text_unique, (x_offset + 20, current_y), font, font_scale, (255, 150, 255), thickness)
 
         metadata = {
             "boxes": self.last_boxes,

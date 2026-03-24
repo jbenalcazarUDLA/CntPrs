@@ -67,9 +67,31 @@ def register_rtsp(
 
     return crud.create_video_source(db=db, source=source)
 
+import re
+
+def mask_rtsp_url(url: str) -> str:
+    if not url: return ""
+    if not url.startswith("rtsp://"):
+        return url
+    return re.sub(r"rtsp://[^:]+:[^@]+@", "rtsp://***:***@", url)
+
 @router.get("/", response_model=list[schemas.VideoSource])
 def list_sources(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    return crud.get_video_sources(db, skip=skip, limit=limit)
+    sources = crud.get_video_sources(db, skip=skip, limit=limit)
+    result = []
+    for s in sources:
+        # Convert DB object to dict manually to avoid Pydantic V1/V2 from_orm issues
+        s_dict = {
+            "id": s.id,
+            "name": s.name,
+            "type": s.type,
+            "path_url": mask_rtsp_url(s.path_url) if s.type == "rtsp" and s.path_url else s.path_url,
+            "created_at": s.created_at,
+            "is_scheduled": getattr(s, 'is_scheduled', False)
+        }
+        s_model = schemas.VideoSource(**s_dict)
+        result.append(s_model)
+    return result
 
 @router.delete("/{source_id}")
 def delete_source(source_id: int, db: Session = Depends(get_db)):
