@@ -21,13 +21,17 @@ El **Formato MOT** es un archivo `.txt` donde cada línea es un objeto en cada f
 *(Ejemplo de un frame: `1, 1, 136, 122, 54, 167, 1, -1, -1, -1`)*
 
 ### Para lanzar una evaluación:
-Una vez que tengas tu `video.mp4` y tu archivo de anotación manual `gt.txt`, ejecuta el script:
+Una vez que tengas tu `video.mp4`, tu archivo de anotación manual MOT `gt.txt` (y opcionalmente tu archivo de eventos de cruce `events_gt.txt`), ejecuta el script:
 
 ```bash
+# Solo Visión
 python backend/evaluate.py --video sample_video.mp4 --gt gt.txt --show
+
+# Visión + Conteo Geométrico
+python backend/evaluate.py --video sample.mp4 --gt gt.txt --gt-counts events_gt.txt --show
 ```
 - La bandera `--show` renderiza el video evaluado frame a frame.
-- Obtendrás en consola los resultados finales al terminar el video de prueba.
+- Obtendrás en consola los resultados finales (tanto de Tracking como de Conteo) al terminar el video de prueba.
 
 ### Interpretación de Resultados:
 

@@ -1,0 +1,28 @@
+# Detection and Tracking Improvements: Walkthrough
+
+## Issue Addressed
+The system had a low detection rate and unbalanced entry/exit counts (more entries than exits). This was caused by strict tracking thresholds, high confidence requirements, and a flawed method for establishing when a bounding box crossed the tripwire (using the exact center of the box, which changes relative to the ground as the person gets close to the bottom of the frame).
+
+## Changes Implemented
+
+### 1. Robust Centroid Measurement
+In [backend/services/detection.py](file:///home/jbenalcazar/TITA/CntPrs/backend/services/detection.py):
+```python
+cy = int(box[3] - (box[3] - box[1]) * 0.1)
+```
+We shifted the tracking point from the center of the bounding box to the bottom 10%. This tracks the person's feet, which provides a far more stable intersection with the tripwire and prevents exits from being missed when the bounding box is partially cut off at the bottom of the camera frame.
+
+### 2. Lowered Tracking History Requirement
+In [backend/services/detection.py](file:///home/jbenalcazar/TITA/CntPrs/backend/services/detection.py):
+```python
+if valid_tripwire and len(history) >= 3 and track_id not in self.counted_ids:
+```
+We lowered the requirement from 4 frames to 3 to allow people who emerge immediately next to a tripwire to still be counted.
+
+### 3. Lowered Detection and Tracking Thresholds
+- Lowered YOLO confidence threshold from `0.35` to `0.25` to capture subjects further away.
+- In [custom_bytetrack.yaml](file:///home/jbenalcazar/TITA/CntPrs/backend/custom_bytetrack.yaml), we lowered `track_high_thresh` and `new_track_thresh` to `0.30`. This ensures that even if YOLO struggles with partial occlusion, the tracker keeps the ID alive instead of starting a new track or dropping the person entirely (which previously caused miscounts near the edges).
+- Increased ByteTrack's `track_buffer` to 90 frames for longer tracking memory.
+
+## Next Steps
+The user is requested to test the application by reviewing live cameras and the entry/exit counts to confirm the system's accuracy and behavior has improved.

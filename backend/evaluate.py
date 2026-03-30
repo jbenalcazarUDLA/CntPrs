@@ -9,7 +9,33 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from backend.services.detection import YoloDetector
 from backend.services.metrics import evaluate_detection_frame, calculate_iou, evaluate_tracking_frame
 
-def parse_mot_gt(gt_path):
+class DummyTripwire:
+    def __init__(self, x1, y1, x2, y2, direction):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+        self.direction = direction
+
+def parse_events_gt(gt_path):
+    """
+    Parses an Event Ground Truth file.
+    Format: <frame>, <direction> (1 for IN, -1 for OUT)
+    """
+    events = []
+    if not gt_path or not os.path.exists(gt_path):
+        return events
+    with open(gt_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith('#'): continue
+            parts = line.split(',')
+            if len(parts) >= 2:
+                events.append({
+                    'frame': int(parts[0]),
+                    'direction': int(parts[1])
+                })
+    return sorted(events, key=lambda x: x['frame'])
     """
     Parses a MOT format Ground Truth file.
     MOT format: <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
@@ -48,7 +74,9 @@ def parse_mot_gt(gt_path):
 def main():
     parser = argparse.ArgumentParser(description="Evaluate YOLO + ByteTrack using MOT Ground Truth")
     parser.add_argument('--video', type=str, required=True, help="Path to the video file")
-    parser.add_argument('--gt', type=str, required=True, help="Path to the Ground Truth text file (MOT format)")
+    parser.add_argument('--gt', type=str, required=False, help="Path to the Ground Truth text file (MOT format)", default="")
+    parser.add_argument('--gt-counts', type=str, required=False, help="Path to Counting Events Ground Truth CSV", default="")
+    parser.add_argument('--tw', type=str, required=False, help="Tripwire format: x1,y1,x2,y2,DIR (e.g. 0.1,0.5,0.9,0.5,IN)", default="")
     parser.add_argument('--iou', type=float, default=0.5, help="IoU threshold for matching")
     parser.add_argument('--show', action='store_true', help="Show the video with metrics rendered")
     args = parser.parse_args()
@@ -57,9 +85,27 @@ def main():
         print(f"Error: Video file {args.video} not found.")
         sys.exit(1)
 
-    print(f"Loading Ground Truth from: {args.gt}")
-    gt_data = parse_mot_gt(args.gt)
-    print(f"Loaded {sum(len(f) for f in gt_data.values())} GT boxes across {len(gt_data)} frames.")
+    if args.gt and os.path.exists(args.gt):
+        print(f"Loading Ground Truth MOT from: {args.gt}")
+        gt_data = parse_mot_gt(args.gt)
+        print(f"Loaded {sum(len(f) for f in gt_data.values())} GT boxes across {len(gt_data)} frames.")
+    else:
+        gt_data = {}
+        
+    gt_events = []
+    if args.gt_counts and os.path.exists(args.gt_counts):
+        print(f"Loading Ground Truth Counts from: {args.gt_counts}")
+        gt_events = parse_events_gt(args.gt_counts)
+        print(f"Loaded {len(gt_events)} GT counting events.")
+        
+    tripwire_config = None
+    if args.tw:
+        try:
+            parts = args.tw.split(',')
+            tripwire_config = DummyTripwire(float(parts[0]), float(parts[1]), float(parts[2]), float(parts[3]), parts[4].upper())
+            print(f"Loaded Dummy Tripwire: {args.tw}")
+        except Exception as e:
+            print(f"Failed to parse tripwire: {e}")
 
     print(f"Loading Model and starting evaluation on: {args.video}")
     detector = YoloDetector()
@@ -81,8 +127,12 @@ def main():
     mot_gt_total = 0
     
     # ID mappings across frames to count ID switches
-    # Maps predicted object_id to the ground truth ID it was last matched with
     pred_to_gt = {} 
+
+    # Counting Metrics
+    system_events = []
+    prev_entries = 0
+    prev_exits = 0
 
     frame_idx = 0
     while True:
@@ -96,10 +146,21 @@ def main():
         gt_tracks_dict = {g['id']: g['box'] for g in current_gt}
         
         # We need to hack `frame_skip` dynamically since evaluate should evaluate all frames
-        # or we just let it run normally but GT is frame-by-frame. 
-        # By default detector process_frame calculates on every frame passed to it if we don't skip.
+        processed_frame, metadata = detector.process_frame(frame, source_id="eval_source", tripwire_data=tripwire_config)
         
-        processed_frame, metadata = detector.process_frame(frame, source_id="eval_source")
+        # Capture counting events
+        current_entries = metadata.get("entry_count", 0)
+        current_exits = metadata.get("exit_count", 0)
+        
+        if current_entries > prev_entries:
+            for _ in range(current_entries - prev_entries):
+                system_events.append({'frame': frame_idx, 'direction': 1})
+        if current_exits > prev_exits:
+            for _ in range(current_exits - prev_exits):
+                system_events.append({'frame': frame_idx, 'direction': -1})
+                
+        prev_entries = current_entries
+        prev_exits = current_exits
         
         # metadata["boxes"] is format: [([x1, y1, x2, y2], track_id), ...]
         pred_boxes_data = metadata.get("boxes", [])
@@ -141,6 +202,40 @@ def main():
     if args.show:
         cv2.destroyAllWindows()
 
+    # --- Match Counting Events ---
+    count_tp = 0
+    count_fp = 0
+    count_fn = 0
+    count_dir_err = 0
+    
+    if len(gt_events) > 0:
+        matched_sys = set()
+        matched_gt = set()
+        TOLERANCE = 20 # frames
+        
+        for g_idx, g_ev in enumerate(gt_events):
+            best_match_idx = -1
+            min_dist = TOLERANCE + 1
+            
+            for s_idx, s_ev in enumerate(system_events):
+                if s_idx in matched_sys: continue
+                dist = abs(g_ev['frame'] - s_ev['frame'])
+                if dist <= TOLERANCE and dist < min_dist:
+                    min_dist = dist
+                    best_match_idx = s_idx
+                    
+            if best_match_idx != -1:
+                matched_gt.add(g_idx)
+                matched_sys.add(best_match_idx)
+                if system_events[best_match_idx]['direction'] == g_ev['direction']:
+                    count_tp += 1
+                else:
+                    count_dir_err += 1
+            else:
+                count_fn += 1 # GT event missed by system
+                
+        count_fp = len(system_events) - len(matched_sys) # Ghost counts
+
     print("\n\n------------- EVALUATION RESULTS -------------")
     
     # Calculate Precision and Recall
@@ -168,13 +263,34 @@ def main():
     print(f"ID Switches (Mismatches):   {mot_mismatches}")
     print(f"MOTA Score:                 {mota:.4f}")
     
+    if len(gt_events) > 0:
+        count_precision = count_tp / (count_tp + count_fp) if (count_tp + count_fp) > 0 else 0
+        count_recall = count_tp / (count_tp + count_fn) if (count_tp + count_fn) > 0 else 0
+        
+        print("\n[ Tripwire ] COUNTING METRICS:")
+        print(f"Total Ground Truth Events:  {len(gt_events)}")
+        print(f"System Detected Events:     {len(system_events)}")
+        print(f"True Positives (TP):        {count_tp}")
+        print(f"False Positives (Ghost):    {count_fp}")
+        print(f"False Negatives (Missed):   {count_fn}")
+        print(f"Direction Errors:           {count_dir_err}")
+        print(f"Counting Precision:         {count_precision:.4f}")
+        print(f"Counting Recall:            {count_recall:.4f}")
+    
     print("----------------------------------------------")
-    if mota < 0.5:
+    if mota < 0.5 and mot_gt_total > 0:
         print("💡 INSIGHT: El problema recae gravemente en el TRACKING. Considera aumentar el framerate de la cámara u optimizar max_age en bytetrack")
-    elif precision < 0.5 or recall < 0.5:
+    elif (precision < 0.5 or recall < 0.5) and mot_gt_total > 0:
         print("💡 INSIGHT: El problema de conteo recae en la DETECCION. YOLO esta fallando en encontrar a las personas de forma consistente.")
+    elif len(gt_events) > 0:
+        if count_precision < 0.8:
+            print("💡 INSIGHT: La línea virtual es MUY SENSIBLE (genera conteos falsos/fantasmas o hay rebotes). Ajusta su posición.")
+        elif count_recall < 0.8:
+            print("💡 INSIGHT: La línea virtual NO ALCANZA A CONTAR. Las personas la cruzan muy rápido o antes de ser marcados (distancia mínima de historial).")
+        else:
+            print("💡 INSIGHT: ¡El sistema de conteo es Óptimo!")
     else:
-        print("💡 INSIGHT: El modelo es relativamente consistente. Revisa la lógica geométrica del Tripwire (línea virtual).")
+        print("💡 INSIGHT: El modelo de detección es relativamente consistente.")
 
 if __name__ == '__main__':
     main()

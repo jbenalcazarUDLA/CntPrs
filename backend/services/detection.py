@@ -43,7 +43,7 @@ class YoloDetector:
                 print(f"Error warming up YOLO model: {e}")
 
         # Optimization settings
-        self.conf_threshold = 0.35
+        self.conf_threshold = 0.25
         self.classes = [0] # 0 is 'person' in COCO dataset
         
         # Tracking history and tripwire state
@@ -127,9 +127,9 @@ class YoloDetector:
                     self.total_unique_ids.add(track_id)
                     new_boxes.append((box, track_id))
                     
-                    # Calculate center mass of the person
+                    # Calculate center mass of the person (shift to bottom 10% - feet level)
                     cx = int((box[0] + box[2]) / 2)
-                    cy = int((box[1] + box[3]) / 2)
+                    cy = int(box[3] - (box[3] - box[1]) * 0.1)
                     
                     history = self.tracks[track_id]
                     history.append((cx, cy))
@@ -138,7 +138,7 @@ class YoloDetector:
                         history.pop(0)
 
                     # Try to intersect with Tripwire if available and this ID hasn't been counted recently
-                    if valid_tripwire and len(history) >= 4 and track_id not in self.counted_ids:
+                    if valid_tripwire and len(history) >= 3 and track_id not in self.counted_ids:
                         P_prev = history[-2]
                         P_curr = history[-1]
                         
