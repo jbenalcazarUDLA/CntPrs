@@ -85,10 +85,11 @@ def save_mot_format(output_path, detections):
             line = f"{det[0]+1},{det[1]},{det[2]:.2f},{det[3]:.2f},{det[4]:.2f},{det[5]:.2f},{det[6]:.4f},1,-1,-1\n"
             f.write(line)
 
-def save_mot_zip(output_zip, detections, video_info=None, label_name='person'):
+def save_mot_zip(output_zip, detections, video_info=None, label_name='person', export_res=None):
     """
     Creates a ZIP file compatible with CVAT MOT 1.1.
     Includes seqinfo.ini to avoid NoneType errors in CVAT.
+    export_res: (width, height) to use in seqinfo.ini (overrides video_info if provided)
     """
     temp_dir = "temp_mot_cvat"
     gt_dir = os.path.join(temp_dir, "gt")
@@ -110,50 +111,49 @@ def save_mot_zip(output_zip, detections, video_info=None, label_name='person'):
             f.write(line)
             id_in_frame += 1
             
-    # Create seqinfo.ini - This is often required by CVAT to avoid internal errors
-    seq_info = [
-        "[Sequence]",
-        f"name={os.path.basename(output_zip).replace('.zip', '')}",
-        "imDir=img1",
-        "imExt=.jpg",
-        f"seqLength={video_info['length'] if video_info else 5000}",
-        f"imWidth={video_info['width'] if video_info else 1920}",
-        f"imHeight={video_info['height'] if video_info else 1080}",
-        "frameRate=30"
-    ]
-    seq_file = os.path.join(temp_dir, "seqinfo.ini")
-    with open(seq_file, 'w') as f:
-        f.write("\n".join(seq_info))
+    # Base sequence info
+    actual_length = detections[-1][0] + 1 if detections else 0
+    total_len = video_info['length'] if video_info else actual_length
+    
+    # Resolve resolution for CVAT (must match the video being used)
+    if export_res:
+        out_w, out_h = export_res
+    else:
+        out_w = video_info['width'] if video_info else 1920
+        out_h = video_info['height'] if video_info else 1080
 
     # Create the ZIP file
-    actual_length = detections[-1][0] + 1 if detections else 0
     with zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
         zf.write(gt_file, arcname="gt/gt.txt")
-        # Update seqinfo with actual exported length
+        
+        # Create seqinfo.ini
         seq_info = [
             "[Sequence]",
             f"name={os.path.basename(output_zip).replace('.zip', '')}",
             "imDir=img1",
             "imExt=.jpg",
-            f"seqLength={video_info['length'] if video_info else actual_length}",
-            f"imWidth={video_info['width'] if video_info else 1920}",
-            f"imHeight={video_info['height'] if video_info else 1080}",
+            f"seqLength={total_len}",
+            f"imWidth={out_w}",
+            f"imHeight={out_h}",
             "frameRate=30"
         ]
-        seq_file_updated = os.path.join(temp_dir, "seqinfo_final.ini")
-        with open(seq_file_updated, 'w') as f:
+        seq_file = os.path.join(temp_dir, "seqinfo.ini")
+        with open(seq_file, 'w') as f:
             f.write("\n".join(seq_info))
-        zf.write(seq_file_updated, arcname="seqinfo.ini")
+        zf.write(seq_file, arcname="seqinfo.ini")
+        
         # Add labels.txt at root and inside gt/ with specified label
-        # Important: must include newline
         label_content = f"{label_name}\n"
         zf.writestr("labels.txt", label_content)
         zf.writestr("gt/labels.txt", label_content) 
         
     # Cleanup temp directory
     shutil.rmtree(temp_dir)
-    print(f"CVAT-compatible ZIP created successfully: {output_zip} (Frames: {actual_length})")
-    print(f"Label mapped in labels.txt: {label_name}")
+    print(f"CVAT ZIP: {output_zip}")
+    print(f"  - Total Frames (seqLength): {total_len}")
+    print(f"  - Last frame with detection: {actual_length}")
+    print(f"  - Export Resolution: {out_w}x{out_h}")
+    print(f"  - Label mapped: {label_name}")
 
 def main():
     parser = argparse.ArgumentParser(description="3.1 Capa de Visión (Detección - YOLO) Evaluation Script")
@@ -352,7 +352,9 @@ def main():
     if args.show:
         cv2.destroyAllWindows()
 
-    print(f"\nFinalizado: {frame_idx} frames procesados.")
+    print(f"\nFinalizado:")
+    print(f"  - Frames procesados: {frame_idx}")
+    print(f"  - Frames esperados (ffprobe/OpenCV): {video_info['length']}")
 
     if gt_data:
         precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
@@ -371,6 +373,9 @@ def main():
         print(f"F1 SCORE:  {f1_score:.4f}")
         print("="*40)
         
+        if recall >= 0.8 and precision >= 0.8:
+            print("Interpretación: Desempeño general óptimo (Detección robusta).")
+        
         if recall < 0.8:
             print("Interpretación: Bajo recall -> el modelo no detecta personas (problema de visión).")
         if precision < 0.8:
@@ -378,9 +383,22 @@ def main():
     else:
         print("\nNo se proporcionó Ground Truth para evaluación.")
 
+    # Sincronizar el conteo final para el ZIP de CVAT (Evita error "Unknown internal frame id 650")
+    video_info['length'] = frame_idx
+
     if args.save_detections:
         if args.save_detections.endswith('.zip'):
-            save_mot_zip(args.save_detections, all_yolo_detections, video_info=video_info, label_name=args.label)
+            # Determine correct resolution for CVAT
+            export_res = None
+            if args.no_reverse:
+                # If no_reverse, coordinates are in processed space (default 640x640)
+                export_res = (preprocessor.config["resize"]["width"], preprocessor.config["resize"]["height"])
+            
+            save_mot_zip(args.save_detections, 
+                         all_yolo_detections, 
+                         video_info=video_info, 
+                         label_name=args.label,
+                         export_res=export_res)
             print(f"IMPORTANTE: En CVAT, usa 'Upload annotations' -> 'MOT 1.1' y selecciona este archivo ZIP.")
             print(f"Asegúrate de que la etiqueta en CVAT se llame EXACTAMENTE: {args.label}")
         else:

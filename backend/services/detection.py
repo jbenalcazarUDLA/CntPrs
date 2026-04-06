@@ -129,7 +129,7 @@ class YoloDetector:
                     
                     # Calculate center mass of the person (shift to bottom 10% - feet level)
                     cx = int((box[0] + box[2]) / 2)
-                    cy = int(box[3] - (box[3] - box[1]) * 0.1)
+                    cy = int((box[1] + box[3]) / 2)
                     
                     history = self.tracks[track_id]
                     history.append((cx, cy))
